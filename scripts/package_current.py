@@ -14,7 +14,7 @@ release=project/'Versiones'/('V'+version)
 source_dir=release/'Codigo';docs_dir=release/'Fuentes'
 android=release/'Distribucion/Android';windows=release/'Distribucion/Windows'
 for folder in [source_dir,docs_dir,android,windows]:folder.mkdir(parents=True,exist_ok=True)
-report=root/'desktop/qa/packaged-v31.json'
+report=root/'desktop/qa/packaged-v32.json'
 assert json.loads(report.read_text('utf-8-sig'))['ok']
 reports=list((root/'app/build/test-results/testDebugUnitTest').glob('TEST-*.xml'))
 assert reports
@@ -35,9 +35,9 @@ for directory in ['app/src','gradle','docs','desktop/licenses']:
 for name in ['.gitignore','build.gradle','settings.gradle','gradle.properties','app/build.gradle','Compilar.ps1','gradlew','gradlew.bat','shared/translations.tsv','scripts/sync_translations.py','scripts/document_source.py','scripts/package_current.py']:
     entries.append((root/name,name))
 entries += [(path,'desktop/'+path.name) for path in (root/'desktop').glob('*.py')]
-for name in ['requirements.txt','scanner.png','desktop.spec','version_info.txt','Compilar-Windows.ps1','translations.tsv']:
+for name in ['arrow-dark.png','arrow-light.png','requirements.txt','scanner.png','desktop.spec','version_info.txt','Compilar-Windows.ps1','translations.tsv']:
     entries.append((root/'desktop'/name,'desktop/'+name))
-for name in ['foto.png','v3-claro.png','v3-oscuro.png','v3-editor.png','packaged-v31.json']:
+for name in ['foto.png','v3-claro.png','v3-oscuro.png','v3-editor.png','packaged-v32.json','v32-imagenes.png','v32-gestor.png','v32-informacion.png']:
     path=root/'desktop/qa'/name
     if path.is_file():entries.append((path,'desktop/qa/'+name))
 archive=source_dir/f'FolioScan-V{version}-codigo.zip'

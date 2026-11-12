@@ -1,3 +1,7 @@
+# V3.2 — 2026-11-12
+
+Ajustes de navegación y configuración Android/Windows, idioma inicial del sistema, formato de papel contextual en Windows y eliminación del selector previo Android. Mantiene la clave de publicación de V3.1 corregida.
+
 # Historial
 
 ## V3.1 / 3.1 — 2026-11-12

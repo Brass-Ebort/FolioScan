@@ -12,6 +12,34 @@ import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk=28)
 public class MainActivityTest {
+    @Test @Config(qualifiers="fr-rFR") public void systemLanguageAndManualOverride() {
+        android.content.Context context = RuntimeEnvironment.getApplication();
+        android.content.SharedPreferences prefs = context.getSharedPreferences("MainActivity",0);
+        prefs.edit().remove("language").commit();
+        I18n.load(context);
+        assertEquals("Scanner", I18n.t("Escáner"));
+        assertEquals("Gestionnaire PDF", I18n.t("Gestor de PDF"));
+        prefs.edit().putString("language","es").commit();
+        I18n.load(context);
+        assertEquals("Gestor de PDF", I18n.t("Gestor de PDF"));
+    }
+
+    @Test public void footerOnlyInSettingsAndNoManagerFormatSelector() {
+        RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().putString("language","es").commit();
+        try(ActivityController<MainActivity> controller=Robolectric.buildActivity(MainActivity.class).setup()) {
+            MainActivity activity=controller.get();
+            View root=activity.getWindow().getDecorView();
+            assertNull(find(root,"Gracias por descargar la aplicación."));
+            find(root,"Gestor de PDF").performClick();
+            root=activity.getWindow().getDecorView();
+            assertNull(find(root,"Tamaño para imágenes → PDF"));
+            assertNull(find(root,"Gracias por descargar la aplicación."));
+            find(root,"⚙").performClick();
+            android.app.Dialog drawer=org.robolectric.shadows.ShadowDialog.getLatestDialog();
+            assertNotNull(find(drawer.getWindow().getDecorView(),"Gracias por descargar la aplicación."));
+            drawer.dismiss();
+        }
+    }
     @Test public void selectedTabIsDarkerInBothThemes() {
         for(boolean dark:new boolean[]{false,true}){
             RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().putBoolean("dark",dark).putString("language","es").commit();
@@ -33,7 +61,7 @@ public class MainActivityTest {
         return null;
     }
     @Test public void darkPreferenceAndPdfTabSurviveRecreation() {
-        RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().putBoolean("dark",true).putString("format","A3").commit();
+        RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().putBoolean("dark",true).putString("language","es").putString("format","A3").commit();
         try(ActivityController<MainActivity> controller=Robolectric.buildActivity(MainActivity.class).setup()) {
             MainActivity activity=controller.get();
             assertTrue(activity.getPreferences(0).getBoolean("dark",false));

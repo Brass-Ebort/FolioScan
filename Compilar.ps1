@@ -31,4 +31,4 @@ if (($folioSignature -join "`n") -match '(?i)CN=Android Debug') { throw 'El APK 
 $folioBadging = & "$($folioBuildTools.FullName)\aapt.exe" dump badging $folioApk 2>&1
 if ($LASTEXITCODE -ne 0) { throw 'No se pudo inspeccionar el manifiesto del APK.' }
 if (($folioBadging -join "`n") -match 'application-debuggable') { throw 'El APK tiene la depuración activada.' }
-Copy-Item -LiteralPath "$PSScriptRoot\app\build\outputs\apk\release\app-release.apk" -Destination "$PSScriptRoot\FolioScan-3.1.apk" -Force
+Copy-Item -LiteralPath "$PSScriptRoot\app\build\outputs\apk\release\app-release.apk" -Destination "$PSScriptRoot\FolioScan-3.2.apk" -Force

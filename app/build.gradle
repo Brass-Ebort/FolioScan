@@ -10,7 +10,7 @@ if (releasePropertiesFile.isFile()) {
 android {
     namespace 'es.folioscan.app'
     compileSdk 35
-    defaultConfig { applicationId 'es.folioscan.app'; minSdk 26; targetSdk 35; versionCode 5; versionName '3.1' }
+    defaultConfig { applicationId 'es.folioscan.app'; minSdk 26; targetSdk 35; versionCode 6; versionName '3.2' }
     signingConfigs {
         release {
             if (releaseProperties.getProperty('storeFile')) {

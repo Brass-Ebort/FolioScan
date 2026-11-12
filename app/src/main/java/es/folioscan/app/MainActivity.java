@@ -32,7 +32,6 @@ public class MainActivity extends ComponentActivity {
   private LinearLayout list;
   private TextView status;
   private Button scan;
-  private Spinner pageFormat;
   private String pendingExport;
   private String scanFormat = "A4", operation = "merge", pendingToolExport;
   private ActivityResultLauncher<String[]> toolPicker;
@@ -203,7 +202,24 @@ public class MainActivity extends ComponentActivity {
   }
 
   private void styleTab(Button button, boolean active) {
-    GradientDrawable shape = background(Color.parseColor(active ? (dark ? "#102C50" : "#174A86") : (dark ? "#365678" : "#DCEAFF")), 0);
+    styleTab(button, active, false);
+  }
+
+  private void styleTab(Button button, boolean active, boolean mainNavigation) {
+    int fill = Color.parseColor(active ? (dark ? (mainNavigation ? "#101B2B" : "#102C50") : "#174A86") : (dark ? "#365678" : "#DCEAFF"));
+    // La pestaña principal activa queda abierta por abajo, como una ficha.
+    GradientDrawable shape = new GradientDrawable() {
+      @Override public void draw(android.graphics.Canvas canvas) {
+        super.draw(canvas);
+        if (active && mainNavigation) {
+          android.graphics.Paint paint = new android.graphics.Paint();
+          paint.setColor(fill);
+          android.graphics.Rect bounds = getBounds();
+          canvas.drawRect(bounds.left + dp(1), bounds.bottom - dp(1), bounds.right - dp(1), bounds.bottom, paint);
+        }
+      }
+    };
+    shape.setColor(fill);
     shape.setStroke(dp(1), MUTED);
     button.setBackground(shape);
     button.setTextColor(active || dark ? Color.WHITE : INK);
@@ -258,20 +274,23 @@ public class MainActivity extends ComponentActivity {
               tab = 1;
               buildUi();
             });
-    styleTab(scanTab, tab == 0);
-    styleTab(pdfTab, tab == 1);
+    styleTab(scanTab, tab == 0, true);
+    styleTab(pdfTab, tab == 1, true);
     settings.setPadding(0, 0, 0, 0);
-    tabs.addView(settings, new LinearLayout.LayoutParams(dp(48), dp(48)));
+    LinearLayout.LayoutParams gearParams = new LinearLayout.LayoutParams(dp(48), dp(48));
+    gearParams.setMarginEnd(dp(12));
+    tabs.addView(settings, gearParams);
     tabs.addView(scanTab, new LinearLayout.LayoutParams(0, dp(48), 1));
     tabs.addView(pdfTab, new LinearLayout.LayoutParams(0, dp(48), 1));
     body.addView(tabs);
+    // El título respira bajo la navegación, también al cambiar al gestor PDF.
+    View tabSpacing = new View(this);
+    body.addView(tabSpacing, new LinearLayout.LayoutParams(-1, dp(20)));
     status = text(model.status.getValue() == null ? "" : model.status.getValue(), 14, ACCENT, false);
     status.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE);
     if (tab == 1) {
       body.addView(text("Tus PDF,\na tu manera.", 34, INK, true));
 
-      body.addView(text("Tamaño para imágenes → PDF", 15, INK, true));
-      body.addView(formatSpinner());
       body.addView(button("Unir varios PDF", false, () -> pick("merge")));
       body.addView(button("Separar PDF en páginas · ZIP", false, () -> pick("split")));
       body.addView(button("PDF a imágenes JPG · ZIP", false, () -> pick("render")));
@@ -292,7 +311,6 @@ public class MainActivity extends ComponentActivity {
       updateTool();
       body.addView(
           text("Selecciona un archivo y usa las flechas para cambiar el orden.", 13, MUTED, false));
-      addFooter(body);
       setContentView(scroll);
       return;
     }
@@ -327,7 +345,6 @@ public class MainActivity extends ComponentActivity {
     list = new LinearLayout(this);
     list.setOrientation(LinearLayout.VERTICAL);
     body.addView(list);
-    addFooter(body);
     setContentView(scroll);
     refresh();
   }
@@ -585,29 +602,6 @@ public class MainActivity extends ComponentActivity {
         .show();
   }
 
-  private Spinner formatSpinner() {
-    Spinner spinner = new Spinner(this);
-    spinner.setMinimumHeight(dp(52));
-    ArrayAdapter<String> adapter =
-        new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, PageFormats.NAMES);
-    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    spinner.setAdapter(adapter);
-    String value =
-        getPreferences(0)
-            .getString("format", getPreferences(0).getBoolean("a4", true) ? "A4" : "Original");
-    spinner.setSelection(Math.max(0, Arrays.asList(PageFormats.NAMES).indexOf(value)));
-    spinner.setOnItemSelectedListener(
-        new android.widget.AdapterView.OnItemSelectedListener() {
-          public void onNothingSelected(android.widget.AdapterView<?> parent) {}
-
-          public void onItemSelected(
-              android.widget.AdapterView<?> parent, View view, int position, long id) {
-            getPreferences(0).edit().putString("format", PageFormats.NAMES[position]).apply();
-          }
-        });
-    return spinner;
-  }
-
   private void message(String value) {
     new I18n.Builder(this).setMessage(value).setPositiveButton("Entendido", null).show();
   }
@@ -661,7 +655,18 @@ public class MainActivity extends ComponentActivity {
               drawer.dismiss();
               chooseLanguage();
             }));
-    drawer.setContentView(panel);
+    // El contenido puede desplazarse en pantallas pequeñas sin ocultar el pie.
+    View spacer = new View(this);
+    panel.addView(spacer, new LinearLayout.LayoutParams(1, 0, 1));
+    String version;
+    try { version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName; }
+    catch (android.content.pm.PackageManager.NameNotFoundException e) { version = "3.2"; }
+    panel.addView(text("FolioScan · v" + version, 12, MUTED, false));
+    addFooter(panel);
+    ScrollView settingsScroll = new ScrollView(this);
+    settingsScroll.setFillViewport(true);
+    settingsScroll.addView(panel);
+    drawer.setContentView(settingsScroll);
     Window window = drawer.getWindow();
     if (window != null) {
       window.setBackgroundDrawableResource(android.R.color.transparent);
@@ -752,7 +757,7 @@ public class MainActivity extends ComponentActivity {
             "Procesar",
             (d, w) ->
                 model.processPdf(
-                    operation, new ArrayList<>(uris), getPreferences(0).getString("format", "A4")))
+                    operation, new ArrayList<>(uris), "Original"))
         .show();
   }
 

@@ -30,12 +30,11 @@ public final class I18n {
 
   // Lee el catálogo de idiomas una vez y selecciona la preferencia persistida.
   public static void load(Context context) {
-    language =
-        Math.max(
-            0,
-            Arrays.asList(CODES)
-                .indexOf(
-                    context.getSharedPreferences("MainActivity", 0).getString("language", "es")));
+    String systemLanguage = context.getResources().getConfiguration().getLocales().get(0).getLanguage();
+    String selected = context.getSharedPreferences("MainActivity", 0)
+        .getString("language", systemLanguage);
+    language = Arrays.asList(CODES).indexOf(selected);
+    if (language < 0) language = Arrays.asList(CODES).indexOf("en");
     if (!ROWS.isEmpty()) return;
     try (BufferedReader reader =
         new BufferedReader(
