@@ -1,6 +1,6 @@
 # FolioScan
 
-**A free, straightforward document scanner and PDF toolkit for Android and Windows. No ads. No subscriptions.**
+**A free, straightforward document scanner and PDF toolkit for Android and Windows(portable). No ads. No subscriptions.**
 
 **Languages:** [English](#english) · [Español](#español)
 
