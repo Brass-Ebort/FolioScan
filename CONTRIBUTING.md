@@ -2,9 +2,9 @@
 
 Los cambios al código propio se distribuyen bajo la misma licencia PolyForm Noncommercial 1.0.0. Conserva los avisos de autoría y las licencias de terceros. No incorpores código sin derechos suficientes ni documentos personales a las pruebas.
 
-1. Lee README y docs/ARQUITECTURA.md.
-2. Instala las dependencias indicadas en docs/COMPILACION.md.
-3. Haz cambios pequeños, con comentarios sobre decisiones y límites. Hay una explicación adicional de cada línea en docs/CODIGO_COMENTADO.html.
+1. Lee README y docs/ESP/ARQUITECTURA.md.
+2. Instala las dependencias indicadas en docs/ESP/COMPILACION.md.
+3. Haz cambios pequeños, con comentarios sobre decisiones y límites. Hay una explicación adicional de cada línea en docs/ESP/CODIGO_COMENTADO.html.
 4. Ejecuta las pruebas de la plataforma afectada. Para cambios destructivos, comprueba también cancelación, fallo de escritura y recuperación.
 5. Describe comportamiento anterior, comportamiento nuevo y comprobaciones realizadas.
 

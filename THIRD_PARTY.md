@@ -17,10 +17,22 @@ La licencia no comercial de FolioScan solo abarca su código y los materiales qu
 
 Las versiones exactas de Windows constan en `desktop/requirements.txt`; las de Android en `app/build.gradle`. No se empaquetan fuentes de Windows: se utilizan las disponibles en el sistema.
 
-## Derechos sobre Qt/PySide y otras bibliotecas LGPL
+## Estado de la revisión V3.2
 
-Se permite expresamente modificar o sustituir las bibliotecas LGPL y realizar ingeniería inversa de FolioScan cuando sea necesario para depurar tales modificaciones, conforme a LGPL. Ninguna restricción no comercial del código propio reduce esos derechos sobre las bibliotecas.
+Los textos LGPLv3/GPLv3 del parche fueron cotejados con GNU; LICENSE coincide con el texto oficial de PolyForm Noncommercial 1.0.0 sin cambiar sus términos. Se conservaron los avisos originales de los paquetes, incluso el aviso comercial de Qt, y se añadieron los textos y avisos de la opción LGPL extraídos de fuentes oficiales. No se afirma que cualquier módulo de Qt pueda usarse bajo LGPL: el inventario limita la distribución a los módulos identificados.
 
-La entrega de fuentes incluye los archivos necesarios para volver a empaquetar la aplicación con bibliotecas Qt/PySide modificadas. Crea el entorno, instala tu versión compatible de las bibliotecas y ejecuta `desktop/Compilar-Windows.ps1`; no hay verificación que impida sustituirlas. Para desarrollo puedes ejecutar directamente `desktop/launcher.py` sin empaquetar.
+Windows ahora se entrega como carpeta portable dentro de un ZIP. `_internal/legal` contiene los avisos y se abre desde Información adicional; la ventana también identifica Qt/PySide/Shiboken y LGPLv3. Consulte [AVISO_QT_LGPL.md](AVISO_QT_LGPL.md) para fuentes, permisos y prueba efectiva de sustitución. La carpeta `_internal` es necesaria para ejecutar el programa.
 
-Fuentes originales: [Qt](https://code.qt.io/), [PySide / Shiboken](https://code.qt.io/cgit/pyside/pyside-setup.git/), [pypdfium2](https://github.com/pypdfium2-team/pypdfium2), [PDFium](https://pdfium.googlesource.com/pdfium/), [PDFBox Android](https://github.com/TomRoush/PdfBox-Android), [ML Kit](https://developers.google.com/ml-kit/vision/doc-scanner). Selecciona la etiqueta correspondiente a la versión indicada en los manifiestos. Los textos de licencia incluidos en las distribuciones son los aplicables a cada componente.
+El inventario nativo final y sus hashes están en `legal/windows-binary-inventory.json`. Los metadatos del entorno incluyen herramientas de compilación que no necesariamente se distribuyen. Los 240 binarios Qt/PySide/Shiboken comparados corresponden al entorno de las ruedas originales, no a 240 binarios dentro de la entrega.
+
+Se excluyen FFmpeg (la webcam usa DirectShow), Mesa/OpenGL software (la aplicación usa QWidget raster) y una DLL de datos ICU huérfana de las ICU ajenas previamente excluidas. No se distribuyen estos componentes sin utilizar. No se alteró el código de captura ni el procesamiento de documentos.
+
+Android: 63 artefactos de ejecución correspondientes a 60 coordenadas únicas, resueltos por Gradle. `legal/android-license-inventory.json` y los POM originales documentan las licencias. Se conservaron 22 avisos integrados y se añadieron LICENSE/NOTICE oficiales PDFBox Android v2.0.27.0 (incluidos recursos Adobe), licencia Bouncy Castle r1rv72 y Apache-2.0. Guava ListenableFuture hereda Apache-2.0 de guava-parent 26.0-android. ML Kit y Play Services mantienen sus términos Google; sus enlaces y el aviso de métricas están en la página legal integrada y accesible sin conexión. No se presentan las dependencias Google como código propio ni como código abierto.
+
+## Comprobaciones no cerradas
+
+La versión/procedencia exacta de `libffi-8.dll` suministrada por el runtime Python de desarrollo no está acreditada con un manifiesto de distribución. Se incluye una licencia MIT de referencia de libffi, identificada como referencia, pero no se da por cerrado su cotejo con ese binario. Debe localizarse su paquete original con avisos o sustituirse por un runtime documentado y comprobar su compatibilidad.
+
+Las DLL Microsoft Visual C++ conservan su copyright y proceden de las ruedas/runtime utilizados; debe archivarse la licencia de redistribución aplicable y comprobar su derecho de redistribución. La lista oficial de redistribuibles no reemplaza los términos aplicables al distribuidor: https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution . No se aplica PolyForm ni LGPL a esas DLL.
+
+No se declara conforme el conjunto Windows hasta cerrar estos puntos. Los textos oficiales de terceros prevalecen sobre este resumen. Véase INFORME_FINAL_PUBLICACION.md.

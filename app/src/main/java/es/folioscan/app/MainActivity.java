@@ -655,6 +655,7 @@ public class MainActivity extends ComponentActivity {
               drawer.dismiss();
               chooseLanguage();
             }));
+    panel.addView(button("Licencias y avisos", false, this::showLicenses));
     // El contenido puede desplazarse en pantallas pequeñas sin ocultar el pie.
     View spacer = new View(this);
     panel.addView(spacer, new LinearLayout.LayoutParams(1, 0, 1));
@@ -678,6 +679,37 @@ public class MainActivity extends ComponentActivity {
     if (window != null)
       window.setLayout(
           Math.min(dp(330), getResources().getDisplayMetrics().widthPixels - dp(32)), -1);
+  }
+
+  // Los textos legales incluidos se consultan sin conexión ni JavaScript.
+  private void showLicenses() {
+    try (java.io.InputStream in = getAssets().open("legal.html")) {
+      java.io.ByteArrayOutputStream buffer = new java.io.ByteArrayOutputStream();
+      byte[] bytes = new byte[8192];
+      int count;
+      while ((count = in.read(bytes)) != -1) buffer.write(bytes, 0, count);
+      android.webkit.WebView view = new android.webkit.WebView(this);
+      view.getSettings().setJavaScriptEnabled(false);
+      view.getSettings().setAllowFileAccess(false);
+      view.setWebViewClient(new android.webkit.WebViewClient() {
+        @Override public boolean shouldOverrideUrlLoading(android.webkit.WebView web,
+            android.webkit.WebResourceRequest request) {
+          String scheme = request.getUrl().getScheme();
+          if ("https".equals(scheme) || "http".equals(scheme))
+            startActivity(new Intent(Intent.ACTION_VIEW, request.getUrl()));
+          return true;
+        }
+      });
+      view.loadDataWithBaseURL(null, buffer.toString("UTF-8"), "text/html", "UTF-8", null);
+      android.app.Dialog dialog = new android.app.Dialog(this);
+      dialog.setTitle(I18n.t("Licencias y avisos"));
+      dialog.setContentView(view);
+      dialog.setOnDismissListener(d -> view.destroy());
+      dialog.show();
+      dialog.getWindow().setLayout(-1, -1);
+    } catch (java.io.IOException error) {
+      message(error.getMessage());
+    }
   }
 
   private void pick(String action) {
