@@ -1,14 +1,14 @@
 VSVersionInfo(
-  ffi=FixedFileInfo(filevers=(3,1,0,0), prodvers=(3,1,0,0), mask=0x3f,
+  ffi=FixedFileInfo(filevers=(3,2,0,0), prodvers=(3,2,0,0), mask=0x3f,
     flags=0x0, OS=0x40004, fileType=0x1, subtype=0x0, date=(0,0)),
   kids=[StringFileInfo([StringTable('040904B0',[
     StringStruct('CompanyName','Brass-Ebort'),
     StringStruct('FileDescription','FolioScan — Escáner y gestor PDF'),
-    StringStruct('FileVersion','3.1.0'),
+    StringStruct('FileVersion','3.2.0'),
     StringStruct('InternalName','FolioScan'),
-    StringStruct('OriginalFilename','FolioScan-3.1.exe'),
+    StringStruct('OriginalFilename','FolioScan-3.2.exe'),
     StringStruct('ProductName','FolioScan'),
-    StringStruct('ProductVersion','3.1.0'),
+    StringStruct('ProductVersion','3.2.0'),
     StringStruct('LegalCopyright','Copyright 2026 Brass-Ebort')
   ])]),VarFileInfo([VarStruct('Translation',[1033,1200])])]
 )

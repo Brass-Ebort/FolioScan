@@ -43,6 +43,15 @@ def run(report_path):
             app.processEvents()
             assert window.windowTitle() == 'FolioScan'
             assert window.library_tabs.count() == 2
+            assert window.status.isHidden()
+            window.tabs.setCurrentIndex(1)
+            for index in range(4):
+                window.operation.setCurrentIndex(index)
+                assert window.pdf_format.isHidden() == (index != 3)
+            window.operation.setCurrentIndex(0)
+            from app import ASSETS
+            assert (ASSETS / 'arrow-dark.png').is_file()
+            assert (ASSETS / 'arrow-light.png').is_file()
             # La distribución final debe conservar las zonas de arrastre y el importador.
             assert window.accept_scan_drop([image,root/'a.pdf'])
             imported=core.import_scan_files([image,root/'merged.pdf'],root/'data/Sesion')

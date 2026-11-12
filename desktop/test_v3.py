@@ -18,6 +18,44 @@ from app import configure_fonts
 
 
 class V3Test(unittest.TestCase):
+    def test_v32_contextual_format_and_system_language(self):
+        from unittest.mock import patch
+        from PySide6.QtCore import QLocale, QTimer
+        from PySide6.QtWidgets import QDialog
+        with tempfile.TemporaryDirectory() as temp:
+            with patch("v3.QLocale.system", return_value=QLocale("fr_FR")):
+                window = WindowV3(data_root=Path(temp))
+            self.assertEqual(i18n.language, "fr")
+            window.show()
+            window.tabs.setCurrentIndex(1)
+            self.app.processEvents()
+            self.assertTrue(window.status.isHidden())
+            for index in range(4):
+                window.operation.setCurrentIndex(index)
+                self.assertEqual(window.pdf_format.isHidden(), index != 3)
+                self.assertEqual(window.pdf_format_label.isHidden(), index != 3)
+            captured = []
+            def inspect_dialog():
+                for widget in self.app.topLevelWidgets():
+                    if isinstance(widget, QDialog) and widget.isVisible():
+                        captured.extend(label.text() for label in widget.findChildren(QLabel))
+                        widget.accept()
+            QTimer.singleShot(50, inspect_dialog)
+            window.additional_info()
+            self.assertIn("FolioScan · v3.2", captured)
+            window.settings.setValue("language", "es")
+            window.close()
+            with patch("v3.QLocale.system", return_value=QLocale("fr_FR")):
+                reopened = WindowV3(data_root=Path(temp))
+            self.assertEqual(i18n.language, "es")
+            reopened.close()
+        with tempfile.TemporaryDirectory() as temp:
+            with patch("v3.QLocale.system", return_value=QLocale("de_DE")):
+                fallback = WindowV3(data_root=Path(temp))
+            self.assertEqual(i18n.language, "en")
+            fallback.close()
+        i18n.language = "es"
+
     @classmethod
     def setUpClass(cls):
         cls.app = QApplication.instance() or QApplication([])

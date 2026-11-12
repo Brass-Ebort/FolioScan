@@ -12,7 +12,7 @@ import uuid
 from pathlib import Path
 from types import SimpleNamespace
 
-from PySide6.QtCore import Qt, QSettings
+from PySide6.QtCore import Qt, QSettings, QLocale
 from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
@@ -53,7 +53,10 @@ class WindowV3(Window):
         settings = settings or QSettings(
             str(self.data_root / "preferencias.ini"), QSettings.IniFormat
         )
-        i18n.language = str(settings.value("language", "es"))
+        system_language = QLocale.system().name().split("_")[0]
+        i18n.language = str(settings.value("language", system_language))
+        if i18n.language not in i18n.CODES:
+            i18n.language = "en"
         super().__init__(settings)
         # Replace the temporary scan workspace with a persistent portable one.
         self.session.cleanup()
@@ -80,13 +83,8 @@ class WindowV3(Window):
         self.gear.setText("⚙")
         self.gear.setToolTip(i18n.tr("Configuración"))
         self.tabs.setCornerWidget(self.gear, Qt.TopRightCorner)
-        footer = QLabel(
-            'Gracias por descargar la aplicación.  ·  <a href="https://github.com/Brass-Ebort">github.com/Brass-Ebort</a>'
-        )
-        footer.setProperty("footer", True)
-        footer.setOpenExternalLinks(True)
-        footer.setStyleSheet("font-size:11px;")
-        outer.addWidget(footer)
+        # Sin cartel permanente: el progreso solo ocupa espacio durante el trabajo.
+        self.status.hide()
         self.refresh_library()
         self.scan_files.model().rowsMoved.connect(self.persist_session)
         self.scan_files.model().rowsRemoved.connect(self.persist_session)
@@ -195,9 +193,12 @@ class WindowV3(Window):
         row = QHBoxLayout()
         row.addWidget(self.button("Selecciona archivos", self.add_tools))
         row.addStretch()
-        row.addWidget(QLabel(i18n.tr("Formato de papel")))
+        self.pdf_format_label = QLabel(i18n.tr("Formato de papel"))
+        row.addWidget(self.pdf_format_label)
         self.pdf_format = self.format_box()
         row.addWidget(self.pdf_format)
+        self.pdf_format.hide()
+        self.pdf_format_label.hide()
         layout.addLayout(row)
         self.tool_files = self.file_list()
         layout.addWidget(self.tool_files, 1)
@@ -208,7 +209,9 @@ class WindowV3(Window):
     # Vacía la selección anterior para no mezclar tipos de archivo entre operaciones.
     def operation_changed(self):
         self.tool_files.clear()
-        self.pdf_format.setEnabled(self.operation.currentIndex() == 3)
+        images = self.operation.currentIndex() == 3
+        self.pdf_format.setVisible(images)
+        self.pdf_format_label.setVisible(images)
 
     # Actualiza el manifiesto de páginas con reemplazo atómico para poder reabrir la sesión.
     def persist_session(self, *_):
@@ -589,6 +592,7 @@ class WindowV3(Window):
         self.tabs.setEnabled(False)
         self.gear.setEnabled(False)
         self.status.setText(i18n.tr("Procesando…"))
+        self.status.show()
         self.worker = Worker(fn)
         self.worker.progress.connect(self.status.setText)
         # Deliver the result only after QThread has stopped, allowing chained jobs.
@@ -598,6 +602,7 @@ class WindowV3(Window):
 
         def finished():
             self.finish_job()
+            self.status.hide()
             if "value" in result:
                 (on_success or self.completed)(result["value"])
 
@@ -618,7 +623,23 @@ class WindowV3(Window):
         )
         menu.addAction(i18n.tr("Idioma"), self.choose_language)
         menu.addAction(i18n.tr("¿Cómo funciona?"), self.help)
+        menu.addSeparator()
+        menu.addAction(i18n.tr("Información adicional"), self.additional_info)
         menu.exec(self.gear.mapToGlobal(self.gear.rect().bottomLeft()))
+
+    def additional_info(self):
+        """Versión y agradecimiento en una ventana accesible desde Configuración."""
+        dialog = QDialog(self)
+        dialog.setWindowTitle(i18n.tr("Información adicional"))
+        layout = QVBoxLayout(dialog)
+        layout.setContentsMargins(24, 24, 24, 24)
+        layout.setSpacing(16)
+        layout.addWidget(QLabel("FolioScan · v3.2"))
+        layout.addWidget(QLabel(i18n.tr("Gracias por descargar la aplicación.")))
+        link = QLabel('<a href="https://github.com/Brass-Ebort">github.com/Brass-Ebort</a>')
+        link.setOpenExternalLinks(True)
+        layout.addWidget(link)
+        dialog.exec()
 
     # Persiste el idioma seleccionado y actualiza la interfaz con el catálogo local.
     def choose_language(self):

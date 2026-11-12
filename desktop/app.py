@@ -743,10 +743,13 @@ class Window(QMainWindow):
         palette.setColor(QPalette.Button, QColor(soft))
         palette.setColor(QPalette.ButtonText, QColor(ink))
         palette.setColor(QPalette.Highlight, QColor(accent))
+        palette.setColor(QPalette.Link, QColor(accent))
+        palette.setColor(QPalette.LinkVisited, QColor(accent))
         palette.setColor(
             QPalette.HighlightedText, QColor("#101B2B" if dark else "white")
         )
         QApplication.instance().setPalette(palette)
+        arrow = (ASSETS / ("arrow-dark.png" if dark else "arrow-light.png")).as_posix()
         self.setStyleSheet(
             f"""
             QWidget {{font-family:'Segoe UI';font-size:14px;color:{ink};}}
@@ -760,7 +763,10 @@ class Window(QMainWindow):
             QPushButton:hover {{border:1px solid {accent};}}
             QPushButton:disabled {{color:{muted};}}
             QPushButton#primary {{background:{accent};color:{'#101B2B' if dark else '#FFFFFF'};}}
-            QComboBox {{background:{card};border:1px solid {soft};border-radius:8px;padding:10px;min-width:90px;}}
+            QComboBox {{background:{card};border:1px solid {soft};border-radius:8px;padding:10px 36px 10px 12px;min-width:90px;}}
+            QComboBox::drop-down {{subcontrol-origin:padding;subcontrol-position:top right;width:30px;border:0;border-left:1px solid {soft};border-top-right-radius:8px;border-bottom-right-radius:8px;background:{soft};}}
+            QComboBox::down-arrow {{image:url("{arrow}");width:16px;height:16px;}}
+            QComboBox QAbstractItemView {{background:{card};color:{ink};selection-background-color:{soft};border:1px solid {soft};padding:4px;}}
             QListWidget {{background:{card};border:1px solid {soft};border-radius:12px;padding:8px;}}
             QListWidget::item {{padding:12px;border-radius:8px;}}
             QListWidget::item:selected {{background:{soft};color:{ink};}}

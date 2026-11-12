@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "checks": [
+    "images_to_pdf",
+    "merge",
+    "split_zip",
+    "pdf_to_jpg_zip",
+    "perspective",
+    "Qt_window",
+    "theme",
+    "append_and_recovery",
+    "layout_pdf_png",
+    "11_languages",
+    "FolioScan_brand",
+    "drop_pdf_event",
+    "import_photo_and_pdf_pages"
+  ]
+}
