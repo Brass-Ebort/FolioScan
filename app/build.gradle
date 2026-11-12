@@ -1,11 +1,46 @@
 plugins { id 'com.android.application' }
+
+// Las credenciales viven fuera del repositorio; nunca recurrir a la firma debug.
+def releasePropertiesFile = new File(System.getenv('FOLIOSCAN_SIGNING_PROPERTIES') ?:
+        "${System.getProperty('user.home')}/.folioscan/signing/release.properties")
+def releaseProperties = new Properties()
+if (releasePropertiesFile.isFile()) {
+    releasePropertiesFile.withInputStream { releaseProperties.load(it) }
+}
 android {
     namespace 'es.folioscan.app'
     compileSdk 35
     defaultConfig { applicationId 'es.folioscan.app'; minSdk 26; targetSdk 35; versionCode 5; versionName '3.1' }
-    buildTypes { release { signingConfig signingConfigs.debug; minifyEnabled false } }
+    signingConfigs {
+        release {
+            if (releaseProperties.getProperty('storeFile')) {
+                def keyFile = new File(releaseProperties.getProperty('storeFile'))
+                storeFile = keyFile.isAbsolute() ? keyFile : new File(releasePropertiesFile.parentFile, keyFile.path)
+            }
+            storePassword = releaseProperties.getProperty('storePassword')
+            keyAlias = releaseProperties.getProperty('keyAlias')
+            keyPassword = releaseProperties.getProperty('keyPassword')
+            storeType = 'PKCS12'
+        }
+    }
+    buildTypes { release { signingConfig signingConfigs.release; debuggable false; minifyEnabled false } }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     testOptions { unitTests.includeAndroidResources = true }
+}
+
+// Debug y las pruebas no necesitan secretos; una release incompleta debe fallar.
+def verifyReleaseCredentials = tasks.register('verifyReleaseCredentials') {
+        doLast {
+            if (!releasePropertiesFile.isFile() ||
+                    ['storeFile', 'storePassword', 'keyAlias', 'keyPassword'].any {
+                        !releaseProperties.getProperty(it)?.trim()
+                    }) {
+                throw new GradleException('Falta la firma de publicación. Configura ~/.folioscan/signing/release.properties o FOLIOSCAN_SIGNING_PROPERTIES; no se usará la clave debug.')
+            }
+        }
+}
+tasks.configureEach {
+    if (name == 'preReleaseBuild') { dependsOn(verifyReleaseCredentials) }
 }
 dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom:1.9.24')
