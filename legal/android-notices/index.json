@@ -1,0 +1,112 @@
+[
+  {
+    "origin": "androidx.core:core-ktx:1.15.0 / META-INF/androidx/core/core-ktx/LICENSE.txt",
+    "file": "001.txt",
+    "sha256": "1d5afc26765f4da03ed7605f2944198b985dac1ddac0ec0b5ace57fe06b94330"
+  },
+  {
+    "origin": "androidx.core:core:1.15.0 / META-INF/androidx/core/core/LICENSE.txt",
+    "file": "002.txt",
+    "sha256": "1d5afc26765f4da03ed7605f2944198b985dac1ddac0ec0b5ace57fe06b94330"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-api:2.2.1 / third_party_licenses.json",
+    "file": "003.txt",
+    "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-api:2.2.1 / third_party_licenses.txt",
+    "file": "004.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-backend-cct:2.3.3 / third_party_licenses.json",
+    "file": "005.txt",
+    "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-backend-cct:2.3.3 / third_party_licenses.txt",
+    "file": "006.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-runtime:2.2.6 / third_party_licenses.json",
+    "file": "007.txt",
+    "sha256": "f276bb11c8ecc0c0e2d6f11f28bd207ce8d00fb7743292a0c644a1d1d4642d4c"
+  },
+  {
+    "origin": "com.google.android.datatransport:transport-runtime:2.2.6 / third_party_licenses.txt",
+    "file": "008.txt",
+    "sha256": "3d9e99725bcfe5f186127070bd24a9ac764cf2fb39c14ec9fbd6b66097f9dc50"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-base:18.5.0 / third_party_licenses.json",
+    "file": "009.txt",
+    "sha256": "f49b0d3754fe9430ca8e1d7578b98f9c74c912fa5182bee2db86f0c386ab7970"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-base:18.5.0 / third_party_licenses.txt",
+    "file": "010.txt",
+    "sha256": "d6c3f7b31462a89150fcf4a5001ba43f625396b6780effe9a72ba9890c6a713a"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-basement:18.4.0 / third_party_licenses.json",
+    "file": "011.txt",
+    "sha256": "f49b0d3754fe9430ca8e1d7578b98f9c74c912fa5182bee2db86f0c386ab7970"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-basement:18.4.0 / third_party_licenses.txt",
+    "file": "012.txt",
+    "sha256": "d6c3f7b31462a89150fcf4a5001ba43f625396b6780effe9a72ba9890c6a713a"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-mlkit-document-scanner:16.0.0 / third_party_licenses.json",
+    "file": "013.txt",
+    "sha256": "92b7723b636096325b4ce8b7fd1a495d7034dc314730cfd153dec84545688bdc"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-mlkit-document-scanner:16.0.0 / third_party_licenses.txt",
+    "file": "014.txt",
+    "sha256": "ba97d9b3df15c252a2716f0c2576bdea04bd7955cd1fab1d9465769e44d65ea7"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-tasks:18.2.0 / third_party_licenses.json",
+    "file": "015.txt",
+    "sha256": "f49b0d3754fe9430ca8e1d7578b98f9c74c912fa5182bee2db86f0c386ab7970"
+  },
+  {
+    "origin": "com.google.android.gms:play-services-tasks:18.2.0 / third_party_licenses.txt",
+    "file": "016.txt",
+    "sha256": "d6c3f7b31462a89150fcf4a5001ba43f625396b6780effe9a72ba9890c6a713a"
+  },
+  {
+    "origin": "com.google.firebase:firebase-components:16.1.0 / third_party_licenses.json",
+    "file": "017.txt",
+    "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+  },
+  {
+    "origin": "com.google.firebase:firebase-components:16.1.0 / third_party_licenses.txt",
+    "file": "018.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "origin": "com.google.firebase:firebase-encoders-json:17.1.0 / third_party_licenses.json",
+    "file": "019.txt",
+    "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+  },
+  {
+    "origin": "com.google.firebase:firebase-encoders-json:17.1.0 / third_party_licenses.txt",
+    "file": "020.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "origin": "com.google.mlkit:common:18.11.0 / third_party_licenses.json",
+    "file": "021.txt",
+    "sha256": "c421e0ab8fb44de3aea1eaae744d7e68a1d8905e1e309368bf0ca82c95ad9d3f"
+  },
+  {
+    "origin": "com.google.mlkit:common:18.11.0 / third_party_licenses.txt",
+    "file": "022.txt",
+    "sha256": "5fef0236df9b96a76879a87bedc98d159ba7da30a219b6470d9b2111b3e55428"
+  }
+]
