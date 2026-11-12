@@ -1,0 +1,58 @@
+[
+  {
+    "archive": "pyside-setup-everywhere-src-6.12.0.tar.xz",
+    "source": "pyside-setup-everywhere-src-6.12.0/sources/pyside6/libpyside/pyside.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "pyside-setup-everywhere-src-6.12.0.tar.xz",
+    "source": "pyside-setup-everywhere-src-6.12.0/sources/shiboken6/libshiboken/bindingmanager.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtbase-everywhere-src-6.12.0.tar.xz",
+    "source": "qtbase-everywhere-src-6.12.0/src/corelib/global/qglobal.h",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtbase-everywhere-src-6.12.0.tar.xz",
+    "source": "qtbase-everywhere-src-6.12.0/src/network/access/qnetworkaccessmanager.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtbase-everywhere-src-6.12.0.tar.xz",
+    "source": "qtbase-everywhere-src-6.12.0/src/plugins/platforms/windows/qwindowsintegration.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtbase-everywhere-src-6.12.0.tar.xz",
+    "source": "qtbase-everywhere-src-6.12.0/src/widgets/kernel/qapplication.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtbase-everywhere-src-6.12.0.tar.xz",
+    "source": "qtbase-everywhere-src-6.12.0/src/widgets/kernel/qwidget.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  },
+  {
+    "archive": "qtsvg-everywhere-src-6.12.0.tar.xz",
+    "source": "qtsvg-everywhere-src-6.12.0/src/svg/qsvgrenderer.cpp",
+    "license_headers": [
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+    ]
+  }
+]

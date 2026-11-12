@@ -1,33 +1,34 @@
-# Architecture and Design Decisions
+# Architecture and design decisions
 
 ## Android
 
-- `MainActivity.java`: presentation, tabs, settings, permissions, file pickers, and confirmation dialogs. The package identifier is retained to allow updates from V2.
-- `ScanModel.java`: library and sequential operations in an ExecutorService. Publishes results through LiveData and prevents simultaneous writes.
-- `PdfTools.java`: PDFBox for PDF merging/splitting and PDF operations; PdfRenderer for images; EXIF orientation for photos.
-- `LayoutSpec.java`: dimensions in points, uniform scaling, and relative positioning. `LayoutDialog.java` displays the preview; `DocumentOps.layout` exports the same geometry.
-- `DocumentOps.java`: replacement and recovery operations, PDF searching, and selection of the set of rendered photos.
-- `I18n.java`: shared local translation catalog, with no remote translation service.
+- MainActivity.java owns tabs, settings, permissions, pickers and overwrite confirmations. Package identity is retained, but upgrading also requires the same signing certificate.
+- ScanModel.java serializes operations on an ExecutorService and publishes results through LiveData to avoid concurrent writes.
+- PdfTools.java uses PDFBox for merging/splitting and PDF creation, Android PdfRenderer for rasterization, and EXIF orientation for imported images.
+- LayoutSpec.java stores page dimensions in PDF points, uniform scale and relative offsets. LayoutDialog.java previews those settings; DocumentOps.layout exports the same geometry. Rotating the sheet swaps its dimensions and output pixel dimensions, without rotating the original photo.
+- DocumentOps.java handles replacement/recovery, discovery and rendered-photo selection.
+- I18n.java loads an offline shared catalogue. A manual language overrides the system language; unsupported system languages fall back to English.
+- The legal page is a local asset opened with JavaScript disabled. External legal references are handed to the browser only when selected.
 
 ## Windows
 
-- `launcher.py`: entry point; captures self-test errors without displaying error windows.
-- `app.py`: reusable controls, camera, perspective cropping, styling, and Qt worker. `main` starts `WindowV3`.
-- `v3.py`: current interface, persistent library, device management, and confirmation when appending pages. `Datos/preferencias.ini` replaces the registry as the settings store in V3.
-- `layout_editor.py`: per-page composition; `core.py`: PDF, image, and transactional operations that can be tested without the interface.
-- `i18n.py`: local translations. Preserves the controls' source text so language changes can be reversed.
-- `desktop.spec`: PyInstaller packaging. Excludes system DLLs and unrelated ICU libraries found on PATH that caused the QtCore error in V2.
+- launcher.py is the entry point. Its limited library-verification mode checks replacement separately from application functional tests.
+- app.py supplies reusable controls, DirectShow camera capture, perspective cropping, styling and a Qt worker thread. main starts WindowV3.
+- v3.py contains the current shell, persistent library, device-file management and append confirmation. Datos/preferencias.ini replaces registry-based settings.
+- layout_editor.py provides per-page composition. core.py implements PDF/image operations and transactional output independently of the GUI.
+- i18n.py preserves original catalogue keys so changing language is reversible.
+- desktop.spec builds an onedir portable package with external DLLs and legal texts. The entire directory must be kept together. Information additional exposes the legal folder.
 
 ## Geometry
 
-The model uses a top-left origin, PDF points, and offsets expressed as fractions of the page. Fitting is calculated as `min(pageWidth/imageWidth, pageHeight/imageHeight) × scale`. The image is centered and then offset. PDF output reverses the Y axis when writing. Anything outside the canvas is clipped without changing the image's aspect ratio. For JPG/PNG, the canvas adopts the aspect ratio of the requested pixel dimensions. Limit: 6,000 pixels per side and 24 megapixels in total.
+Coordinates use a top-left origin. Dimensions are PDF points and offsets are fractions of the page. The fit factor is `min(pageWidth/imageWidth, pageHeight/imageHeight) * scale`. The image is centered and then translated. PDF output flips the Y axis. Content outside the canvas is clipped without stretching the image. JPG/PNG canvas proportions follow the requested pixel dimensions, limited to 6000 pixels per side and 24 megapixels total.
 
-## File Integrity
+## File integrity
 
-When appending pages, the complete PDF is built in a temporary file in the same directory. The operation checks whether the original's size or modification time has changed. It then creates a `.recovery` copy and replaces the original. If creation of the recovery copy fails, the operation stops before replacement, not afterward. File-system permissions or insufficient space may prevent the operation; an error is reported in that case.
+Appending first creates a complete PDF in a temporary file in the same directory. The original file's size and modification time are checked for concurrent changes. A .recovery copy is created before replacement; failure to create that recovery copy aborts the replacement. Permissions and insufficient disk space can still prevent an operation and must be reported.
 
-The `.exported` marker is written only after export is complete. `.extended` prevents the old subset of images from being offered as though it represented the extended PDF. Modifying a PDF invalidates its digital signatures. This is a simple local library, not a multi-user database or version-control system.
+The .exported marker is written only after successful export. The .extended marker prevents an old subset of scan images being presented as the full appended PDF. Modifying a PDF invalidates digital signatures. This is a local library, not a multiuser database or an unlimited version history.
 
-## Comments
+## Reading the source
 
-The source files contain comments about methods, geometry, permissions, lifecycle, and transactions. `CODIGO_COMENTADO.html` adds an explanation of **every line**, including structural lines, without filling compilable files with repetitive comments. It can be opened offline in any browser. Java comments are not included as text in the APK; Python comments are omitted during bytecode compilation. The guide is distributed alongside the source code, separately from the executable.
+Maintenance comments remain in the original source. CODE_GUIDE.html provides English line-by-line syntax explanations; the ESP edition provides Spanish explanations. Structural explanations are reading aids, not a proof of correctness. Algorithm-specific comments take precedence. Java comments and Python source comments are not shipped as executable instructions.

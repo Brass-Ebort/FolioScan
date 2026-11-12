@@ -163,7 +163,7 @@ def explain(line):
     if '(' in s:return 'Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.'
     return 'Continúa la declaración o expresión del bloque que la contiene.'
 
-out=root/'docs';out.mkdir(exist_ok=True)
+out=root/'docs/ESP';out.mkdir(parents=True,exist_ok=True)
 parts=['<!doctype html><html lang="es"><meta charset="utf-8"><title>Código comentado V3</title><style>body{font:15px system-ui;margin:30px}table{border-collapse:collapse;width:100%}td{padding:5px;border-bottom:1px solid #ddd;vertical-align:top}pre{margin:0;white-space:pre-wrap}summary{font-size:20px;margin:24px 0;cursor:pointer}td:first-child{color:#777;width:45px}td:last-child{width:32%}</style><h1>Código V3: guía línea por línea</h1><p>El código contiene comentarios de mantenimiento en español. Esta vista añade una explicación sintáctica de cada línea, incluidos cierres de bloque. Las notas junto a los algoritmos describen sus decisiones y tienen prioridad sobre la descripción sintáctica general.</p>']
 for path in files:
     parts.append('<details><summary>'+html.escape(str(path.relative_to(root)))+'</summary><table>')

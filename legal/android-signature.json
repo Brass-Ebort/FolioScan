@@ -1,0 +1,7 @@
+{
+  "matches_corrected_v31": true,
+  "package_line": "package: name='es.folioscan.app' versionCode='7' versionName='3.2' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'",
+  "apk_sha256": "286A1F59F79EAA4DE448730D5CA0F80F9CEF51C22A860B22227B79BCA69E4AB5",
+  "debuggable": false,
+  "certificate_sha256": "f6eaee9ff38a54e82a1611574595689eb47a0af5613b8c13608bce284e615b15"
+}

@@ -1,0 +1,920 @@
+[
+  {
+    "file": "_internal/_asyncio.pyd",
+    "sha256": "662cc9136e27f97f7bbeb2e66cac80a859140d984b054af575dd69c427f81b4e",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_bz2.pyd",
+    "sha256": "f852110ed6de933a4fa2bb9a41a8693f04c7ff8b2e34de12475cc8853123f91f",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_ctypes.pyd",
+    "sha256": "fe3a0a9aea4e93b15b5a598560518c0c58d207d7ebefa5f2a6da2785d6048650",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_decimal.pyd",
+    "sha256": "1d1864a7325f34d6fafd9b593399c64bb6d748cc9ce456b3d55612cc4be98096",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_elementtree.pyd",
+    "sha256": "daa2dce312c39bca3906a54cd620d1acba4a6a022cba015dd459e0df9aab511a",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_hashlib.pyd",
+    "sha256": "65861f8a2d8cce40071621d5f51915190810f9fb6bf6b0516b31ccf7d8688d52",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_lzma.pyd",
+    "sha256": "44b97eb784b9a9967e4a3ff8f07ca58bf1ed9d67ceb32a78f91a083de522a6c8",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_multiprocessing.pyd",
+    "sha256": "0a22560fc12ff18d4aca278d097dd84a9c259ab630e78e3947955396fcf31c02",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_overlapped.pyd",
+    "sha256": "fadc960928386b36b254a87f8624205519976e42e3762258599fab64e05a47f8",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_queue.pyd",
+    "sha256": "808a40d153ec83351d8913c4df3974bf9dd485a426744d69849ad6edc61ed90a",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_socket.pyd",
+    "sha256": "bfb6e7c0e73c53332c4f6ccb17b6db3c032e080000045829b543d6fda7f47b49",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_ssl.pyd",
+    "sha256": "303544637df1230dfca2ccafe0487e91744a7970e1e8efd5c0a7cae99f368586",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_uuid.pyd",
+    "sha256": "6b4637c6d74041b3ddf891340596b3f9caa7c5a0c5ccf2784a23e25cef7e39e6",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/_wmi.pyd",
+    "sha256": "ad06b834491810b1ea8049324dc3042202a000607c843ad6027708a7af57fd0e",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/charset_normalizer/cd.cp312-win_amd64.pyd",
+    "sha256": "2bdbc0805f85565d76f8d6166e451bfafa6d5490b06b36c9f423cd0102b4f149",
+    "component": "charset-normalizer 3.5.2",
+    "license_basis": "MIT; bundled package license",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/charset_normalizer/md.cp312-win_amd64.pyd",
+    "sha256": "b08be5d29125f39a92e22d0abe4b9160753f7a790fffd07258319a8e16394afa",
+    "component": "charset-normalizer 3.5.2",
+    "license_basis": "MIT; bundled package license",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/cv2/cv2.pyd",
+    "sha256": "eefedf6ee006a84bbc7d3df5ec66046429b8c95dbfd5f8f8f98c5772b91d6d48",
+    "component": "OpenCV 5.0.0.93",
+    "license_basis": "Apache-2.0 plus cv2/LICENSE-3RD-PARTY.txt; FFmpeg DLL excluded",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/libcrypto-3-x64.dll",
+    "sha256": "198458b0f04112b325dfd137703ff4afc0d2d4a90f5373be268b9ee16889e1ff",
+    "component": "OpenSSL",
+    "license_basis": "Apache-2.0; exact bundled library version in PE inventory",
+    "metadata": {
+      "CompanyName": "The OpenSSL Project, https://www.openssl.org/",
+      "FileVersion": "3.6.5",
+      "ProductVersion": "3.6.5",
+      "LegalCopyright": "Copyright 1998-2026 The OpenSSL Authors. All rights reserved."
+    }
+  },
+  {
+    "file": "_internal/libffi-8.dll",
+    "sha256": "a0555fea03342e7958413b3c80f10a866fdbca1ac52cc2650e0c264a1eaf541c",
+    "component": "libffi (exact build unconfirmed)",
+    "license_basis": "MIT reference included; exact binary provenance/copyright still requires verification",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/libssl-3-x64.dll",
+    "sha256": "ccbda19ad0f855b7c2e1e9bf3e12e2ed8e9422dd520e1f39704753d5c6e08ad1",
+    "component": "OpenSSL",
+    "license_basis": "Apache-2.0; exact bundled library version in PE inventory",
+    "metadata": {
+      "CompanyName": "The OpenSSL Project, https://www.openssl.org/",
+      "FileVersion": "3.6.5",
+      "ProductVersion": "3.6.5",
+      "LegalCopyright": "Copyright 1998-2026 The OpenSSL Authors. All rights reserved."
+    }
+  },
+  {
+    "file": "_internal/numpy/_core/_multiarray_tests.cp312-win_amd64.pyd",
+    "sha256": "f09f60242eaed510e1af6384284f53ff56ae42770a62e630bd415bc2b6854d66",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/_core/_multiarray_umath.cp312-win_amd64.pyd",
+    "sha256": "9c10617e66e992b5ac6d9f78fe7cedd0011618e1c2f89d09a185bb63073e2c90",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/fft/_pocketfft_umath.cp312-win_amd64.pyd",
+    "sha256": "4f008612d6b9e2ab3820ee17a1c758c499e45e80a36764c9dfb7bf304b066f03",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/linalg/_umath_linalg.cp312-win_amd64.pyd",
+    "sha256": "03bc9de2d6d8e2d9ea3ec781f3c16bcbc9960095cc02ca588f4229cd1560c661",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_bounded_integers.cp312-win_amd64.pyd",
+    "sha256": "927c1673ba698a85e6253b4d8d2223eb019b021792c54604489767c694d2ab93",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_common.cp312-win_amd64.pyd",
+    "sha256": "712a7bb4b2d3e56548cdf255eb4e6c1ca0737d7d81d76f09bdccebb0703ae572",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_generator.cp312-win_amd64.pyd",
+    "sha256": "0fa509dcf5ae21910cb2b3c74271977d0fac7fab15ffd5f32017e08b97e71de6",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_mt19937.cp312-win_amd64.pyd",
+    "sha256": "e6938df4dd3a193b7d9171d3e192702be3a70de2ebe866cf6fcd92f9e368349d",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_pcg64.cp312-win_amd64.pyd",
+    "sha256": "8eb5569b221d40884093def83d897376bddd99c9279f182b9db3145b9b897d34",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_philox.cp312-win_amd64.pyd",
+    "sha256": "cc0c03e2c1443e8981300ddb9cc5ceb504e7f8494323d4ec0a1ad95ae16fbf75",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/_sfc64.cp312-win_amd64.pyd",
+    "sha256": "20c551734cd2b2be2425c8773b795f1e92de8826ebbe6c1103cd0fa6b5c94408",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/bit_generator.cp312-win_amd64.pyd",
+    "sha256": "c7f637df1fa0db9fe4bba6c05dac680d89aed245401423f1ffd16d93366a35a7",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy/random/mtrand.cp312-win_amd64.pyd",
+    "sha256": "e8bdaf22830ceaabc596854a816d39d96d1d60e96c2e12a9a17950b624d480a1",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy.libs/libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+    "sha256": "ed4f167a5330424524f45258e7ca2c8d7f03c0cba1f30ee4985553ac1f88ecf8",
+    "component": "NumPy 2.5.4 / OpenBLAS",
+    "license_basis": "NumPy wheel bundled license texts (BSD and third parties)",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+    "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.40.33810.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.40.33810.0"
+    }
+  },
+  {
+    "file": "_internal/PIL/_avif.cp312-win_amd64.pyd",
+    "sha256": "3c31d65c8b3b4c91ac2838d5c843a6b2479d775b6904fe654d60b56d41772411",
+    "component": "Pillow 13.0.0",
+    "license_basis": "HPND and bundled Pillow third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PIL/_imaging.cp312-win_amd64.pyd",
+    "sha256": "7140f56d38dd6cd51512f8122386bcb914c5df2a82eb5f719c973527d9213cee",
+    "component": "Pillow 13.0.0",
+    "license_basis": "HPND and bundled Pillow third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PIL/_imagingcms.cp312-win_amd64.pyd",
+    "sha256": "2640857cace64d69735bdcaa3987e9ad70f85168abc1a8662079c77ac44b5301",
+    "component": "Pillow 13.0.0",
+    "license_basis": "HPND and bundled Pillow third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PIL/_imagingtk.cp312-win_amd64.pyd",
+    "sha256": "e1c87f73e96d2269395624d03b3808300f4b0f795f5fad1ecc3d1492e5dcc7c2",
+    "component": "Pillow 13.0.0",
+    "license_basis": "HPND and bundled Pillow third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PIL/_webp.cp312-win_amd64.pyd",
+    "sha256": "bb9c64d38a6e4857bd3358e14dbe6cf3a4593b1efcd1185fdba1ef8931550896",
+    "component": "Pillow 13.0.0",
+    "license_basis": "HPND and bundled Pillow third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/pyexpat.pyd",
+    "sha256": "5f729fe833b8e75bf1a4c690d303e5ce13b3a009e1354da9fc0afcc04f008270",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/pypdfium2_raw/pdfium.dll",
+    "sha256": "69f1e860f6742fbaafcc4db80e785eec9a4ee0da36ea6d1dc0867ea0f18baea6",
+    "component": "PDFium build 8076 / pypdfium2 5.14.0",
+    "license_basis": "PDFium/pypdfium2 bundled third-party notices",
+    "metadata": {
+      "CompanyName": "Google Inc.",
+      "FileVersion": "156.0.8076.0",
+      "ProductVersion": "156.0.8076.0",
+      "LegalCopyright": "Copyright 2026 PDFium Authors. All rights reserved."
+    }
+  },
+  {
+    "file": "_internal/PySide6/MSVCP140.dll",
+    "sha256": "f6f1d55bfd64027820ddce48f9cd8cf46d53bfa34047e6acf4ef348d492a05cb",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/MSVCP140_1.dll",
+    "sha256": "2be87527c41e1ba8aff48e326e0adcd4743516e0bbcc9304986c726e27de6aca",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/MSVCP140_2.dll",
+    "sha256": "6a72ed8a87eae1671640bd1ca98eccb989f1772ae46ab84594e385bf6d4ac4fb",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/generic/qtuiotouchplugin.dll",
+    "sha256": "8565656807db29cfb6170e6803181f24e0bed3aa1b14684d29694e375cc5ee96",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/iconengines/qsvgicon.dll",
+    "sha256": "f9e21af351bd5d5629bc00e8e3796b552eca92d1a9645438c865b9c53af1714f",
+    "component": "qtsvg 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qgif.dll",
+    "sha256": "77782de4aa4f7b75a7cc4d3f24aee49da935c312ea13d25f4cda3a98d180145c",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qicns.dll",
+    "sha256": "93e2e588cd1036af3c6300b539d648b3825625788e59a3f0f1863d9901c9759f",
+    "component": "qtimageformats 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qico.dll",
+    "sha256": "a0e4d0d0319e075f6cc5f774084bf390f7af83600f38685c6bc9c407681cc22c",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qjpeg.dll",
+    "sha256": "dd42bdcd229744a9515db82ba9a802c74b6589cc508c3e85fb30f06ba24b9da6",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qsvg.dll",
+    "sha256": "b63f97ed0ae60aa5bc332c37e429c1f31154e1eee358352b2c49598c5269843b",
+    "component": "qtsvg 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qtga.dll",
+    "sha256": "ce95aa019d940533341b4f08a10ddd3b0393162678c47904251da77aeadfd34e",
+    "component": "qtimageformats 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qtiff.dll",
+    "sha256": "ce696a2dd2e57b8852f7d01834725f54a4d0be66c3d2c491df60fd907fece907",
+    "component": "qtimageformats 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qwbmp.dll",
+    "sha256": "e118243bd3528aa5fe6378a8839abe0efc200e891af06ee369b97b2ff239b89c",
+    "component": "qtimageformats 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/imageformats/qwebp.dll",
+    "sha256": "02ae5555b688f78aade5cedcd66c646b73d519460c008c23e75ad408bd152668",
+    "component": "qtimageformats 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/networkinformation/qnetworklistmanager.dll",
+    "sha256": "2bd047476183c76004221fb44adb7ada9b4b6ce5c2929d63ff67a5305b430f1a",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/platforms/qdirect2d.dll",
+    "sha256": "18213464be5a5a1d39af6a2c876ce21a6bb6a634c814651d09f0ef7e4719edc2",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/platforms/qminimal.dll",
+    "sha256": "c9025bc5f4653c5aadac87f06ab391763e82adf792f6759c6027a78a5efcaf5c",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/platforms/qoffscreen.dll",
+    "sha256": "d24ef380ab0882d39f21539dcf57ab4213875a6fc658a53012f2d2fd275c6f69",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/platforms/qwindows.dll",
+    "sha256": "ddd5cf6a96f058cfafcbc901ddeb5df010d755f0716beacfb557f8b27b733afe",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/styles/qmodernwindowsstyle.dll",
+    "sha256": "74d4c47b56a942afb3723bb105900501bb8f91a46a8b592fa722cc4fdb2ce9bf",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/tls/qcertonlybackend.dll",
+    "sha256": "87574d467b6f9640a15e37bf4183179c6a7cefc4dc84346b8f4cffb989cf1e12",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/tls/qopensslbackend.dll",
+    "sha256": "94b3492bc4087da2818e2749a5a03f7d810611b2e3648bd8d580ad087363046f",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/plugins/tls/qschannelbackend.dll",
+    "sha256": "2915a86a2531e65fd4905f0cc1c8dc353772a4f52aeda5100725dd9249db54d1",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/pyside6.abi3.dll",
+    "sha256": "d5b87ccb0a7c305854bd120242b0a75002d0b50a35532d0f6171e4ed0f3cc82a",
+    "component": "pyside-setup 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PySide6/Qt6Core.dll",
+    "sha256": "f57ed38afd95d0306cca9d88d997f639f70c7628a4f1f064eae291d579487121",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/Qt6Gui.dll",
+    "sha256": "abd20026e190e8cc69667d1bea042db05cd353cc05e7da74b063c20b7da3f6cd",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/Qt6Network.dll",
+    "sha256": "1c7c393b264ae78f4dee211656377a086c4be714bf768d3135f94f11c1d0be61",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/Qt6Svg.dll",
+    "sha256": "8f1de5b28aab1eedb415c751c81f9cfaa2804242868c0ceea5f3fdb4b2babca4",
+    "component": "qtsvg 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/Qt6Widgets.dll",
+    "sha256": "2f62cbe2869fff4e20df7369c2786e1ec7ec290d5a63d1371b7f70cf06909c3f",
+    "component": "qtbase 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {
+      "CompanyName": "The Qt Company Ltd.",
+      "FileVersion": "6.12.0.0",
+      "LegalCopyright": "Copyright (C) The Qt Company Ltd. and other contributors.",
+      "ProductVersion": "6.12.0.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/QtCore.pyd",
+    "sha256": "6486f6f0a2fec42fc8c652c0b76bb3ad0d44eaccad9c72e577116a075681eebb",
+    "component": "pyside-setup 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PySide6/QtGui.pyd",
+    "sha256": "9ac544d1bcf8a26c408c63090d05506f8382d5378ee3a204e29a3ac5449c5b2b",
+    "component": "pyside-setup 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PySide6/QtNetwork.pyd",
+    "sha256": "22bffdb2a431b5a986de255f7eb0fcd1fd7d9e85c53967978e2ab479b33a13c5",
+    "component": "pyside-setup 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PySide6/QtWidgets.pyd",
+    "sha256": "a8e323e56a93c1a8a70981c36a409c0a2546e7a08da5be8ca4e03dfd27febc2a",
+    "component": "pyside-setup 6.12.0",
+    "license_basis": "LGPL-3.0 option; component source archive and its bundled third-party licenses",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/PySide6/VCRUNTIME140.dll",
+    "sha256": "a36e0cb185eb89533ed96d4568138f86a1315756a8b2644c5963a8ce23e32101",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/PySide6/VCRUNTIME140_1.dll",
+    "sha256": "302b1e160e858602490a55e32ae2e29ddfc0bec2a188e19550cb655cdaa58f9c",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/python3.dll",
+    "sha256": "98c794f02cb86b5c80eeedf9aad1344c2d2919e01d288dd7b78b7f6d7ce70363",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/python312.dll",
+    "sha256": "ed24fdb0310df3b746bf692e4f0751ec957544ce1d8f1f50127bda24cb4f20f9",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/select.pyd",
+    "sha256": "2d06ada1773f9cabb938f60a52d3afd96fb8848e9cd450992d2072f42ab544dc",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/shiboken6/MSVCP140.dll",
+    "sha256": "1ba4d7c0a95d375da138a057a57593b33510ad5bda6c5e2686afd68faa5b4231",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/shiboken6/Shiboken.pyd",
+    "sha256": "8ccf415b2cefb5b6462504581ab1993fb41afe04e415931d8a72049f1c79b267",
+    "component": "Shiboken6 6.12.0",
+    "license_basis": "LGPL-3.0 option; pyside-setup 6.12.0 sources and notices",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/shiboken6/shiboken6.abi3.dll",
+    "sha256": "07c318c02be5a3a9f1475f5a2d0cd438f4d4ea3288c28e2e10bc5ebbbec8de86",
+    "component": "Shiboken6 6.12.0",
+    "license_basis": "LGPL-3.0 option; pyside-setup 6.12.0 sources and notices",
+    "metadata": {}
+  },
+  {
+    "file": "_internal/shiboken6/VCRUNTIME140.dll",
+    "sha256": "e7be9112ee9a5b9f44b44bff24cb761cca9b1ed7550b612f77b70edfcf5fdabf",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/shiboken6/VCRUNTIME140_1.dll",
+    "sha256": "f02cd4a862b85a9a3153d27e15e5a213f5df8e3d77004ed2e87b8a7e8873d97c",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/unicodedata.pyd",
+    "sha256": "952078613973116a6aaef8d0b6a2dbc98b72fedb492dfca3f1cbdc0fdd678bcc",
+    "component": "Python runtime or extension",
+    "license_basis": "Python PSF and extension package notices; review per file",
+    "metadata": {
+      "CompanyName": "Python Software Foundation",
+      "FileVersion": "3.12.14",
+      "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
+      "ProductVersion": "3.12.14"
+    }
+  },
+  {
+    "file": "_internal/VCRUNTIME140.dll",
+    "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "_internal/VCRUNTIME140_1.dll",
+    "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.44.35211.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.44.35211.0"
+    }
+  },
+  {
+    "file": "FolioScan-3.2.exe",
+    "sha256": "028c7cec4d938974163f04ccc6b72b430969994d1ef41a087e6282a0e9739b9c",
+    "component": "FolioScan / PyInstaller bootloader",
+    "license_basis": "PolyForm Noncommercial / PyInstaller GPL with bootloader exception",
+    "metadata": {
+      "CompanyName": "Brass-Ebort",
+      "FileVersion": "3.2.0",
+      "ProductVersion": "3.2.0",
+      "LegalCopyright": "Copyright 2026 Brass-Ebort"
+    }
+  }
+]

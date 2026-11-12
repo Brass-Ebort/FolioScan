@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "baseline": {
+    "ok": true,
+    "qt": "6.12.0",
+    "modules": [
+      {
+        "module": "Qt6Core.dll",
+        "path": "_internal/PySide6/Qt6Core.dll",
+        "sha256": "f57ed38afd95d0306cca9d88d997f639f70c7628a4f1f064eae291d579487121"
+      },
+      {
+        "module": "Qt6Gui.dll",
+        "path": "_internal/PySide6/Qt6Gui.dll",
+        "sha256": "abd20026e190e8cc69667d1bea042db05cd353cc05e7da74b063c20b7da3f6cd"
+      },
+      {
+        "module": "Qt6Widgets.dll",
+        "path": "_internal/PySide6/Qt6Widgets.dll",
+        "sha256": "2f62cbe2869fff4e20df7369c2786e1ec7ec290d5a63d1371b7f70cf06909c3f"
+      },
+      {
+        "module": "pyside6.abi3.dll",
+        "path": "_internal/PySide6/pyside6.abi3.dll",
+        "sha256": "d5b87ccb0a7c305854bd120242b0a75002d0b50a35532d0f6171e4ed0f3cc82a"
+      },
+      {
+        "module": "shiboken6.abi3.dll",
+        "path": "_internal/shiboken6/shiboken6.abi3.dll",
+        "sha256": "07c318c02be5a3a9f1475f5a2d0cd438f4d4ea3288c28e2e10bc5ebbbec8de86"
+      }
+    ],
+    "scope": "DLL loading and Qt event loop only; no functional tests."
+  },
+  "replacement": {
+    "ok": true,
+    "qt": "6.12.0",
+    "modules": [
+      {
+        "module": "Qt6Core.dll",
+        "path": "_internal/PySide6/Qt6Core.dll",
+        "sha256": "2d117737327b848ce631b2691a95784044d99d239b199e0fce91c829d658f484"
+      },
+      {
+        "module": "Qt6Gui.dll",
+        "path": "_internal/PySide6/Qt6Gui.dll",
+        "sha256": "abd20026e190e8cc69667d1bea042db05cd353cc05e7da74b063c20b7da3f6cd"
+      },
+      {
+        "module": "Qt6Widgets.dll",
+        "path": "_internal/PySide6/Qt6Widgets.dll",
+        "sha256": "2f62cbe2869fff4e20df7369c2786e1ec7ec290d5a63d1371b7f70cf06909c3f"
+      },
+      {
+        "module": "pyside6.abi3.dll",
+        "path": "_internal/PySide6/pyside6.abi3.dll",
+        "sha256": "d5b87ccb0a7c305854bd120242b0a75002d0b50a35532d0f6171e4ed0f3cc82a"
+      },
+      {
+        "module": "shiboken6.abi3.dll",
+        "path": "_internal/shiboken6/shiboken6.abi3.dll",
+        "sha256": "07c318c02be5a3a9f1475f5a2d0cd438f4d4ea3288c28e2e10bc5ebbbec8de86"
+      }
+    ],
+    "scope": "DLL loading and Qt event loop only; no functional tests."
+  },
+  "modification": "COFF timestamp incremented by one; exports/code unchanged.",
+  "limitations": "Does not prove ABI compatibility of arbitrary source changes; no functional tests.",
+  "original_distribution_unchanged": true
+}

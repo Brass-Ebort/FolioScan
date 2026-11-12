@@ -1,0 +1,62 @@
+[
+  {
+    "file": "LEEME_PRIMERO.txt",
+    "bytes": 1297,
+    "sha256": "12af0b27d24cca75e16af82afe47f79490f33c03a0b194ae1a74ecf6ff71d34b"
+  },
+  {
+    "file": "Documentos_para_distribucion/LICENSE",
+    "bytes": 4563,
+    "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8"
+  },
+  {
+    "file": "Documentos_para_distribucion/AVISO_QT_LGPL.md",
+    "bytes": 2911,
+    "sha256": "5f401918ebceb47c94b34dc9914278a271aa661f8de14fdc76b56c7f9fb5b8b6"
+  },
+  {
+    "file": "Documentos_para_distribucion/LGPL-3.txt",
+    "bytes": 7652,
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  },
+  {
+    "file": "Documentos_para_distribucion/THIRD_PARTY.md",
+    "bytes": 3980,
+    "sha256": "91547326d43976b22c6aeb0b41d7db8849aed490dad43c56c9a74cfe0dae1121"
+  },
+  {
+    "file": "Documentos_para_distribucion/GPL-3.txt",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "file": "Documentos_para_distribucion/NOTICE",
+    "bytes": 511,
+    "sha256": "79350abe93a116a4a5d8c7bdb4af3d320d66bd85c1842e77cd1a9e7c6a29924f"
+  },
+  {
+    "file": "Archivos_para_repositorio/AVISO_QT_LGPL.md",
+    "bytes": 2911,
+    "sha256": "5f401918ebceb47c94b34dc9914278a271aa661f8de14fdc76b56c7f9fb5b8b6"
+  },
+  {
+    "file": "Archivos_para_repositorio/README.md",
+    "bytes": 8663,
+    "sha256": "84bd869aeb1cf0f08116232c62d5780d940ae5858b25a245c742f7c548214612"
+  },
+  {
+    "file": "Archivos_para_repositorio/THIRD_PARTY.md",
+    "bytes": 3980,
+    "sha256": "91547326d43976b22c6aeb0b41d7db8849aed490dad43c56c9a74cfe0dae1121"
+  },
+  {
+    "file": "Archivos_para_repositorio/desktop/licenses/Qt/LGPL-3.txt",
+    "bytes": 7652,
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  },
+  {
+    "file": "Archivos_para_repositorio/desktop/licenses/Qt/GPL-3.txt",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "pdfbox-license",
+    "url": "https://raw.githubusercontent.com/TomRoush/PdfBox-Android/2.0.27.0/LICENSE",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "pdfbox-notice",
+    "url": "https://raw.githubusercontent.com/TomRoush/PdfBox-Android/2.0.27.0/NOTICE",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "bouncycastle",
+    "url": "https://raw.githubusercontent.com/bcgit/bc-java/r1rv72/LICENSE.html",
+    "bytes": 1175
+  },
+  {
+    "name": "guava",
+    "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/26.0-android/guava-parent-26.0-android.pom",
+    "bytes": 10180
+  },
+  {
+    "name": "polyform",
+    "url": "https://polyformproject.org/licenses/noncommercial/1.0.0.txt",
+    "bytes": 4563
+  },
+  {
+    "name": "apache",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "bytes": 11358
+  },
+  {
+    "name": "pdfbox-license",
+    "url": "https://raw.githubusercontent.com/TomRoush/PdfBox-Android/v2.0.27.0/LICENSE.txt",
+    "sha256": "8ceed6051cbd7f6d5d56bad8ca5e73f0414fb13cbe0c4170f7c4c9beaa1a7679"
+  },
+  {
+    "name": "pdfbox-notice",
+    "url": "https://raw.githubusercontent.com/TomRoush/PdfBox-Android/v2.0.27.0/NOTICE.txt",
+    "sha256": "8191c60848b9e5666a1ee50a65a7f6eab7339dc1ea20b52092f3eac5ef10d0cd"
+  },
+  {
+    "name": "gpl",
+    "url": "https://www.gnu.org/licenses/gpl-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "name": "lgpl",
+    "url": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  }
+]
