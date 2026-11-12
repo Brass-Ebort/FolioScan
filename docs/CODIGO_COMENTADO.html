@@ -3433,271 +3433,292 @@
 <tr><td>86</td><td><pre>    width = field(dimensions, &quot;Ancho (mm)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
 <tr><td>87</td><td><pre>    height = field(dimensions, &quot;Alto (mm)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
 <tr><td>88</td><td><pre>    body.addView(dimensions);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>89</td><td><pre>    zoom = slider(body, &quot;Escala&quot;, 390);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>90</td><td><pre>    x = slider(body, &quot;Horizontal&quot;, 200);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>91</td><td><pre>    y = slider(body, &quot;Vertical&quot;, 200);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>92</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>93</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>94</td><td><pre>            &quot;Centrar&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>95</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>96</td><td><pre>              pages[index].scale = 1;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>97</td><td><pre>              pages[index].x = pages[index].y = 0;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>98</td><td><pre>              loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>99</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>100</td><td><pre>    body.addView(label(&quot;Salida&quot;));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>101</td><td><pre>    output = select(new String[] {&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;});</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>102</td><td><pre>    body.addView(output);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>103</td><td><pre>    LinearLayout pixels = new LinearLayout(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>104</td><td><pre>    pw = field(pixels, &quot;Ancho (px)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>105</td><td><pre>    ph = field(pixels, &quot;Alto (px)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>106</td><td><pre>    body.addView(pixels);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>107</td><td><pre>    body.addView(label(&quot;Lo que queda fuera de la hoja se recorta.&quot;));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>108</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>109</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>110</td><td><pre>            &quot;Aplicar a todas&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>111</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>112</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
-<tr><td>113</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>114</td><td><pre>                for (int i = 0; i &lt; pages.length; i++) pages[i] = pages[index].copy();</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
-<tr><td>115</td><td><pre>              } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>116</td><td><pre>                invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>117</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>118</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>119</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>120</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>121</td><td><pre>            &quot;Guardar&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>122</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>123</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
-<tr><td>124</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>125</td><td><pre>                for (LayoutSpec s : pages) s.validate();</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
-<tr><td>126</td><td><pre>                saved.accept(pages);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>127</td><td><pre>                dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>128</td><td><pre>              } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>129</td><td><pre>                invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>130</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>131</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>132</td><td><pre>    format.setOnItemSelectedListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
-<tr><td>133</td><td><pre>        new AdapterView.OnItemSelectedListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>134</td><td><pre>          public void onNothingSelected(AdapterView&lt;?&gt; p) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>135</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>136</td><td><pre>          public void onItemSelected(AdapterView&lt;?&gt; p, View v, int position, long id) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>137</td><td><pre>            if (loading) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>138</td><td><pre>            LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>139</td><td><pre>            s.format = position &lt; PageFormats.NAMES.length ? PageFormats.NAMES[position] : &quot;Custom&quot;;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>140</td><td><pre>            if (position == 0 &amp;&amp; bitmap != null) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>141</td><td><pre>              s.width = bitmap.getWidth() * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>142</td><td><pre>              s.height = bitmap.getHeight() * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>143</td><td><pre>            } else if (position &lt; PageFormats.NAMES.length) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>144</td><td><pre>              int[] size = PageFormats.points(s.format, false);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>145</td><td><pre>              s.width = size[0];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>146</td><td><pre>              s.height = size[1];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>147</td><td><pre>            }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>148</td><td><pre>            float resolution = Math.min(150f / 72, 4096 / Math.max(s.width, s.height));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>149</td><td><pre>            s.pixelsWide = Math.max(64, Math.round(s.width * resolution));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>150</td><td><pre>            s.pixelsHigh = Math.max(64, Math.round(s.height * resolution));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>151</td><td><pre>            loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>152</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>153</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>154</td><td><pre>    output.setOnItemSelectedListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
-<tr><td>155</td><td><pre>        new AdapterView.OnItemSelectedListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>156</td><td><pre>          public void onNothingSelected(AdapterView&lt;?&gt; p) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>157</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>158</td><td><pre>          public void onItemSelected(AdapterView&lt;?&gt; p, View v, int position, long id) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>159</td><td><pre>            if (!loading) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>160</td><td><pre>              String value = new String[] {&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;}[position];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>161</td><td><pre>              for (LayoutSpec s : pages) {</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
-<tr><td>162</td><td><pre>                s.output = value;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>163</td><td><pre>                if (!value.equals(&quot;PDF&quot;)) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>164</td><td><pre>                  s.width = s.pixelsWide * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>165</td><td><pre>                  s.height = s.pixelsHigh * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>166</td><td><pre>                }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>167</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>168</td><td><pre>              loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>169</td><td><pre>            }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>170</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>171</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>172</td><td><pre>    for (EditText field : new EditText[] {width, height, pw, ph})</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
-<tr><td>173</td><td><pre>      field.setOnFocusChangeListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
-<tr><td>174</td><td><pre>          (v, focus) -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>175</td><td><pre>            if (!focus &amp;&amp; !loading)</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>176</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
-<tr><td>177</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>178</td><td><pre>              } catch (Exception ignored) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>179</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>180</td><td><pre>          });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>181</td><td><pre>    loadPage();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>182</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>183</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>184</td><td><pre>  private EditText field(LinearLayout parent, String title) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>185</td><td><pre>    LinearLayout column = new LinearLayout(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>186</td><td><pre>    column.setOrientation(LinearLayout.VERTICAL);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>187</td><td><pre>    column.addView(label(title));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>188</td><td><pre>    EditText e = new EditText(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>189</td><td><pre>    e.setSingleLine(true);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>190</td><td><pre>    e.setInputType(8194);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>191</td><td><pre>    column.addView(e);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>192</td><td><pre>    parent.addView(column, new LinearLayout.LayoutParams(0, -2, 1));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>193</td><td><pre>    return e;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>194</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>195</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>196</td><td><pre>  private SeekBar slider(LinearLayout parent, String title, int max) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>197</td><td><pre>    parent.addView(label(title));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>198</td><td><pre>    SeekBar bar = new SeekBar(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>199</td><td><pre>    bar.setMax(max);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>200</td><td><pre>    bar.setOnSeekBarChangeListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
-<tr><td>201</td><td><pre>        new SeekBar.OnSeekBarChangeListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>202</td><td><pre>          public void onStartTrackingTouch(SeekBar b) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>203</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>204</td><td><pre>          public void onStopTrackingTouch(SeekBar b) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>205</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>206</td><td><pre>          public void onProgressChanged(SeekBar b, int value, boolean user) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>207</td><td><pre>            if (loading || !user) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>208</td><td><pre>            LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>209</td><td><pre>            if (b == zoom) s.scale = (value + 10) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>210</td><td><pre>            else if (b == x) s.x = (value - 100) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>211</td><td><pre>            else s.y = (value - 100) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>212</td><td><pre>            preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>213</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>214</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>215</td><td><pre>    parent.addView(bar);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
-<tr><td>216</td><td><pre>    return bar;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>217</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>218</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>219</td><td><pre>  private void readFields() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>220</td><td><pre>    LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>221</td><td><pre>    s.width = Float.parseFloat(width.getText().toString()) * 72 / 25.4f;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>222</td><td><pre>    s.height = Float.parseFloat(height.getText().toString()) * 72 / 25.4f;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>223</td><td><pre>    s.pixelsWide = Integer.parseInt(pw.getText().toString());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>224</td><td><pre>    s.pixelsHigh = Integer.parseInt(ph.getText().toString());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>225</td><td><pre>    if (!s.output.equals(&quot;PDF&quot;)) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>226</td><td><pre>      s.width = s.pixelsWide * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>227</td><td><pre>      s.height = s.pixelsHigh * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>228</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>229</td><td><pre>    s.validate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>230</td><td><pre>    preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>231</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>232</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>233</td><td><pre>  private void invalid() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>234</td><td><pre>    new I18n.Builder(activity)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>235</td><td><pre>        .setMessage(&quot;Ancho/alto: 4–1411 mm; imagen: 64–6000 px, máximo 24 megapíxeles.&quot;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>236</td><td><pre>        .setPositiveButton(&quot;Entendido&quot;, null)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>237</td><td><pre>        .show();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>238</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>239</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>240</td><td><pre>  // Cambia de página conservando los ajustes de la anterior.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
-<tr><td>241</td><td><pre>  private void change(int delta) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>242</td><td><pre>    int next = index + delta;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>243</td><td><pre>    if (next &lt; 0 || next &gt;= pages.length) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>244</td><td><pre>    try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
-<tr><td>245</td><td><pre>      readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>246</td><td><pre>      index = next;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>247</td><td><pre>      loadPage();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>248</td><td><pre>    } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>249</td><td><pre>      invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>250</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>251</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>252</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>253</td><td><pre>  private void loadPage() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>254</td><td><pre>    try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
-<tr><td>255</td><td><pre>      if (bitmap != null) bitmap.recycle();</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>256</td><td><pre>      bitmap = PdfTools.decode(files[index]);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>257</td><td><pre>      loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>258</td><td><pre>    } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>259</td><td><pre>      dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>260</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>261</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>262</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>263</td><td><pre>  private void loadControls() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>264</td><td><pre>    loading = true;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>265</td><td><pre>    LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>266</td><td><pre>    number.setText((index + 1) + &quot; / &quot; + pages.length);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>267</td><td><pre>    width.setText(String.format(java.util.Locale.ROOT, &quot;%.2f&quot;, s.width * 25.4 / 72));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>268</td><td><pre>    height.setText(String.format(java.util.Locale.ROOT, &quot;%.2f&quot;, s.height * 25.4 / 72));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>269</td><td><pre>    pw.setText(&quot;&quot; + s.pixelsWide);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>270</td><td><pre>    ph.setText(&quot;&quot; + s.pixelsHigh);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>271</td><td><pre>    zoom.setProgress(Math.round(s.scale * 100) - 10);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>272</td><td><pre>    x.setProgress(Math.round(s.x * 100) + 100);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>273</td><td><pre>    y.setProgress(Math.round(s.y * 100) + 100);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>274</td><td><pre>    int position = java.util.Arrays.asList(PageFormats.NAMES).indexOf(s.format);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>275</td><td><pre>    format.setSelection(position &lt; 0 ? PageFormats.NAMES.length : position);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>276</td><td><pre>    output.setSelection(java.util.Arrays.asList(&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;).indexOf(s.output));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>277</td><td><pre>    loading = false;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>278</td><td><pre>    preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>279</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>280</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>281</td><td><pre>  @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
-<tr><td>282</td><td><pre>  public void show() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>283</td><td><pre>    super.show();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>284</td><td><pre>    getWindow().setLayout(-1, -1);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>285</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>286</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>287</td><td><pre>  @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
-<tr><td>288</td><td><pre>  public void dismiss() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>289</td><td><pre>    if (bitmap != null) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>290</td><td><pre>      bitmap.recycle();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>291</td><td><pre>      bitmap = null;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>292</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>293</td><td><pre>    super.dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>294</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>295</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>296</td><td><pre>  private final class Preview extends View {</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>297</td><td><pre>    private float lastX, lastY, factor;</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>298</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>299</td><td><pre>    Preview() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>300</td><td><pre>      super(activity);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>301</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>302</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>303</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
-<tr><td>304</td><td><pre>    protected void onDraw(Canvas canvas) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>305</td><td><pre>      canvas.drawColor(Color.DKGRAY);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>306</td><td><pre>      if (bitmap == null) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>307</td><td><pre>      LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>308</td><td><pre>      factor = Math.min((getWidth() - 20) / s.width, (getHeight() - 20) / s.height);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>309</td><td><pre>      canvas.save();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>310</td><td><pre>      canvas.translate((getWidth() - s.width * factor) / 2, (getHeight() - s.height * factor) / 2);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>311</td><td><pre>      canvas.scale(factor, factor);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>312</td><td><pre>      canvas.clipRect(0, 0, s.width, s.height);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>313</td><td><pre>      canvas.drawColor(Color.WHITE);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>314</td><td><pre>      float[] b = s.box(bitmap.getWidth(), bitmap.getHeight());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>315</td><td><pre>      canvas.drawBitmap(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>316</td><td><pre>          bitmap,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>317</td><td><pre>          null,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
-<tr><td>318</td><td><pre>          new RectF(b[0], b[1], b[0] + b[2], b[1] + b[3]),</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>319</td><td><pre>          new Paint(Paint.FILTER_BITMAP_FLAG));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>320</td><td><pre>      canvas.restore();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>321</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>322</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>323</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
-<tr><td>324</td><td><pre>    public boolean onTouchEvent(MotionEvent e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>325</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_DOWN) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>326</td><td><pre>        lastX = e.getX();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>327</td><td><pre>        lastY = e.getY();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>328</td><td><pre>        getParent().requestDisallowInterceptTouchEvent(true);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>329</td><td><pre>        return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>330</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>331</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_MOVE &amp;&amp; factor &gt; 0) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>332</td><td><pre>        LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>333</td><td><pre>        s.x = Math.max(-1, Math.min(1, s.x + (e.getX() - lastX) / factor / s.width));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>334</td><td><pre>        s.y = Math.max(-1, Math.min(1, s.y + (e.getY() - lastY) / factor / s.height));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>335</td><td><pre>        lastX = e.getX();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>336</td><td><pre>        lastY = e.getY();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>337</td><td><pre>        invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>338</td><td><pre>        return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>339</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>340</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_UP) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>341</td><td><pre>        performClick();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>342</td><td><pre>        loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>343</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>344</td><td><pre>      return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>345</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>346</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>347</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
-<tr><td>348</td><td><pre>    public boolean performClick() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>349</td><td><pre>      super.performClick();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>350</td><td><pre>      return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
-<tr><td>351</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>352</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>353</td><td><pre>}</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>89</td><td><pre>    body.addView(button(&quot;Girar hoja 90°&quot;, this::rotateSheet));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>90</td><td><pre>    zoom = slider(body, &quot;Escala&quot;, 390);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>91</td><td><pre>    x = slider(body, &quot;Horizontal&quot;, 200);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>92</td><td><pre>    y = slider(body, &quot;Vertical&quot;, 200);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>93</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>94</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>95</td><td><pre>            &quot;Centrar&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>96</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>97</td><td><pre>              pages[index].scale = 1;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>98</td><td><pre>              pages[index].x = pages[index].y = 0;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>99</td><td><pre>              loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>100</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>101</td><td><pre>    body.addView(label(&quot;Salida&quot;));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>102</td><td><pre>    output = select(new String[] {&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;});</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>103</td><td><pre>    body.addView(output);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>104</td><td><pre>    LinearLayout pixels = new LinearLayout(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>105</td><td><pre>    pw = field(pixels, &quot;Ancho (px)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>106</td><td><pre>    ph = field(pixels, &quot;Alto (px)&quot;);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>107</td><td><pre>    body.addView(pixels);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>108</td><td><pre>    body.addView(label(&quot;Lo que queda fuera de la hoja se recorta.&quot;));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>109</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>110</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>111</td><td><pre>            &quot;Aplicar a todas&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>112</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>113</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>114</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>115</td><td><pre>                for (int i = 0; i &lt; pages.length; i++) pages[i] = pages[index].copy();</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>116</td><td><pre>              } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>117</td><td><pre>                invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>118</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>119</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>120</td><td><pre>    body.addView(</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>121</td><td><pre>        button(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>122</td><td><pre>            &quot;Guardar&quot;,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>123</td><td><pre>            () -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>124</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>125</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>126</td><td><pre>                for (LayoutSpec s : pages) s.validate();</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>127</td><td><pre>                saved.accept(pages);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>128</td><td><pre>                dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>129</td><td><pre>              } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>130</td><td><pre>                invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>131</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>132</td><td><pre>            }));</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>133</td><td><pre>    format.setOnItemSelectedListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>134</td><td><pre>        new AdapterView.OnItemSelectedListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>135</td><td><pre>          public void onNothingSelected(AdapterView&lt;?&gt; p) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>136</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>137</td><td><pre>          public void onItemSelected(AdapterView&lt;?&gt; p, View v, int position, long id) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>138</td><td><pre>            if (loading) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>139</td><td><pre>            LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>140</td><td><pre>            String selected = position &lt; PageFormats.NAMES.length ? PageFormats.NAMES[position] : &quot;Custom&quot;;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>141</td><td><pre>            // Cargar otra página no debe reiniciar su orientación guardada.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>142</td><td><pre>            if (selected.equals(s.format)) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>143</td><td><pre>            s.format = selected;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>144</td><td><pre>            if (position == 0 &amp;&amp; bitmap != null) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>145</td><td><pre>              s.width = bitmap.getWidth() * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>146</td><td><pre>              s.height = bitmap.getHeight() * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>147</td><td><pre>            } else if (position &lt; PageFormats.NAMES.length) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>148</td><td><pre>              int[] size = PageFormats.points(s.format, false);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>149</td><td><pre>              s.width = size[0];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>150</td><td><pre>              s.height = size[1];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>151</td><td><pre>            }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>152</td><td><pre>            float resolution = Math.min(150f / 72, 4096 / Math.max(s.width, s.height));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>153</td><td><pre>            s.pixelsWide = Math.max(64, Math.round(s.width * resolution));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>154</td><td><pre>            s.pixelsHigh = Math.max(64, Math.round(s.height * resolution));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>155</td><td><pre>            loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>156</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>157</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>158</td><td><pre>    output.setOnItemSelectedListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>159</td><td><pre>        new AdapterView.OnItemSelectedListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>160</td><td><pre>          public void onNothingSelected(AdapterView&lt;?&gt; p) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>161</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>162</td><td><pre>          public void onItemSelected(AdapterView&lt;?&gt; p, View v, int position, long id) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>163</td><td><pre>            if (!loading) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>164</td><td><pre>              String value = new String[] {&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;}[position];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>165</td><td><pre>              for (LayoutSpec s : pages) {</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>166</td><td><pre>                s.output = value;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>167</td><td><pre>                if (!value.equals(&quot;PDF&quot;)) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>168</td><td><pre>                  s.width = s.pixelsWide * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>169</td><td><pre>                  s.height = s.pixelsHigh * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>170</td><td><pre>                }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>171</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>172</td><td><pre>              loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>173</td><td><pre>            }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>174</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>175</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>176</td><td><pre>    for (EditText field : new EditText[] {width, height, pw, ph})</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>177</td><td><pre>      field.setOnFocusChangeListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>178</td><td><pre>          (v, focus) -&gt; {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>179</td><td><pre>            if (!focus &amp;&amp; !loading)</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>180</td><td><pre>              try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>181</td><td><pre>                readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>182</td><td><pre>              } catch (Exception ignored) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>183</td><td><pre>              }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>184</td><td><pre>          });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>185</td><td><pre>    loadPage();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>186</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>187</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>188</td><td><pre>  private EditText field(LinearLayout parent, String title) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>189</td><td><pre>    LinearLayout column = new LinearLayout(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>190</td><td><pre>    column.setOrientation(LinearLayout.VERTICAL);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>191</td><td><pre>    column.addView(label(title));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>192</td><td><pre>    EditText e = new EditText(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>193</td><td><pre>    e.setSingleLine(true);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>194</td><td><pre>    e.setInputType(8194);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>195</td><td><pre>    column.addView(e);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>196</td><td><pre>    parent.addView(column, new LinearLayout.LayoutParams(0, -2, 1));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>197</td><td><pre>    return e;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>198</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>199</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>200</td><td><pre>  private SeekBar slider(LinearLayout parent, String title, int max) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>201</td><td><pre>    parent.addView(label(title));</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>202</td><td><pre>    SeekBar bar = new SeekBar(activity);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>203</td><td><pre>    bar.setMax(max);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>204</td><td><pre>    bar.setOnSeekBarChangeListener(</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>205</td><td><pre>        new SeekBar.OnSeekBarChangeListener() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>206</td><td><pre>          public void onStartTrackingTouch(SeekBar b) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>207</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>208</td><td><pre>          public void onStopTrackingTouch(SeekBar b) {}</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>209</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>210</td><td><pre>          public void onProgressChanged(SeekBar b, int value, boolean user) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>211</td><td><pre>            if (loading || !user) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>212</td><td><pre>            LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>213</td><td><pre>            if (b == zoom) s.scale = (value + 10) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>214</td><td><pre>            else if (b == x) s.x = (value - 100) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>215</td><td><pre>            else s.y = (value - 100) / 100f;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>216</td><td><pre>            preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>217</td><td><pre>          }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>218</td><td><pre>        });</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>219</td><td><pre>    parent.addView(bar);</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>220</td><td><pre>    return bar;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>221</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>222</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>223</td><td><pre>  private void readFields() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>224</td><td><pre>    LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>225</td><td><pre>    s.width = Float.parseFloat(width.getText().toString()) * 72 / 25.4f;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>226</td><td><pre>    s.height = Float.parseFloat(height.getText().toString()) * 72 / 25.4f;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>227</td><td><pre>    s.pixelsWide = Integer.parseInt(pw.getText().toString());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>228</td><td><pre>    s.pixelsHigh = Integer.parseInt(ph.getText().toString());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>229</td><td><pre>    if (!s.output.equals(&quot;PDF&quot;)) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>230</td><td><pre>      s.width = s.pixelsWide * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>231</td><td><pre>      s.height = s.pixelsHigh * 72f / 150;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>232</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>233</td><td><pre>    s.validate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>234</td><td><pre>    preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>235</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>236</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>237</td><td><pre>  private void invalid() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>238</td><td><pre>    new I18n.Builder(activity)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>239</td><td><pre>        .setMessage(&quot;Ancho/alto: 4–1411 mm; imagen: 64–6000 px, máximo 24 megapíxeles.&quot;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>240</td><td><pre>        .setPositiveButton(&quot;Entendido&quot;, null)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>241</td><td><pre>        .show();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>242</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>243</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>244</td><td><pre>  // Alterna vertical/horizontal sin girar ni modificar la fotografía original.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>245</td><td><pre>  private void rotateSheet() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>246</td><td><pre>    try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>247</td><td><pre>      readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>248</td><td><pre>      LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>249</td><td><pre>      float previousWidth = s.width;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>250</td><td><pre>      s.width = s.height;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>251</td><td><pre>      s.height = previousWidth;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>252</td><td><pre>      int previousPixels = s.pixelsWide;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>253</td><td><pre>      s.pixelsWide = s.pixelsHigh;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>254</td><td><pre>      s.pixelsHigh = previousPixels;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>255</td><td><pre>      loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>256</td><td><pre>    } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>257</td><td><pre>      invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>258</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>259</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>260</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>261</td><td><pre>  // Cambia de página conservando los ajustes de la anterior.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>262</td><td><pre>  private void change(int delta) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>263</td><td><pre>    int next = index + delta;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>264</td><td><pre>    if (next &lt; 0 || next &gt;= pages.length) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>265</td><td><pre>    try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>266</td><td><pre>      readFields();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>267</td><td><pre>      index = next;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>268</td><td><pre>      loadPage();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>269</td><td><pre>    } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>270</td><td><pre>      invalid();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>271</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>272</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>273</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>274</td><td><pre>  private void loadPage() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>275</td><td><pre>    try {</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>276</td><td><pre>      if (bitmap != null) bitmap.recycle();</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>277</td><td><pre>      bitmap = PdfTools.decode(files[index]);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>278</td><td><pre>      loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>279</td><td><pre>    } catch (Exception e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>280</td><td><pre>      dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>281</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>282</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>283</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>284</td><td><pre>  private void loadControls() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>285</td><td><pre>    loading = true;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>286</td><td><pre>    LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>287</td><td><pre>    number.setText((index + 1) + &quot; / &quot; + pages.length);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>288</td><td><pre>    width.setText(String.format(java.util.Locale.ROOT, &quot;%.2f&quot;, s.width * 25.4 / 72));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>289</td><td><pre>    height.setText(String.format(java.util.Locale.ROOT, &quot;%.2f&quot;, s.height * 25.4 / 72));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>290</td><td><pre>    pw.setText(&quot;&quot; + s.pixelsWide);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>291</td><td><pre>    ph.setText(&quot;&quot; + s.pixelsHigh);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>292</td><td><pre>    zoom.setProgress(Math.round(s.scale * 100) - 10);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>293</td><td><pre>    x.setProgress(Math.round(s.x * 100) + 100);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>294</td><td><pre>    y.setProgress(Math.round(s.y * 100) + 100);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>295</td><td><pre>    int position = java.util.Arrays.asList(PageFormats.NAMES).indexOf(s.format);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>296</td><td><pre>    format.setSelection(position &lt; 0 ? PageFormats.NAMES.length : position);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>297</td><td><pre>    output.setSelection(java.util.Arrays.asList(&quot;PDF&quot;, &quot;JPG&quot;, &quot;PNG&quot;).indexOf(s.output));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>298</td><td><pre>    loading = false;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>299</td><td><pre>    preview.invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>300</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>301</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>302</td><td><pre>  @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
+<tr><td>303</td><td><pre>  public void show() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>304</td><td><pre>    super.show();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>305</td><td><pre>    getWindow().setLayout(-1, -1);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>306</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>307</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>308</td><td><pre>  @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
+<tr><td>309</td><td><pre>  public void dismiss() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>310</td><td><pre>    if (bitmap != null) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>311</td><td><pre>      bitmap.recycle();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>312</td><td><pre>      bitmap = null;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>313</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>314</td><td><pre>    super.dismiss();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>315</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>316</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>317</td><td><pre>  private final class Preview extends View {</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>318</td><td><pre>    private float lastX, lastY, factor;</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>319</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>320</td><td><pre>    Preview() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>321</td><td><pre>      super(activity);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>322</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>323</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>324</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
+<tr><td>325</td><td><pre>    protected void onDraw(Canvas canvas) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>326</td><td><pre>      canvas.drawColor(Color.DKGRAY);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>327</td><td><pre>      if (bitmap == null) return;</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>328</td><td><pre>      LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>329</td><td><pre>      factor = Math.min((getWidth() - 20) / s.width, (getHeight() - 20) / s.height);</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>330</td><td><pre>      canvas.save();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>331</td><td><pre>      canvas.translate((getWidth() - s.width * factor) / 2, (getHeight() - s.height * factor) / 2);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>332</td><td><pre>      canvas.scale(factor, factor);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>333</td><td><pre>      canvas.clipRect(0, 0, s.width, s.height);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>334</td><td><pre>      canvas.drawColor(Color.WHITE);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>335</td><td><pre>      float[] b = s.box(bitmap.getWidth(), bitmap.getHeight());</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>336</td><td><pre>      canvas.drawBitmap(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>337</td><td><pre>          bitmap,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>338</td><td><pre>          null,</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>339</td><td><pre>          new RectF(b[0], b[1], b[0] + b[2], b[1] + b[3]),</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>340</td><td><pre>          new Paint(Paint.FILTER_BITMAP_FLAG));</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>341</td><td><pre>      canvas.restore();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>342</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>343</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>344</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
+<tr><td>345</td><td><pre>    public boolean onTouchEvent(MotionEvent e) {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>346</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_DOWN) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>347</td><td><pre>        lastX = e.getX();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>348</td><td><pre>        lastY = e.getY();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>349</td><td><pre>        getParent().requestDisallowInterceptTouchEvent(true);</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>350</td><td><pre>        return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>351</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>352</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_MOVE &amp;&amp; factor &gt; 0) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>353</td><td><pre>        LayoutSpec s = pages[index];</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>354</td><td><pre>        s.x = Math.max(-1, Math.min(1, s.x + (e.getX() - lastX) / factor / s.width));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>355</td><td><pre>        s.y = Math.max(-1, Math.min(1, s.y + (e.getY() - lastY) / factor / s.height));</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>356</td><td><pre>        lastX = e.getX();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>357</td><td><pre>        lastY = e.getY();</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>358</td><td><pre>        invalidate();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>359</td><td><pre>        return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>360</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>361</td><td><pre>      if (e.getAction() == MotionEvent.ACTION_UP) {</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>362</td><td><pre>        performClick();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>363</td><td><pre>        loadControls();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>364</td><td><pre>      }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>365</td><td><pre>      return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>366</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>367</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>368</td><td><pre>    @Override</pre></td><td>Anotación o decorador que describe cómo se ejecuta el elemento siguiente.</td></tr>
+<tr><td>369</td><td><pre>    public boolean performClick() {</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>370</td><td><pre>      super.performClick();</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>371</td><td><pre>      return true;</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>372</td><td><pre>    }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>373</td><td><pre>  }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>374</td><td><pre>}</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
 </table></details>
 <details><summary>app\src\main\java\es\folioscan\app\LayoutSpec.java</summary><table>
 <tr><td>1</td><td><pre>package es.folioscan.app;</pre></td><td>Identifica el paquete Android al que pertenece esta clase.</td></tr>

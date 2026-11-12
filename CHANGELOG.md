@@ -1,3 +1,7 @@
+# Corrección Android V3.2 — orientación de hoja
+
+Añade Girar hoja 90° en Preparar salida. Conserva los ajustes por página y cambia también las dimensiones de salida JPG/PNG. versionCode 7; Windows sin cambios.
+
 # V3.2 — 2026-11-12
 
 Ajustes de navegación y configuración Android/Windows, idioma inicial del sistema, formato de papel contextual en Windows y eliminación del selector previo Android. Mantiene la clave de publicación de V3.1 corregida.

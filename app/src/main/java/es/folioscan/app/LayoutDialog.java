@@ -86,6 +86,7 @@ public final class LayoutDialog extends Dialog {
     width = field(dimensions, "Ancho (mm)");
     height = field(dimensions, "Alto (mm)");
     body.addView(dimensions);
+    body.addView(button("Girar hoja 90°", this::rotateSheet));
     zoom = slider(body, "Escala", 390);
     x = slider(body, "Horizontal", 200);
     y = slider(body, "Vertical", 200);
@@ -136,7 +137,10 @@ public final class LayoutDialog extends Dialog {
           public void onItemSelected(AdapterView<?> p, View v, int position, long id) {
             if (loading) return;
             LayoutSpec s = pages[index];
-            s.format = position < PageFormats.NAMES.length ? PageFormats.NAMES[position] : "Custom";
+            String selected = position < PageFormats.NAMES.length ? PageFormats.NAMES[position] : "Custom";
+            // Cargar otra página no debe reiniciar su orientación guardada.
+            if (selected.equals(s.format)) return;
+            s.format = selected;
             if (position == 0 && bitmap != null) {
               s.width = bitmap.getWidth() * 72f / 150;
               s.height = bitmap.getHeight() * 72f / 150;
@@ -235,6 +239,23 @@ public final class LayoutDialog extends Dialog {
         .setMessage("Ancho/alto: 4–1411 mm; imagen: 64–6000 px, máximo 24 megapíxeles.")
         .setPositiveButton("Entendido", null)
         .show();
+  }
+
+  // Alterna vertical/horizontal sin girar ni modificar la fotografía original.
+  private void rotateSheet() {
+    try {
+      readFields();
+      LayoutSpec s = pages[index];
+      float previousWidth = s.width;
+      s.width = s.height;
+      s.height = previousWidth;
+      int previousPixels = s.pixelsWide;
+      s.pixelsWide = s.pixelsHigh;
+      s.pixelsHigh = previousPixels;
+      loadControls();
+    } catch (Exception e) {
+      invalid();
+    }
   }
 
   // Cambia de página conservando los ajustes de la anterior.
