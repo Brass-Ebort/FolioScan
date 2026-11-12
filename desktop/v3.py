@@ -639,6 +639,17 @@ class WindowV3(Window):
         link = QLabel('<a href="https://github.com/Brass-Ebort">github.com/Brass-Ebort</a>')
         link.setOpenExternalLinks(True)
         layout.addWidget(link)
+        qt_notice = QLabel("Qt / PySide6 / Shiboken6 · LGPLv3")
+        layout.addWidget(qt_notice)
+        # Avisos externos y legibles también cuando se sustituyen las bibliotecas LGPL.
+        legal = QPushButton(i18n.tr("Licencias y avisos"))
+        def open_legal():
+            from app import ASSETS
+            from PySide6.QtCore import QUrl
+            from PySide6.QtGui import QDesktopServices
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(ASSETS / "legal")))
+        legal.clicked.connect(open_legal)
+        layout.addWidget(legal)
         dialog.exec()
 
     # Persiste el idioma seleccionado y actualiza la interfaz con el catálogo local.

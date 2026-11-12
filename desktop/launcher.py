@@ -3,6 +3,10 @@
 import sys
 
 if __name__ == "__main__":
+    if "--verify-libraries" in sys.argv:
+        from verify_libraries import run
+        run(sys.argv[sys.argv.index("--verify-libraries") + 1])
+        raise SystemExit(0)
     try:
         from app import main
 
