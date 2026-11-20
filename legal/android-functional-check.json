@@ -1,0 +1,110 @@
+{
+  "version": "0.4.0",
+  "versionCode": 8,
+  "suites": [
+    {
+      "name": "es.folioscan.app.DiscoveryTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.DocumentOpsTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.DocumentStoreTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.LayoutDialogTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.MainActivityTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.PageFitTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.PageFormatsTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "es.folioscan.app.PdfToolsTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "lint": [
+    {
+      "id": "TrustAllX509TrustManager",
+      "severity": "Warning"
+    },
+    {
+      "id": "DataExtractionRules",
+      "severity": "Warning"
+    },
+    {
+      "id": "DrawAllocation",
+      "severity": "Warning"
+    },
+    {
+      "id": "DrawAllocation",
+      "severity": "Warning"
+    },
+    {
+      "id": "ObsoleteSdkInt",
+      "severity": "Warning"
+    },
+    {
+      "id": "UnusedResources",
+      "severity": "Warning"
+    },
+    {
+      "id": "MonochromeLauncherIcon",
+      "severity": "Warning"
+    },
+    {
+      "id": "SetTextI18n",
+      "severity": "Warning"
+    },
+    {
+      "id": "SetTextI18n",
+      "severity": "Warning"
+    },
+    {
+      "id": "SetTextI18n",
+      "severity": "Warning"
+    },
+    {
+      "id": "SetTextI18n",
+      "severity": "Warning"
+    }
+  ],
+  "physical_device_tested": false,
+  "google_scanner_end_to_end_tested": false
+}
