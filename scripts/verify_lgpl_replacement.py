@@ -12,13 +12,15 @@ scratch.mkdir(exist_ok=True)
 folder=Path(tempfile.mkdtemp(prefix='lgpl-replacement-',dir=scratch)).resolve()
 assert scratch.resolve() in folder.parents
 try:
-    target=folder/'FolioScan-3.2';shutil.copytree(source,target)
+    target=folder/'FolioScan-3.2';target.mkdir()
+    shutil.copy2(root/'desktop/dist/FolioScan-3.2-portable.exe',target/'FolioScan-3.2.exe')
     report=folder/'baseline.json'
     exe=target/'FolioScan-3.2.exe'
     subprocess.run([str(exe),'--verify-libraries',str(report)],check=True,timeout=60)
     baseline=json.loads(report.read_text('utf-8'));assert baseline['ok']
-    library=target/'_internal/PySide6/Qt6Core.dll'
-    original=library.read_bytes();modified=bytearray(original)
+    library=target/'Bibliotecas/PySide6/Qt6Core.dll'
+    library.parent.mkdir(parents=True)
+    original=(source/'_internal/PySide6/Qt6Core.dll').read_bytes();modified=bytearray(original)
     offset=struct.unpack_from('<I',modified,0x3c)[0]+8
     old=struct.unpack_from('<I',modified,offset)[0]
     struct.pack_into('<I',modified,offset,(old+1)&0xffffffff)
@@ -30,7 +32,7 @@ try:
     result=json.loads(report.read_text('utf-8'));assert result['ok']
     core=next(m for m in result['modules'] if m['module']=='Qt6Core.dll')
     assert core['sha256']==changed
-    assert core['path']=='_internal/PySide6/Qt6Core.dll'
+    assert core['path']=='PySide6/Qt6Core.dll'
     output={'ok':True,'baseline':baseline,'replacement':result,
             'modification':'COFF timestamp incremented by one; exports/code unchanged.',
             'limitations':'Does not prove ABI compatibility of arbitrary source changes; no functional tests.',

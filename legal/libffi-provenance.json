@@ -1,0 +1,9 @@
+{
+  "component": "libffi 3.4.4, CPython amd64 build",
+  "commit": "94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d",
+  "binary_url": "https://raw.githubusercontent.com/python/cpython-bin-deps/94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d/amd64/libffi-8.dll",
+  "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a",
+  "license_url": "https://raw.githubusercontent.com/python/cpython-bin-deps/94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d/LICENSE",
+  "license_sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+  "action": "Replace the untraceable runtime copy in the distribution only; retain the build interpreter unchanged."
+}

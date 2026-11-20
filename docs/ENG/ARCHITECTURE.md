@@ -17,7 +17,7 @@
 - v3.py contains the current shell, persistent library, device-file management and append confirmation. Datos/preferencias.ini replaces registry-based settings.
 - layout_editor.py provides per-page composition. core.py implements PDF/image operations and transactional output independently of the GUI.
 - i18n.py preserves original catalogue keys so changing language is reversible.
-- desktop.spec builds an onedir portable package with external DLLs and legal texts. The entire directory must be kept together. Information additional exposes the legal folder.
+- desktop.spec builds a standalone onefile EXE and an onedir copy for audits. Optional Bibliotecas overrides compatible LGPL libraries before Qt loads.
 
 ## Geometry
 

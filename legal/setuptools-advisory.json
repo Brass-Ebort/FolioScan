@@ -1,0 +1,115 @@
+{
+  "ghsa_id": "GHSA-xmj3-9gf7-h52w",
+  "cve_id": null,
+  "url": "https://api.github.com/repos/pypa/setuptools/security-advisories/GHSA-xmj3-9gf7-h52w",
+  "html_url": "https://github.com/pypa/setuptools/security/advisories/GHSA-xmj3-9gf7-h52w",
+  "summary": "Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
+  "description": "### Summary\r\n\r\nOn Windows, attacker-controlled content in a wheel's\r\n`.dist-info/namespace_packages.txt` can cause setuptools' legacy wheel\r\ninstallation path to create an `__init__.py` outside the requested\r\n`destination_eggdir`.\r\n\r\nThe attacker can influence the destination path, but not the contents of\r\nthe created file.\r\n\r\nI confirmed this end-to-end using the real setuptools\r\n`Wheel.install_as_egg()` path in a disposable local sandbox.\r\n\r\n### Details\r\n\r\nTested setuptools commit:\r\n\r\n`6ead555c5fb29bc57fe6105b1bffc163f56fd558`\r\n\r\nRelevant source:\r\n\r\n`setuptools/wheel.py`\r\n\r\nSHA-256:\r\n\r\n`359b7e0d5dd8c3135653abe08a8ed5dc0352eadfd7df22cb5e2b5303b7c3cafd`\r\n\r\nThe relevant call path is:\r\n\r\n`Wheel(wheel_path).install_as_egg(destination)`\r\n\u2192 `_install_as_egg`\r\n\u2192 `_convert_metadata`\r\n\u2192 `_fix_namespace_packages`\r\n\r\nA wheel can provide attacker-controlled content in:\r\n\r\n`<distribution>.dist-info/namespace_packages.txt`\r\n\r\nThe namespace value is eventually used approximately as:\r\n\r\n```python\r\nmod_dir = os.path.join(destination_eggdir, *mod.split('.'))\r\nmod_init = os.path.join(mod_dir, '__init__.py')\r\n\r\nIf mod is a Windows drive-qualified absolute path containing no dots,\r\nmod.split('.') preserves it as a single component.\r\nOn Windows, os.path.join(destination_eggdir, absolute_component) discards\r\nthe original base directory and resolves to the attacker-supplied absolute\r\npath.\r\nThe existing wheel filename and ZIP traversal checks do not validate this\r\nmetadata value before it is subsequently interpreted as a filesystem path.\r\n\r\n```markdown\r\n### PoC\r\n\r\nThe reproduction was performed entirely inside a disposable temporary\r\ndirectory.\r\n\r\nLayout:\r\n\r\n```text\r\nsandbox/\r\n    destination/\r\n    outside/\r\n    input/\r\n    canary.txt\r\n```\r\n\r\nA synthetic wheel was created containing:\r\n\r\n`demo_pkg-1.0.dist-info/namespace_packages.txt`\r\n\r\nwhose content was the absolute path of:\r\n\r\n`sandbox\\outside`\r\n\r\nThe real acquired setuptools implementation was then invoked:\r\n\r\n```python\r\nsetuptools.wheel.Wheel(synthetic_wheel).install_as_egg(\r\n    sandbox_destination\r\n)\r\n```\r\n\r\nThe operation completed without exception.\r\n\r\nExpected metadata was created under:\r\n\r\n`sandbox\\destination\\EGG-INFO`\r\n\r\nbut setuptools also created:\r\n\r\n`sandbox\\outside\\__init__.py`\r\n\r\nThe file did not exist before execution.\r\n\r\nIts contents were:\r\n\r\n```python\r\n__import__('pkg_resources').declare_namespace(__name__)\r\n```\r\n\r\nThe unrelated canary remained byte-identical.\r\n\r\nThe sandbox was deleted after recording the evidence.\r\n```\r\n\r\n\r\n### Impact\r\n\r\nA crafted wheel can cause setuptools to create a fixed-content\r\n`__init__.py` outside the intended installation directory at a\r\nfilesystem path influenced by the wheel, with the permissions of the\r\nprocess performing the installation.\r\n\r\nThe demonstrated reproduction required the target parent directory to\r\nalready exist.\r\n\r\nThis report does **not** claim:\r\n\r\n- arbitrary-content file write;\r\n- overwrite of an existing `__init__.py`;\r\n- remote code execution;\r\n- persistence;\r\n- privilege escalation.\r\n\r\nI found CVE-2025-47273 / GHSA-5rjg-fvgr-3xxf, but that issue concerns\r\n`PackageIndex._download_url` and URL-derived filenames rather than\r\n`namespace_packages.txt` / `_fix_namespace_packages`.\r\n\r\nI have not found a public advisory describing this specific path.\r\n\r\n",
+  "severity": "low",
+  "author": null,
+  "publisher": {
+    "login": "jaraco",
+    "id": 308610,
+    "node_id": "MDQ6VXNlcjMwODYxMA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/308610?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jaraco",
+    "html_url": "https://github.com/jaraco",
+    "followers_url": "https://api.github.com/users/jaraco/followers",
+    "following_url": "https://api.github.com/users/jaraco/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jaraco/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jaraco/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jaraco/subscriptions",
+    "organizations_url": "https://api.github.com/users/jaraco/orgs",
+    "repos_url": "https://api.github.com/users/jaraco/repos",
+    "events_url": "https://api.github.com/users/jaraco/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jaraco/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "identifiers": [
+    {
+      "value": "GHSA-xmj3-9gf7-h52w",
+      "type": "GHSA"
+    }
+  ],
+  "state": "published",
+  "created_at": null,
+  "updated_at": "2026-10-19T20:12:41Z",
+  "published_at": "2026-10-19T20:12:41Z",
+  "closed_at": null,
+  "withdrawn_at": null,
+  "submission": null,
+  "vulnerabilities": [
+    {
+      "package": {
+        "ecosystem": "pip",
+        "name": "setuptools"
+      },
+      "vulnerable_version_range": ">= 38.2.2, < 84.1.0",
+      "patched_versions": "84.1.0",
+      "vulnerable_functions": []
+    }
+  ],
+  "cvss_severities": {
+    "cvss_v3": {
+      "vector_string": null,
+      "score": null
+    },
+    "cvss_v4": {
+      "vector_string": null,
+      "score": null
+    }
+  },
+  "cwes": [
+    {
+      "cwe_id": "CWE-22",
+      "name": "Improper Limitation of a Pathname to a Restricted Directory"
+    }
+  ],
+  "cwe_ids": [
+    "CWE-22"
+  ],
+  "credits": [
+    {
+      "login": "Hades2508",
+      "type": "reporter"
+    }
+  ],
+  "credits_detailed": [
+    {
+      "user": {
+        "login": "Hades2508",
+        "id": 291125437,
+        "node_id": "U_kgDOEVo4vQ",
+        "avatar_url": "https://avatars.githubusercontent.com/u/291125437?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Hades2508",
+        "html_url": "https://github.com/Hades2508",
+        "followers_url": "https://api.github.com/users/Hades2508/followers",
+        "following_url": "https://api.github.com/users/Hades2508/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Hades2508/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Hades2508/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Hades2508/subscriptions",
+        "organizations_url": "https://api.github.com/users/Hades2508/orgs",
+        "repos_url": "https://api.github.com/users/Hades2508/repos",
+        "events_url": "https://api.github.com/users/Hades2508/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Hades2508/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "type": "reporter",
+      "state": "accepted"
+    }
+  ],
+  "collaborating_users": null,
+  "collaborating_teams": null,
+  "private_fork": null,
+  "comments": 1,
+  "cvss": {
+    "vector_string": null,
+    "score": null
+  }
+}

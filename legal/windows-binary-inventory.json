@@ -1,7 +1,7 @@
 [
   {
     "file": "_internal/_asyncio.pyd",
-    "sha256": "662cc9136e27f97f7bbeb2e66cac80a859140d984b054af575dd69c427f81b4e",
+    "sha256": "b3d3910fbdbaa484c3a6fcf4d04b7f95551cf8c7e4fed327015ea425b075b8ad",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -13,7 +13,7 @@
   },
   {
     "file": "_internal/_bz2.pyd",
-    "sha256": "f852110ed6de933a4fa2bb9a41a8693f04c7ff8b2e34de12475cc8853123f91f",
+    "sha256": "b3fb8129619e0f323b2ff57a34bdd88ae39341270e2848dae119f2ef9d777464",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -25,7 +25,7 @@
   },
   {
     "file": "_internal/_ctypes.pyd",
-    "sha256": "fe3a0a9aea4e93b15b5a598560518c0c58d207d7ebefa5f2a6da2785d6048650",
+    "sha256": "fd92f026ae461ba75bbff0cf3bcabd46cdbe62e12e0d863c1af139021283b40c",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -37,7 +37,7 @@
   },
   {
     "file": "_internal/_decimal.pyd",
-    "sha256": "1d1864a7325f34d6fafd9b593399c64bb6d748cc9ce456b3d55612cc4be98096",
+    "sha256": "d9660d2a654b7728320a42951447fbec1586bd1f08078a62f783a7bc91d8b8f3",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -49,7 +49,7 @@
   },
   {
     "file": "_internal/_elementtree.pyd",
-    "sha256": "daa2dce312c39bca3906a54cd620d1acba4a6a022cba015dd459e0df9aab511a",
+    "sha256": "f7a96fa82014e4140b8452918d2891f318110fdb527e4c56024913d3c9cf0cb8",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -61,7 +61,7 @@
   },
   {
     "file": "_internal/_hashlib.pyd",
-    "sha256": "65861f8a2d8cce40071621d5f51915190810f9fb6bf6b0516b31ccf7d8688d52",
+    "sha256": "6d9ee17cea0b59cedcc1e8d0f88bfe328b0c17ba212b7c6ca7cd24d45eb05a0e",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -73,7 +73,7 @@
   },
   {
     "file": "_internal/_lzma.pyd",
-    "sha256": "44b97eb784b9a9967e4a3ff8f07ca58bf1ed9d67ceb32a78f91a083de522a6c8",
+    "sha256": "ca9a9b3e4c5786d27f665f8c3517c2f95434d6a57f84ac2e6545686308b6d779",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -85,7 +85,7 @@
   },
   {
     "file": "_internal/_multiprocessing.pyd",
-    "sha256": "0a22560fc12ff18d4aca278d097dd84a9c259ab630e78e3947955396fcf31c02",
+    "sha256": "906107bf8a0b6f9e3863d410d3aefeda56dd898a91896e129f6b3c480fafb1ed",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -97,7 +97,7 @@
   },
   {
     "file": "_internal/_overlapped.pyd",
-    "sha256": "fadc960928386b36b254a87f8624205519976e42e3762258599fab64e05a47f8",
+    "sha256": "81b5130f8644e4a6cbcc7e7807d768e553d4497b3042b3f9830fbd619a58505f",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -109,7 +109,7 @@
   },
   {
     "file": "_internal/_queue.pyd",
-    "sha256": "808a40d153ec83351d8913c4df3974bf9dd485a426744d69849ad6edc61ed90a",
+    "sha256": "540b4fc7dd70d9974429890c09aa58fe91d0a4f141bc7aa7042cef6a8ce0b3f7",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -121,7 +121,7 @@
   },
   {
     "file": "_internal/_socket.pyd",
-    "sha256": "bfb6e7c0e73c53332c4f6ccb17b6db3c032e080000045829b543d6fda7f47b49",
+    "sha256": "af845a51f566b4c4f25866a0e4687366494254463b250567b2bbbf38539e7e85",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -133,7 +133,7 @@
   },
   {
     "file": "_internal/_ssl.pyd",
-    "sha256": "303544637df1230dfca2ccafe0487e91744a7970e1e8efd5c0a7cae99f368586",
+    "sha256": "6dd2b36121ad06dda8a038d2837179d33fa49232b0d15d6ac5e0e774a411c752",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -145,7 +145,7 @@
   },
   {
     "file": "_internal/_uuid.pyd",
-    "sha256": "6b4637c6d74041b3ddf891340596b3f9caa7c5a0c5ccf2784a23e25cef7e39e6",
+    "sha256": "7cf1167d749855aa2ab13fd5302697911912ea18da37bf203eac682e1deaa209",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -157,7 +157,7 @@
   },
   {
     "file": "_internal/_wmi.pyd",
-    "sha256": "ad06b834491810b1ea8049324dc3042202a000607c843ad6027708a7af57fd0e",
+    "sha256": "8fbdbf185b24572220702039069c9b06616e78f8c040652c9a045a31b6f86440",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -182,6 +182,18 @@
     "metadata": {}
   },
   {
+    "file": "_internal/concrt140.dll",
+    "sha256": "54716f0738af891f283d213b5c8d11b25896bb8ee3097d301eae718560cf974e",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
     "file": "_internal/cv2/cv2.pyd",
     "sha256": "eefedf6ee006a84bbc7d3df5ec66046429b8c95dbfd5f8f8f98c5772b91d6d48",
     "component": "OpenCV 5.0.0.93",
@@ -190,7 +202,7 @@
   },
   {
     "file": "_internal/libcrypto-3-x64.dll",
-    "sha256": "198458b0f04112b325dfd137703ff4afc0d2d4a90f5373be268b9ee16889e1ff",
+    "sha256": "34c6bc837e394e6819ceddb0ffc980724fcc7043b40fef1214097d87d1803671",
     "component": "OpenSSL",
     "license_basis": "Apache-2.0; exact bundled library version in PE inventory",
     "metadata": {
@@ -202,14 +214,14 @@
   },
   {
     "file": "_internal/libffi-8.dll",
-    "sha256": "a0555fea03342e7958413b3c80f10a866fdbca1ac52cc2650e0c264a1eaf541c",
-    "component": "libffi (exact build unconfirmed)",
-    "license_basis": "MIT reference included; exact binary provenance/copyright still requires verification",
+    "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a",
+    "component": "libffi 3.4.4 (CPython amd64 build)",
+    "license_basis": "MIT; pinned upstream binary and matching LICENSE in libffi-provenance.json",
     "metadata": {}
   },
   {
     "file": "_internal/libssl-3-x64.dll",
-    "sha256": "ccbda19ad0f855b7c2e1e9bf3e12e2ed8e9422dd520e1f39704753d5c6e08ad1",
+    "sha256": "6c47d627ba2a7a7c3f5325136bac153a0c2bf5d6f42dde053aea9ec1a0b017a8",
     "component": "OpenSSL",
     "license_basis": "Apache-2.0; exact bundled library version in PE inventory",
     "metadata": {
@@ -217,6 +229,66 @@
       "FileVersion": "3.6.5",
       "ProductVersion": "3.6.5",
       "LegalCopyright": "Copyright 1998-2026 The OpenSSL Authors. All rights reserved."
+    }
+  },
+  {
+    "file": "_internal/msvcp140.dll",
+    "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/msvcp140_1.dll",
+    "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/msvcp140_2.dll",
+    "sha256": "d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/msvcp140_atomic_wait.dll",
+    "sha256": "3d0cbfaa1bf3eecf5a3f4491d2960ee803cb994f30292c6adc4a07c498f60e2b",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/msvcp140_codecvt_ids.dll",
+    "sha256": "8a65c7596ef2e6938731f5a1058e7e40145b6d97967cc649231a076b9a608d78",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
     }
   },
   {
@@ -319,14 +391,14 @@
   },
   {
     "file": "_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
-    "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+    "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
     "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
     "metadata": {
       "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.40.33810.0",
+      "FileVersion": "14.51.36247.0",
       "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.40.33810.0"
+      "ProductVersion": "14.51.36247.0"
     }
   },
   {
@@ -366,7 +438,7 @@
   },
   {
     "file": "_internal/pyexpat.pyd",
-    "sha256": "5f729fe833b8e75bf1a4c690d303e5ce13b3a009e1354da9fc0afcc04f008270",
+    "sha256": "62595c7f39871fac69a94f734517abd722e0c1a044b68659232c832827b6745c",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -386,42 +458,6 @@
       "FileVersion": "156.0.8076.0",
       "ProductVersion": "156.0.8076.0",
       "LegalCopyright": "Copyright 2026 PDFium Authors. All rights reserved."
-    }
-  },
-  {
-    "file": "_internal/PySide6/MSVCP140.dll",
-    "sha256": "f6f1d55bfd64027820ddce48f9cd8cf46d53bfa34047e6acf4ef348d492a05cb",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
-    "file": "_internal/PySide6/MSVCP140_1.dll",
-    "sha256": "2be87527c41e1ba8aff48e326e0adcd4743516e0bbcc9304986c726e27de6aca",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
-    "file": "_internal/PySide6/MSVCP140_2.dll",
-    "sha256": "6a72ed8a87eae1671640bd1ca98eccb989f1772ae46ab84594e385bf6d4ac4fb",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
     }
   },
   {
@@ -760,32 +796,8 @@
     "metadata": {}
   },
   {
-    "file": "_internal/PySide6/VCRUNTIME140.dll",
-    "sha256": "a36e0cb185eb89533ed96d4568138f86a1315756a8b2644c5963a8ce23e32101",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
-    "file": "_internal/PySide6/VCRUNTIME140_1.dll",
-    "sha256": "302b1e160e858602490a55e32ae2e29ddfc0bec2a188e19550cb655cdaa58f9c",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistributable terms; bundled by upstream wheel",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
     "file": "_internal/python3.dll",
-    "sha256": "98c794f02cb86b5c80eeedf9aad1344c2d2919e01d288dd7b78b7f6d7ce70363",
+    "sha256": "55765f62ef3e1d3e3ef4a7ca5be614e9d41dbf361e2b29c00157551d352432af",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -797,7 +809,7 @@
   },
   {
     "file": "_internal/python312.dll",
-    "sha256": "ed24fdb0310df3b746bf692e4f0751ec957544ce1d8f1f50127bda24cb4f20f9",
+    "sha256": "92a55bba8955ae360285b2ead7d6e31ffab9e791bd2f4e77af9c79bb18419e59",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -809,7 +821,7 @@
   },
   {
     "file": "_internal/select.pyd",
-    "sha256": "2d06ada1773f9cabb938f60a52d3afd96fb8848e9cd450992d2072f42ab544dc",
+    "sha256": "9c30dfa9fa9689b16b6e8be3ba74f5a97d9dda79ddacc7e583d87b199bf19f35",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -817,18 +829,6 @@
       "FileVersion": "3.12.14",
       "LegalCopyright": "Copyright © 2001-2023 Python Software Foundation. Copyright © 2000 BeOpen.com. Copyright © 1995-2001 CNRI. Copyright © 1991-1995 SMC.",
       "ProductVersion": "3.12.14"
-    }
-  },
-  {
-    "file": "_internal/shiboken6/MSVCP140.dll",
-    "sha256": "1ba4d7c0a95d375da138a057a57593b33510ad5bda6c5e2686afd68faa5b4231",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
     }
   },
   {
@@ -846,32 +846,8 @@
     "metadata": {}
   },
   {
-    "file": "_internal/shiboken6/VCRUNTIME140.dll",
-    "sha256": "e7be9112ee9a5b9f44b44bff24cb761cca9b1ed7550b612f77b70edfcf5fdabf",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
-    "file": "_internal/shiboken6/VCRUNTIME140_1.dll",
-    "sha256": "f02cd4a862b85a9a3153d27e15e5a213f5df8e3d77004ed2e87b8a7e8873d97c",
-    "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
-    "metadata": {
-      "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
-      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
-    }
-  },
-  {
     "file": "_internal/unicodedata.pyd",
-    "sha256": "952078613973116a6aaef8d0b6a2dbc98b72fedb492dfca3f1cbdc0fdd678bcc",
+    "sha256": "55730fbcc042472d06c9d2fc021f8f213ae1441ea30cfee4765a81c41f7ae7e5",
     "component": "Python runtime or extension",
     "license_basis": "Python PSF and extension package notices; review per file",
     "metadata": {
@@ -882,32 +858,56 @@
     }
   },
   {
-    "file": "_internal/VCRUNTIME140.dll",
-    "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+    "file": "_internal/vccorlib140.dll",
+    "sha256": "09f93d5ff96ae09767f3e1af3cdd43a5a58f2598654fc63089429bb6f9f4737f",
     "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
     "metadata": {
       "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
+      "FileVersion": "14.51.36247.0",
       "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
+      "ProductVersion": "14.51.36247.0"
     }
   },
   {
-    "file": "_internal/VCRUNTIME140_1.dll",
-    "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+    "file": "_internal/vcruntime140.dll",
+    "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
     "component": "Microsoft Visual C++ runtime",
-    "license_basis": "Microsoft redistribution terms; includes wheel-renamed runtime copies",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
     "metadata": {
       "CompanyName": "Microsoft Corporation",
-      "FileVersion": "14.44.35211.0",
+      "FileVersion": "14.51.36247.0",
       "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
-      "ProductVersion": "14.44.35211.0"
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/vcruntime140_1.dll",
+    "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
+    }
+  },
+  {
+    "file": "_internal/vcruntime140_threads.dll",
+    "sha256": "40f39e8cee5f5a531b4010e18b807e8fe265b908dc58f959ecb7ebc6ea6cb11a",
+    "component": "Microsoft Visual C++ runtime",
+    "license_basis": "Visual Studio Community 2026 release CRT; unmodified bytes and provenance in microsoft-runtime-provenance.json",
+    "metadata": {
+      "CompanyName": "Microsoft Corporation",
+      "FileVersion": "14.51.36247.0",
+      "LegalCopyright": "© Microsoft Corporation. All rights reserved.",
+      "ProductVersion": "14.51.36247.0"
     }
   },
   {
     "file": "FolioScan-3.2.exe",
-    "sha256": "028c7cec4d938974163f04ccc6b72b430969994d1ef41a087e6282a0e9739b9c",
+    "sha256": "781fe129ed7af69f583aa3c1491e098940f1dcb5fc4f65e85604898b91033fd9",
     "component": "FolioScan / PyInstaller bootloader",
     "license_basis": "PolyForm Noncommercial / PyInstaller GPL with bootloader exception",
     "metadata": {

@@ -17,8 +17,8 @@ def run(destination):
         kernel.GetModuleHandleW.restype = ctypes.c_void_p
         kernel.GetModuleFileNameW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p, ctypes.c_uint]
         paths = []
-        base = Path(sys.executable).parent
-        for name in ['Qt6Core.dll','Qt6Gui.dll','Qt6Widgets.dll','pyside6.abi3.dll','shiboken6.abi3.dll']:
+        base = Path(sys._MEIPASS) if getattr(sys, 'frozen', False) else Path(sys.executable).parent
+        for name in ['Qt6Core.dll','Qt6Gui.dll','Qt6Widgets.dll','pyside6.abi3.dll','shiboken6.abi3.dll','libffi-8.dll','vcruntime140.dll','vcruntime140_1.dll','msvcp140.dll']:
             handle=kernel.GetModuleHandleW(name)
             if not handle: raise RuntimeError('Module not loaded: '+name)
             buffer=ctypes.create_unicode_buffer(32768)

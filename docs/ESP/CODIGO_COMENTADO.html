@@ -823,15 +823,18 @@
 <tr><td>821</td><td><pre>    app.setStyle(&quot;Fusion&quot;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
 <tr><td>822</td><td><pre>    app.setApplicationName(&quot;FolioScan&quot;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
 <tr><td>823</td><td><pre>    configure_fonts()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>824</td><td><pre>    from v3 import WindowV3</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
-<tr><td>825</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>826</td><td><pre>    window = WindowV3()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>827</td><td><pre>    window.show()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>828</td><td><pre>    sys.exit(app.exec())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>829</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>830</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
-<tr><td>831</td><td><pre>if __name__ == &quot;__main__&quot;:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>832</td><td><pre>    main()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>824</td><td><pre>    from runtime_terms import accept_runtime_terms</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>825</td><td><pre>    if not accept_runtime_terms():</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>826</td><td><pre>        return</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>827</td><td><pre>    from v3 import WindowV3</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>828</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>829</td><td><pre>    window = WindowV3()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>830</td><td><pre>    window.show()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>831</td><td><pre>    sys.exit(app.exec())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>832</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>833</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>834</td><td><pre>if __name__ == &quot;__main__&quot;:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>835</td><td><pre>    main()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
 </table></details>
 <details><summary>desktop\collect_licenses.py</summary><table>
 <tr><td>1</td><td><pre>import importlib.metadata as metadata</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
@@ -1783,6 +1786,63 @@
 <tr><td>244</td><td><pre>            return</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
 <tr><td>245</td><td><pre>        super().accept()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
 </table></details>
+<details><summary>desktop\runtime_prerequisites.py</summary><table>
+<tr><td>1</td><td><pre>&quot;&quot;&quot;Allow compatible LGPL library replacements before Qt is imported.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>2</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>3</td><td><pre>Normal execution needs only the EXE. Advanced users can supply an optional</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>4</td><td><pre>Bibliotecas folder beside it, with PySide6/shiboken6 subdirectories. In onefile</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>5</td><td><pre>mode, replacements are copied into this run&#x27;s private extraction directory.</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>6</td><td><pre>No system installation, network download or runtime dependency is required.</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>7</td><td><pre>&quot;&quot;&quot;</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>8</td><td><pre>import sys</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>9</td><td><pre>import shutil</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>10</td><td><pre>from pathlib import Path</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>11</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>12</td><td><pre>if getattr(sys, &#x27;frozen&#x27;, False):</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>13</td><td><pre>    override = Path(sys.executable).parent / &#x27;Bibliotecas&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>14</td><td><pre>    for component in (&#x27;PySide6&#x27;, &#x27;shiboken6&#x27;):</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>15</td><td><pre>        source = override / component</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>16</td><td><pre>        if source.is_dir():</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>17</td><td><pre>            shutil.copytree(source, Path(sys._MEIPASS) / component, dirs_exist_ok=True)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+</table></details>
+<details><summary>desktop\runtime_terms.py</summary><table>
+<tr><td>1</td><td><pre>&quot;&quot;&quot;Present the bundled Microsoft runtime terms once, storing consent portably.&quot;&quot;&quot;</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>2</td><td><pre>from pathlib import Path</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>3</td><td><pre>import sys, hashlib</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>4</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>5</td><td><pre>def accept_runtime_terms(parent=None):</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>6</td><td><pre>    if not getattr(sys, &#x27;frozen&#x27;, False):</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>7</td><td><pre>        return True</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>8</td><td><pre>    from PySide6.QtWidgets import QDialog, QVBoxLayout, QTextBrowser, QDialogButtonBox, QLabel</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>9</td><td><pre>    text = (Path(sys._MEIPASS) / &#x27;legal/dependencies/Native/Visual-C-V14-License-Redistributable_and_Runtime_ENU.txt&#x27;).read_text(&#x27;utf-8&#x27;)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>10</td><td><pre>    digest = hashlib.sha256(text.encode(&#x27;utf-8&#x27;)).hexdigest()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>11</td><td><pre>    marker = Path(sys.executable).parent / &#x27;Datos/componentes-microsoft-aceptados.txt&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>12</td><td><pre>    if marker.is_file() and marker.read_text(&#x27;utf-8&#x27;) == digest:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>13</td><td><pre>        return True</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>14</td><td><pre>    dialog = QDialog(parent)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>15</td><td><pre>    dialog.setWindowTitle(&#x27;FolioScan · Microsoft runtime terms&#x27;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>16</td><td><pre>    dialog.resize(760, 560)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>17</td><td><pre>    layout = QVBoxLayout(dialog)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>18</td><td><pre>    label = QLabel(&#x27;Condiciones de los componentes Microsoft incluidos / Bundled Microsoft component terms.\n&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>19</td><td><pre>                   &#x27;Solo afectan a esos componentes; FolioScan y Qt conservan sus propias licencias.\n&#x27;</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>20</td><td><pre>                   &#x27;These terms apply only to Microsoft components, not to FolioScan or Qt.&#x27;)</pre></td><td>Continúa la declaración o expresión del bloque que la contiene.</td></tr>
+<tr><td>21</td><td><pre>    label.setWordWrap(True)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>22</td><td><pre>    layout.addWidget(label)</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>23</td><td><pre>    browser = QTextBrowser()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>24</td><td><pre>    browser.setPlainText(text)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>25</td><td><pre>    layout.addWidget(browser)</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>26</td><td><pre>    buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>27</td><td><pre>    buttons.button(QDialogButtonBox.Ok).setText(&#x27;Acepto / I agree&#x27;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>28</td><td><pre>    buttons.button(QDialogButtonBox.Cancel).setText(&#x27;Salir / Exit&#x27;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>29</td><td><pre>    buttons.accepted.connect(dialog.accept)</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>30</td><td><pre>    buttons.rejected.connect(dialog.reject)</pre></td><td>Conecta un evento del control con el comportamiento que debe ejecutarse.</td></tr>
+<tr><td>31</td><td><pre>    layout.addWidget(buttons)</pre></td><td>Incorpora un control o grupo a la estructura visual.</td></tr>
+<tr><td>32</td><td><pre>    if dialog.exec() != QDialog.Accepted:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>33</td><td><pre>        return False</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+<tr><td>34</td><td><pre>    marker.parent.mkdir(parents=True, exist_ok=True)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>35</td><td><pre>    marker.write_text(digest, encoding=&#x27;utf-8&#x27;)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>36</td><td><pre>    return True</pre></td><td>Devuelve el resultado o termina esta rama de la operación.</td></tr>
+</table></details>
 <details><summary>desktop\smoke.py</summary><table>
 <tr><td>1</td><td><pre>&quot;&quot;&quot;Offline packaged-application smoke test; does not access user documents.&quot;&quot;&quot;</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
 <tr><td>2</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
@@ -1886,11 +1946,14 @@
 <tr><td>100</td><td><pre>            }</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
 <tr><td>101</td><td><pre>    except Exception:</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
 <tr><td>102</td><td><pre>        result[&quot;error&quot;] = traceback.format_exc()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>103</td><td><pre>    Path(report_path).write_text(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
-<tr><td>104</td><td><pre>        json.dumps(result, ensure_ascii=False, indent=2), encoding=&quot;utf-8&quot;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>105</td><td><pre>    )</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
-<tr><td>106</td><td><pre>    if not result[&quot;ok&quot;]:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
-<tr><td>107</td><td><pre>        raise SystemExit(1)</pre></td><td>Interrumpe la operación con un error explícito para que la interfaz lo comunique.</td></tr>
+<tr><td>103</td><td><pre>    import sys, hashlib</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>104</td><td><pre>    if getattr(sys, &#x27;frozen&#x27;, False):</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>105</td><td><pre>        result[&#x27;exe_sha256&#x27;] = hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest()</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>106</td><td><pre>    Path(report_path).write_text(</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>107</td><td><pre>        json.dumps(result, ensure_ascii=False, indent=2), encoding=&quot;utf-8&quot;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>108</td><td><pre>    )</pre></td><td>Cierra el bloque o la expresión iniciados en líneas anteriores.</td></tr>
+<tr><td>109</td><td><pre>    if not result[&quot;ok&quot;]:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>110</td><td><pre>        raise SystemExit(1)</pre></td><td>Interrumpe la operación con un error explícito para que la interfaz lo comunique.</td></tr>
 </table></details>
 <details><summary>desktop\test_core.py</summary><table>
 <tr><td>1</td><td><pre>import unittest</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
@@ -2136,6 +2199,44 @@
 <tr><td>96</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
 <tr><td>97</td><td><pre>if __name__ == &quot;__main__&quot;:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
 <tr><td>98</td><td><pre>    unittest.main(verbosity=2)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+</table></details>
+<details><summary>desktop\test_runtime_terms.py</summary><table>
+<tr><td>1</td><td><pre>&quot;&quot;&quot;Exercise consent/cancellation with synthetic terms and a temporary data folder.&quot;&quot;&quot;</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>2</td><td><pre>import os</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>3</td><td><pre>os.environ[&#x27;QT_QPA_PLATFORM&#x27;] = &#x27;offscreen&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>4</td><td><pre>import sys, tempfile, unittest</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>5</td><td><pre>from pathlib import Path</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>6</td><td><pre>from unittest.mock import patch</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>7</td><td><pre>from PySide6.QtWidgets import QApplication, QDialog</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>8</td><td><pre>from PySide6.QtCore import QTimer</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>9</td><td><pre>from runtime_terms import accept_runtime_terms</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
+<tr><td>10</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>11</td><td><pre>class RuntimeTermsTests(unittest.TestCase):</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>12</td><td><pre>    def test_cancel_accept_and_remember(self):</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>13</td><td><pre>        app = QApplication.instance() or QApplication([])</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>14</td><td><pre>        with tempfile.TemporaryDirectory() as directory:</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>15</td><td><pre>            root = Path(directory)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>16</td><td><pre>            license_file = root/&#x27;legal/dependencies/Native/Visual-C-V14-License-Redistributable_and_Runtime_ENU.txt&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>17</td><td><pre>            license_file.parent.mkdir(parents=True)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>18</td><td><pre>            license_file.write_text(&#x27;SYNTHETIC TEST TERMS — not a license agreement.&#x27;, &#x27;utf-8&#x27;)</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>19</td><td><pre>            marker = root/&#x27;Datos/componentes-microsoft-aceptados.txt&#x27;</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
+<tr><td>20</td><td><pre>            def respond(accepted):</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>21</td><td><pre>                for widget in app.topLevelWidgets():</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>22</td><td><pre>                    if isinstance(widget, QDialog) and widget.isVisible():</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>23</td><td><pre>                        widget.accept() if accepted else widget.reject()</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>24</td><td><pre>            with patch.object(sys,&#x27;frozen&#x27;,True,create=True), patch.object(sys,&#x27;_MEIPASS&#x27;,str(root),create=True), patch.object(sys,&#x27;executable&#x27;,str(root/&#x27;test.exe&#x27;)):</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>25</td><td><pre>                QTimer.singleShot(0,lambda:respond(False))</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>26</td><td><pre>                self.assertFalse(accept_runtime_terms())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>27</td><td><pre>                self.assertFalse(marker.exists())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>28</td><td><pre>                QTimer.singleShot(0,lambda:respond(True))</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>29</td><td><pre>                self.assertTrue(accept_runtime_terms())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>30</td><td><pre>                self.assertTrue(marker.exists())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>31</td><td><pre>                # A remembered decision must not create another dialog.</pre></td><td>Comentario o documentación del comportamiento.</td></tr>
+<tr><td>32</td><td><pre>                with patch(&#x27;PySide6.QtWidgets.QDialog&#x27;,side_effect=AssertionError(&#x27;Unexpected prompt&#x27;)):</pre></td><td>Gestiona recursos y errores para cerrar archivos y conservar datos ante fallos.</td></tr>
+<tr><td>33</td><td><pre>                    self.assertTrue(accept_runtime_terms())</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
+<tr><td>34</td><td><pre></pre></td><td>Separación visual entre bloques.</td></tr>
+<tr><td>35</td><td><pre>if __name__ == &#x27;__main__&#x27;:</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>36</td><td><pre>    unittest.main()</pre></td><td>Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.</td></tr>
 </table></details>
 <details><summary>desktop\test_ui.py</summary><table>
 <tr><td>1</td><td><pre>import os</pre></td><td>Importa los tipos o funciones que se usan en este módulo.</td></tr>
@@ -3102,8 +3203,8 @@
 <tr><td>17</td><td><pre>        kernel.GetModuleHandleW.restype = ctypes.c_void_p</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
 <tr><td>18</td><td><pre>        kernel.GetModuleFileNameW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p, ctypes.c_uint]</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
 <tr><td>19</td><td><pre>        paths = []</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>20</td><td><pre>        base = Path(sys.executable).parent</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
-<tr><td>21</td><td><pre>        for name in [&#x27;Qt6Core.dll&#x27;,&#x27;Qt6Gui.dll&#x27;,&#x27;Qt6Widgets.dll&#x27;,&#x27;pyside6.abi3.dll&#x27;,&#x27;shiboken6.abi3.dll&#x27;]:</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
+<tr><td>20</td><td><pre>        base = Path(sys._MEIPASS) if getattr(sys, &#x27;frozen&#x27;, False) else Path(sys.executable).parent</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
+<tr><td>21</td><td><pre>        for name in [&#x27;Qt6Core.dll&#x27;,&#x27;Qt6Gui.dll&#x27;,&#x27;Qt6Widgets.dll&#x27;,&#x27;pyside6.abi3.dll&#x27;,&#x27;shiboken6.abi3.dll&#x27;,&#x27;libffi-8.dll&#x27;,&#x27;vcruntime140.dll&#x27;,&#x27;vcruntime140_1.dll&#x27;,&#x27;msvcp140.dll&#x27;]:</pre></td><td>Recorre los elementos o repite la operación mientras se cumple la condición.</td></tr>
 <tr><td>22</td><td><pre>            handle=kernel.GetModuleHandleW(name)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>
 <tr><td>23</td><td><pre>            if not handle: raise RuntimeError(&#x27;Module not loaded: &#x27;+name)</pre></td><td>Selecciona la rama que corresponde a la condición o al caso indicado.</td></tr>
 <tr><td>24</td><td><pre>            buffer=ctypes.create_unicode_buffer(32768)</pre></td><td>Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.</td></tr>

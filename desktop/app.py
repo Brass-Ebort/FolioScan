@@ -821,6 +821,9 @@ def main():
     app.setStyle("Fusion")
     app.setApplicationName("FolioScan")
     configure_fonts()
+    from runtime_terms import accept_runtime_terms
+    if not accept_runtime_terms():
+        return
     from v3 import WindowV3
 
     window = WindowV3()

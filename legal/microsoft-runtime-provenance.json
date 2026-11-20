@@ -1,0 +1,129 @@
+{
+  "product": "Visual Studio Community 2026",
+  "version": "18.11.12328.437",
+  "stable_complete_installation": true,
+  "runtime_directory": "14.51.36231",
+  "source": "Installed Visual Studio Community release CRT, not System32 or wheel copies",
+  "license_url": "https://visualstudio.microsoft.com/license-terms/vs2026-ga-community/",
+  "redist_list": "https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution",
+  "files": [
+    {
+      "source_name": "concrt140.dll",
+      "destination": "concrt140.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/concrt140.dll",
+      "sha256": "54716f0738af891f283d213b5c8d11b25896bb8ee3097d301eae718560cf974e"
+    },
+    {
+      "source_name": "msvcp140.dll",
+      "destination": "msvcp140.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    },
+    {
+      "source_name": "msvcp140_1.dll",
+      "destination": "msvcp140_1.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140_1.dll",
+      "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982"
+    },
+    {
+      "source_name": "msvcp140_2.dll",
+      "destination": "msvcp140_2.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140_2.dll",
+      "sha256": "d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838"
+    },
+    {
+      "source_name": "msvcp140_atomic_wait.dll",
+      "destination": "msvcp140_atomic_wait.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140_atomic_wait.dll",
+      "sha256": "3d0cbfaa1bf3eecf5a3f4491d2960ee803cb994f30292c6adc4a07c498f60e2b"
+    },
+    {
+      "source_name": "msvcp140_codecvt_ids.dll",
+      "destination": "msvcp140_codecvt_ids.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140_codecvt_ids.dll",
+      "sha256": "8a65c7596ef2e6938731f5a1058e7e40145b6d97967cc649231a076b9a608d78"
+    },
+    {
+      "source_name": "vccorlib140.dll",
+      "destination": "vccorlib140.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/vccorlib140.dll",
+      "sha256": "09f93d5ff96ae09767f3e1af3cdd43a5a58f2598654fc63089429bb6f9f4737f"
+    },
+    {
+      "source_name": "vcruntime140.dll",
+      "destination": "vcruntime140.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/vcruntime140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "source_name": "vcruntime140_1.dll",
+      "destination": "vcruntime140_1.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/vcruntime140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "source_name": "vcruntime140_threads.dll",
+      "destination": "vcruntime140_threads.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/vcruntime140_threads.dll",
+      "sha256": "40f39e8cee5f5a531b4010e18b807e8fe265b908dc58f959ecb7ebc6ea6cb11a"
+    },
+    {
+      "source_name": "msvcp140.dll",
+      "destination": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+      "source_relative": "VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT/msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    }
+  ],
+  "signatures": [
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "concrt140.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "msvcp140.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "msvcp140_1.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "msvcp140_2.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "msvcp140_atomic_wait.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "msvcp140_codecvt_ids.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "vccorlib140.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "vcruntime140.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "vcruntime140_1.dll"
+    },
+    {
+      "signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "status": "Valid",
+      "file": "vcruntime140_threads.dll"
+    }
+  ]
+}

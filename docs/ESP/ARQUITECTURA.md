@@ -16,7 +16,7 @@
 - `v3.py`: interfaz vigente, biblioteca persistente, gestión del dispositivo y confirmación de ampliaciones. `Datos/preferencias.ini` sustituye al registro como almacenamiento de ajustes de V3.
 - `layout_editor.py`: composición por página; `core.py`: operaciones PDF, imagen y transacciones, comprobables sin interfaz.
 - `i18n.py`: traducciones locales. Conserva el texto fuente de los controles para que cambiar de idioma sea reversible.
-- `desktop.spec`: empaquetado PyInstaller onedir con bibliotecas externas reemplazables. Excluye DLL del sistema y las ICU ajenas encontradas en PATH que causaron el error QtCore de V2.
+- `desktop.spec`: EXE autónomo onefile y copia onedir para auditorías. Bibliotecas permite sustituir Qt/PySide/Shiboken compatibles antes de cargarlos.
 
 ## Geometría
 

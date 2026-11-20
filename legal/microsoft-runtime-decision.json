@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-18",
+  "decision": "Do not redistribute Microsoft DLLs; require the official installed x64 runtime.",
+  "minimum_version": "14.44.35211.0",
+  "official_download": "https://aka.ms/vc14/vc_redist.x64.exe",
+  "references": [
+    "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
+    "https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files"
+  ],
+  "local_alias": "NumPy hash-renamed MSVCP140 is copied from System32 on the user machine and excluded from release ZIPs.",
+  "scope": "No assumption that the distributor holds a Visual Studio redistribution license.",
+  "superseded": "2026-11-20: stable Visual Studio Community 2026 installation found. Standalone release includes its unmodified release CRT; see microsoft-runtime-provenance.json. Previous external-runtime choice is no longer the final distribution."
+}

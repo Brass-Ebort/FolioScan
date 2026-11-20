@@ -24,7 +24,7 @@ py -3.12 -m venv .venv
 ./Compilar-Windows.ps1
 ```
 
-`-SkipFunctionalTests` skips the application test suite when explicitly requested. The output is now `desktop/dist/FolioScan-3.2/`, containing the EXE and `_internal`. Keep the whole folder. It does not require Python to be installed on the user's PC. It is portable but no longer a standalone single-file EXE. Personal settings/documents go in Datos next to the EXE. The EXE has no Authenticode signature.
+`-SkipFunctionalTests` skips tests. Distribute `desktop/dist/FolioScan-3.2-portable.exe` as a single standalone EXE. The onedir output is for binary audits only. No Python or Visual C++ installation is needed by end users. Data stays in Datos beside the EXE. The EXE is not Authenticode-signed.
 
 The spec excludes unrelated system/ICU DLLs found on PATH. It also excludes the unused FFmpeg video backend (the camera explicitly uses DirectShow) and the Mesa software OpenGL fallback (the interface uses raster QWidget controls). These exclusions do not establish hardware compatibility; the owner performs camera and functional testing.
 
@@ -39,3 +39,6 @@ The Windows build produces replaceable DLLs. `scripts/audit_windows_binary_inven
 `scripts/sync_translations.py` validates/copies the shared offline catalogue. `scripts/generate_bilingual_guide.py` regenerates documentation without changing application sources. `scripts/prepare_publication.py` prepares the public candidate folder and SHA-256 hashes; it does not approve a release or upload anything.
 
 Do not publish SDK/JDK/Gradle downloads, build caches, virtual environments, Datos, personal files or signing material. Source comments and the separate reading guide do not increase the compiled application size significantly; most Windows size comes from its runtime libraries.
+
+## Windows runtime
+Builders need a properly licensed stable Visual Studio Community 2026 installation with release CRT redistribution rights. The preparation scripts verify libffi and stage unmodified VC/Redist files. End users do not install a runtime. Package using scripts/prepare_publication.py.

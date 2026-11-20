@@ -21,7 +21,7 @@ Las versiones exactas de Windows constan en `desktop/requirements.txt`; las de A
 
 Los textos LGPLv3/GPLv3 del parche fueron cotejados con GNU; LICENSE coincide con el texto oficial de PolyForm Noncommercial 1.0.0 sin cambiar sus términos. Se conservaron los avisos originales de los paquetes, incluso el aviso comercial de Qt, y se añadieron los textos y avisos de la opción LGPL extraídos de fuentes oficiales. No se afirma que cualquier módulo de Qt pueda usarse bajo LGPL: el inventario limita la distribución a los módulos identificados.
 
-Windows ahora se entrega como carpeta portable dentro de un ZIP. `_internal/legal` contiene los avisos y se abre desde Información adicional; la ventana también identifica Qt/PySide/Shiboken y LGPLv3. Consulte [AVISO_QT_LGPL.md](AVISO_QT_LGPL.md) para fuentes, permisos y prueba efectiva de sustitución. La carpeta `_internal` es necesaria para ejecutar el programa.
+Windows se entrega como un único EXE portable. Los avisos integrados se extraen temporalmente y se abren desde Información adicional. Consulte [AVISO_QT_LGPL.md](AVISO_QT_LGPL.md) para fuentes y sustitución mediante la carpeta opcional Bibliotecas.
 
 El inventario nativo final y sus hashes están en `legal/windows-binary-inventory.json`. Los metadatos del entorno incluyen herramientas de compilación que no necesariamente se distribuyen. Los 240 binarios Qt/PySide/Shiboken comparados corresponden al entorno de las ruedas originales, no a 240 binarios dentro de la entrega.
 
@@ -31,8 +31,6 @@ Android: 63 artefactos de ejecución correspondientes a 60 coordenadas únicas, 
 
 ## Comprobaciones no cerradas
 
-La versión/procedencia exacta de `libffi-8.dll` suministrada por el runtime Python de desarrollo no está acreditada con un manifiesto de distribución. Se incluye una licencia MIT de referencia de libffi, identificada como referencia, pero no se da por cerrado su cotejo con ese binario. Debe localizarse su paquete original con avisos o sustituirse por un runtime documentado y comprobar su compatibilidad.
+libffi 3.4.4 amd64 procede del repositorio oficial python/cpython-bin-deps, commit 94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d. Se incluye el LICENSE exacto de ese commit: copyright 1996–2022 Anthony Green, Red Hat, Inc and others, permiso MIT. URL y SHA-256 en legal/libffi-provenance.json. La copia anterior de origen no acreditado no se distribuye.
 
-Las DLL Microsoft Visual C++ conservan su copyright y proceden de las ruedas/runtime utilizados; debe archivarse la licencia de redistribución aplicable y comprobar su derecho de redistribución. La lista oficial de redistribuibles no reemplaza los términos aplicables al distribuidor: https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution . No se aplica PolyForm ni LGPL a esas DLL.
-
-No se declara conforme el conjunto Windows hasta cerrar estos puntos. Los textos oficiales de terceros prevalecen sobre este resumen. Véase INFORME_FINAL_PUBLICACION.md.
+Se incluyen DLL release de Microsoft Visual C++ obtenidas del directorio VC/Redist de la instalación estable Visual Studio Community 2026 del titular. Se verifican firmas y bytes; no se incluyen debug_nonredist ni componentes preview. Véase legal/microsoft-runtime-provenance.json y los términos originales en desktop/licenses/Native. Se usan los derechos de la licencia Community para el desarrollo individual de esta aplicación y la lista oficial: https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution . Los usuarios aceptan las condiciones del runtime al primer inicio. Los distribuidores deben mantener esas protecciones, avisos y condiciones y distribuirlos solo como parte de la aplicación. FolioScan aporta la funcionalidad principal. No se aplica PolyForm ni LGPL a las DLL Microsoft, ni se modifican sus bytes. El nombre alternativo de NumPy conserva exactamente el mismo contenido.

@@ -72,6 +72,9 @@ En el árbol reorganizado, los fuentes actuales están en `herramientas de desar
 
 ## Revisión de publicación
 
-La entrega Windows pasa a onedir: distribuye toda la carpeta `desktop/dist/FolioScan-3.2`, incluido `_internal`, en un ZIP. Los avisos se abren desde Información adicional. Las DLL pueden reemplazarse sin reconstruir FolioScan, respetando ABI, arquitectura y versiones compatibles. Consulta `../../AVISO_QT_LGPL.md`. `Compilar-Windows.ps1 -SkipFunctionalTests` omite las pruebas funcionales cuando el titular las realiza por separado.
+La entrega Windows es `desktop/dist/FolioScan-3.2-portable.exe`, un único archivo autónomo. La carpeta onedir solo sirve para auditoría de binarios. Bibliotecas permite reemplazos LGPL compatibles; consulta `../../AVISO_QT_LGPL.md`.
 
 `python scripts/prepare_publication.py` prepara candidatos y hashes; no aprueba automáticamente su publicación. Consulta el informe final. `python scripts/generate_bilingual_guide.py` genera las guías ESP/ENG sin reescribir código.
+
+## Runtime Windows
+Para compilar se requiere Visual Studio Community 2026 con derechos de redistribución. Los scripts verifican libffi y toman el CRT release de VC/Redist. El usuario final no instala dependencias. Publica mediante scripts/prepare_publication.py.

@@ -1,50 +1,27 @@
-# Revisión final FolioScan V3.2 — 12 de noviembre de 2026
+# FolioScan V3.2 — EXE portable autónomo — 20/11/2026
 
-## Conclusión: NO LISTO PARA PUBLICAR
+Windows se entrega como **FolioScan-3.2.exe**, un único archivo que se puede copiar y ejecutar sin instalar Python ni Visual C++. El ZIP contiene ese mismo EXE e instrucciones. Las dependencias se extraen a una carpeta temporal privada durante la ejecución. Datos se crea junto al EXE: solo es necesario copiarla si se quieren conservar documentos y preferencias. Bibliotecas es opcional y permite reemplazos LGPL compatibles.
 
-Los candidatos están preparados, pero la revisión no cierra la procedencia exacta de libffi ni la base documental de redistribución de los runtimes Microsoft. No publique la Release completa hasta resolver esos puntos. No se ha publicado ni enviado ningún archivo a GitHub.
+## Corrección de la entrega anterior
+La entrega anterior exigía conservar _internal e instalar un runtime externo; no cumplía el objetivo de EXE autónomo. Se ha corregido el empaquetado sin rediseñar la interfaz ni modificar Android. Se ha añadido únicamente la presentación de condiciones Microsoft al primer inicio, con aceptación/cancelación y recuerdo de la decisión junto a los datos portables.
 
-## Cambios realizados
+## Procedencia y condiciones
+- **libffi 3.4.4 amd64:** copia oficial python/cpython-bin-deps, commit 94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d. SHA-256 eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a. LICENSE exacto del mismo commit, copyright 1996–2022 Anthony Green, Red Hat, Inc and others. El script verifica los bytes antes de compilar; no se atribuye esa procedencia a la DLL antigua.
+- **Microsoft:** se ha encontrado una instalación completa y estable de Visual Studio Community 2026 en el equipo, dato no comprobado en la entrega anterior. Se toman las DLL release de VC/Redist, no de System32 ni de las ruedas Python. Sus diez firmas Authenticode son válidas y se conservan sus bytes; el alias NumPy tiene el mismo contenido. No se incluyen debug_nonredist ni previews. La licencia Community permite el desarrollo individual de aplicaciones propias y redistribuir los componentes listados, con obligaciones. Se archivan los documentos oficiales íntegros y una extracción de texto. El programa aporta funcionalidad principal, conserva avisos, no atribuye respaldo Microsoft y muestra las condiciones de uso del runtime. Los distribuidores deben conservar sus condiciones protectoras, cumplir las restricciones de distribución e indemnidad previstas por la licencia, y no aplicar PolyForm/LGPL al código Microsoft. Quien compile/redistribuya debe disponer de derechos aplicables; la presencia del software no es una certificación jurídica universal. Evidencia: legal/microsoft-runtime-provenance.json.
+- **Qt/PySide/Shiboken 6.12.0:** se conservan avisos y textos LGPL/GPL, las fuentes oficiales completas de qtbase, qtsvg, qtimageformats y pyside-setup, y su manifiesto. El paquete de fuentes debe acompañar al EXE en la Release. Se permite expresamente la ingeniería inversa necesaria para depurar modificaciones LGPL. Bibliotecas/PySide6 y Bibliotecas/shiboken6 permiten sustituir componentes compatibles sin recompilar ni comprobar firmas. La prueba modifica únicamente la marca temporal COFF de Qt6Core y verifica los bytes efectivamente cargados; no demuestra compatibilidad de cambios arbitrarios.
+- **Seguridad:** pypdf 7.1.0 y setuptools 84.2.1 corrigen los rangos afectados de las once alertas aportadas. legal/dependency-security-check.json registra la consulta de avisos para las versiones fijadas. No es garantía de ausencia de vulnerabilidades desconocidas.
 
-- Integrado el parche de licencias después de examinar sus 12 entradas. README conserva las novedades V3.2 y el giro de hoja. LICENSE/PolyForm y NOTICE se conservan; los textos PolyForm, LGPLv3 y GPLv3 coinciden con los oficiales al normalizar espacios y saltos de línea.
-- Windows cambia de onefile a onedir: EXE y DLL accesibles, conservando Datos junto al EXE. Se añade acceso a avisos desde Información adicional. No se puede trasladar solamente el EXE.
-- Descargadas las fuentes oficiales completas de qtbase, qtsvg, qtimageformats y pyside-setup 6.12.0, con URL/SHA-256. Se ofrecen en un paquete separado para acompañar al ZIP Windows en la misma Release.
-- Comparados 240 binarios DLL/PYD del entorno PySide/Shiboken con sus ruedas originales de PyPI: ningún desajuste. El paquete final contiene un subconjunto, inventariado por ruta y hash; no se confunde el entorno de construcción con lo realmente distribuido.
-- Excluidos del paquete el backend FFmpeg sin uso (captura por DirectShow), el fallback Mesa/OpenGL sin uso y datos ICU huérfanos. No se cambia el código de cámara ni el procesamiento de documentos. Los demás componentes mantienen sus avisos originales, incluidos avisos de terceros incorporados en las fuentes Qt y en las ruedas.
-- Inventario Gradle: 63 artefactos de producción, 60 coordenadas únicas. Conservados POM y 22 avisos integrados; añadidos los textos oficiales PDFBox Android v2.0.27.0, Bouncy Castle r1rv72 y Apache-2.0. ListenableFuture se resuelve mediante el POM padre Guava 26.0-android.
-- Android incorpora una página local de licencias, accesible en Configuración, con JavaScript desactivado. Incluye aviso de las métricas técnicas de ML Kit y enlaces a las condiciones Google. La apertura de referencias externas corresponde a una acción del usuario.
-- Documentación agrupada en docs/ESP y docs/ENG, con guías de compilación, arquitectura, privacidad, validación y lectura del código. Los comentarios del código original se conservan; las explicaciones de la guía se ofrecen en ambos idiomas. Los textos jurídicos originales no se sustituyen por traducciones.
-- Modificaciones permanentes en el código y scripts de compilación/empaquetado. Las versiones históricas y los archivos personales no se han modificado. No se regenera ninguna clave.
+## Verificación y límites
+Se han ejecutado 21 pruebas Windows, incluidas las operaciones PDF/imagen, arrastrar/soltar, idiomas y la aceptación/cancelación de condiciones usando texto sintético. La autoprueba del EXE verifica 13 grupos de funciones. Los informes de carga comprueban que libffi, Qt y el CRT Microsoft se cargan desde la extracción integrada, no desde una instalación externa. Se prueba mover únicamente el EXE a otra carpeta y ejecutar con PATH reducido. Se verifican hashes y paquetes de publicación.
 
-## Verificaciones técnicas
+No se han probado webcam física ni una máquina Windows limpia sin runtime instalado. No se ha desinstalado ni modificado el runtime del sistema. El EXE no está firmado con Authenticode; las DLL Microsoft originales sí tienen firma válida. Android conserva el APK de publicación revisado previamente, firma propia, paquete es.folioscan.app, versión 3.2/code 7 y depuración desactivada; no se recompila en esta continuación. No se modifica GitHub ni las versiones históricas. Las capturas privadas permanecen en Registros, fuera de la distribución. El titular debe disponer de derechos sobre el icono aportado.
 
-La revisión ejecuta compilación release Android y empaquetado Windows, no las pruebas funcionales que el titular ha reservado para sí. Los 14 tests Android y 20 Windows de la entrega anterior son antecedentes; no se presentan como resultados de estos candidatos.
+## Evidencias y fuentes
+- legal/libffi-provenance.json, microsoft-runtime-provenance.json, windows-functional-check.json, windows-portable-loader.json, lgpl-replacement-verification.json y windows-binary-inventory.json.
+- https://visualstudio.microsoft.com/license-terms/vs2026-ga-community/
+- https://visualstudio.microsoft.com/license-terms/vs2026-ga-visualcpp-v14-redist-runtime/
+- https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution
+- https://www.qt.io/development/open-source-lgpl-obligations
+- https://github.com/python/cpython-bin-deps/tree/94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d
 
-La prueba LGPL trabaja sobre una copia aislada. Incrementa únicamente la marca temporal COFF de Qt6Core.dll, manteniendo código y exportaciones. El EXE vuelve a cargar Qt, crea un QWidget y procesa eventos; se comprueban la ruta efectiva y el hash de la DLL cargada. El resultado demuestra sustitución de un binario compatible con hash distinto, no compatibilidad de cualquier modificación ni compilación desde fuentes de una variante funcionalmente distinta. Las bibliotecas originales del paquete permanecen sin modificar. Véase legal/lgpl-replacement-verification.json y el procedimiento reproducible.
-
-El APK conserva es.folioscan.app, versionName 3.2 y versionCode 7. El informe de firma documenta la coincidencia con V3.1 corregida, ausencia de Android Debug y depuración desactivada. La actualización directa exige firma coincidente: las APK antiguas de debug siguen siendo incompatibles. Las nuevas licencias no cambian la identidad de la aplicación.
-
-Los hashes de publicación se calculan después de preparar los paquetes. El código público se selecciona mediante lista de rutas permitidas: sin venv, SDK/JDK/Gradle descargados, build/dist, Datos, claves ni documentos de usuario. El único fixture JPG Android conservado es una imagen blanca sintética. Los informes de QA históricos y sus documentos se excluyen. Se comprueban ausencia de la contraseña de firma, de almacenes privados y de rutas personales propias en archivos de texto públicos; no se muestran credenciales. Los binarios de terceros pueden conservar sus cadenas de compilación originales, que no se modifican para ocultarlas.
-
-## Bloqueos concretos y cómo cerrarlos
-
-1. **libffi-8.dll:** no contiene una versión verificable ni se encontró un manifiesto del runtime Python de desarrollo que atribuya ese binario a un paquete fuente concreto. El nombre DLL no acredita versión ni avisos. La licencia MIT de referencia incluida no sustituye esa prueba. Obtener del proveedor el manifiesto/build y sus avisos exactos, o compilar/obtener un runtime Python/libffi trazable; reemplazarlo de forma compatible, volver a empaquetar y verificar hashes/carga. La URL de una supuesta distribución embebible oficial Python 3.12.14 devolvió 404: no se inventa equivalencia con ella.
-2. **Microsoft Visual C++:** se identifican las DLL y su origen en ruedas/runtime, pero no se ha archivado la licencia concreta que respalde su redistribución por el titular ni confirmado todos sus requisitos. Obtener los términos aplicables y cotejar cada DLL (incluida la copia renombrada en numpy.libs) con la lista redistribuible. Si no existe autorización, obtener una distribución autorizada o elegir otra estrategia de runtime. No quitar DLL necesarias ni imponerles PolyForm/LGPL. Referencia oficial: https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution .
-
-Estos son pendientes de licencia/procedencia, no pruebas manuales de cámara; por eso la conclusión no es «listo con comprobaciones manuales pendientes». El inventario no demuestra por sí mismo conformidad de todos los binarios. El titular debe además confirmar los derechos del icono aportado antes de publicarlo.
-
-## Comprobaciones del titular
-
-Tras cerrar los bloqueos: instalar/actualizar el APK firmado, probar captura real, giro de hoja, formatos PDF/JPG/PNG, combinación/separación, guardado y permisos; probar Windows y webcam, portabilidad de la carpeta completa y Datos, y acceso a avisos. No se ha instalado en el CMF 2 Pro ni probado una cámara física. No se ha hecho una auditoría de seguridad ni una certificación jurídica.
-
-## Fuentes y evidencias
-
-- Evidencias locales: legal/*.json, POM y avisos originales; scripts de inventario y sustitución en el ZIP de código.
-- Qt: https://www.qt.io/development/open-source-lgpl-obligations y archivos de fuentes exactos listados en legal/qt-source-archives.json.
-- GNU: https://www.gnu.org/licenses/lgpl-3.0.txt y https://www.gnu.org/licenses/gpl-3.0.txt .
-- PolyForm: https://polyformproject.org/licenses/noncommercial/1.0.0.txt .
-- Google: https://developers.google.com/ml-kit/terms y https://developer.android.com/studio/terms .
-- PDFBox: https://github.com/TomRoush/PdfBox-Android/tree/v2.0.27.0 .
-- Bouncy Castle: https://github.com/bcgit/bc-java/blob/r1rv72/LICENSE.html .
-
-Las licencias se conservan; no se promete ausencia de obligaciones fuera del alcance verificado. Los materiales quedan como candidatos revisados, no como autorización para publicar los binarios Windows.
+Las fuentes propias y los scripts de compilación/empaquetado están actualizados en el ZIP de código. Los hashes de entrega se encuentran en SHA256SUMS.txt. La lista de cambios para GitHub está en CAMBIOS_REPOSITORIO.txt.

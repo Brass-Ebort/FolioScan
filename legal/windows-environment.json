@@ -76,7 +76,7 @@
   },
   {
     "name": "pypdf",
-    "version": "6.21.1",
+    "version": "7.1.0",
     "license": "BSD-3-Clause"
   },
   {
@@ -101,7 +101,7 @@
   },
   {
     "name": "setuptools",
-    "version": "84.0.0",
+    "version": "84.2.1",
     "license": "MIT"
   },
   {

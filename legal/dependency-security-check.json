@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-20",
+  "scope": "Known PyPI advisories only; not a guarantee of absence of vulnerabilities",
+  "packages": [
+    {
+      "name": "altgraph",
+      "version": "0.17.5",
+      "source": "https://pypi.org/pypi/altgraph/0.17.5/json",
+      "advisories": []
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "source": "https://pypi.org/pypi/charset-normalizer/3.5.2/json",
+      "advisories": []
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "source": "https://pypi.org/pypi/numpy/2.5.4/json",
+      "advisories": []
+    },
+    {
+      "name": "opencv-python-headless",
+      "version": "5.0.0.93",
+      "source": "https://pypi.org/pypi/opencv-python-headless/5.0.0.93/json",
+      "advisories": []
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "source": "https://pypi.org/pypi/packaging/26.3/json",
+      "advisories": []
+    },
+    {
+      "name": "pefile",
+      "version": "2024.8.26",
+      "source": "https://pypi.org/pypi/pefile/2024.8.26/json",
+      "advisories": []
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "source": "https://pypi.org/pypi/pillow/13.0.0/json",
+      "advisories": []
+    },
+    {
+      "name": "pyinstaller",
+      "version": "6.22.3",
+      "source": "https://pypi.org/pypi/pyinstaller/6.22.3/json",
+      "advisories": []
+    },
+    {
+      "name": "pyinstaller-hooks-contrib",
+      "version": "2026.8",
+      "source": "https://pypi.org/pypi/pyinstaller-hooks-contrib/2026.8/json",
+      "advisories": []
+    },
+    {
+      "name": "pypdf",
+      "version": "7.1.0",
+      "source": "https://pypi.org/pypi/pypdf/7.1.0/json",
+      "advisories": []
+    },
+    {
+      "name": "pypdfium2",
+      "version": "5.14.0",
+      "source": "https://pypi.org/pypi/pypdfium2/5.14.0/json",
+      "advisories": []
+    },
+    {
+      "name": "PySide6_Essentials",
+      "version": "6.12.0",
+      "source": "https://pypi.org/pypi/PySide6_Essentials/6.12.0/json",
+      "advisories": []
+    },
+    {
+      "name": "pywin32-ctypes",
+      "version": "0.2.3",
+      "source": "https://pypi.org/pypi/pywin32-ctypes/0.2.3/json",
+      "advisories": []
+    },
+    {
+      "name": "reportlab",
+      "version": "5.0.1",
+      "source": "https://pypi.org/pypi/reportlab/5.0.1/json",
+      "advisories": []
+    },
+    {
+      "name": "setuptools",
+      "version": "84.2.1",
+      "source": "https://pypi.org/pypi/setuptools/84.2.1/json",
+      "advisories": []
+    },
+    {
+      "name": "shiboken6",
+      "version": "6.12.0",
+      "source": "https://pypi.org/pypi/shiboken6/6.12.0/json",
+      "advisories": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Alcance de la revisión de publicación
 
-Las pruebas funcionales descritas más abajo pertenecen a la entrega anterior V3.2. Por petición del titular, no se vuelven a ejecutar en la revisión legal. El titular comprobará las funciones y el hardware. Aquí se verifican compilación, firma/manifiesto, archivos públicos y carga con una DLL Qt modificada solo en su marca temporal COFF. Esa prueba limitada no certifica modificaciones arbitrarias ni conformidad jurídica. Consulta el informe final de publicación.
+Actualización 20/11/2026: 21 pruebas Windows correctas, incluida aceptación/cancelación de condiciones con texto sintético. El EXE único se comprueba mediante autoprueba, carga de DLL integradas y sustitución Qt. Android no se modifica. No se ha probado una webcam física ni un Windows limpio.
 
 # Validación FolioScan V3.2
 

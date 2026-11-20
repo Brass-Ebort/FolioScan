@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "qt": "6.12.0",
+  "modules": [
+    {
+      "module": "Qt6Core.dll",
+      "path": "PySide6/Qt6Core.dll",
+      "sha256": "f57ed38afd95d0306cca9d88d997f639f70c7628a4f1f064eae291d579487121"
+    },
+    {
+      "module": "Qt6Gui.dll",
+      "path": "PySide6/Qt6Gui.dll",
+      "sha256": "abd20026e190e8cc69667d1bea042db05cd353cc05e7da74b063c20b7da3f6cd"
+    },
+    {
+      "module": "Qt6Widgets.dll",
+      "path": "PySide6/Qt6Widgets.dll",
+      "sha256": "2f62cbe2869fff4e20df7369c2786e1ec7ec290d5a63d1371b7f70cf06909c3f"
+    },
+    {
+      "module": "pyside6.abi3.dll",
+      "path": "PySide6/pyside6.abi3.dll",
+      "sha256": "d5b87ccb0a7c305854bd120242b0a75002d0b50a35532d0f6171e4ed0f3cc82a"
+    },
+    {
+      "module": "shiboken6.abi3.dll",
+      "path": "shiboken6/shiboken6.abi3.dll",
+      "sha256": "07c318c02be5a3a9f1475f5a2d0cd438f4d4ea3288c28e2e10bc5ebbbec8de86"
+    },
+    {
+      "module": "libffi-8.dll",
+      "path": "libffi-8.dll",
+      "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a"
+    },
+    {
+      "module": "vcruntime140.dll",
+      "path": "VCRUNTIME140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    {
+      "module": "vcruntime140_1.dll",
+      "path": "VCRUNTIME140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    {
+      "module": "msvcp140.dll",
+      "path": "MSVCP140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca"
+    }
+  ],
+  "scope": "DLL loading and Qt event loop only; no functional tests.",
+  "exe_sha256": "a987b1a2fc82ab4e39a5929843b4d142746873d83c6d7d98c818fc3d5cce568d",
+  "only_exe_copied": true,
+  "minimal_path": true
+}

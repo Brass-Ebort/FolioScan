@@ -16,9 +16,9 @@ No sustituir estos archivos por un enlace genérico a Qt. Al publicar, mantener 
 
 ## Reemplazo compatible
 
-1. Cierra FolioScan y conserva una copia de toda la carpeta y de Datos.
+1. Cierra FolioScan y conserva una copia del EXE y de Datos. Crea una carpeta opcional Bibliotecas junto al EXE.
 2. Usa compilaciones Windows x64 con ABI compatible. La entrega usa Qt 6.12.0 compartido, MSVC 2022 y bindings ABI3 de PySide/Shiboken. Para reconstruir bindings sigue las instrucciones de pyside-setup incluido; mantén coherentes Qt, PySide y Shiboken.
-3. Sustituye en `_internal/PySide6` las DLL Qt, `pyside6.abi3.dll`, bindings `.pyd` y plugins afectados; sustituye también `_internal/shiboken6` cuando corresponda. Conserva los subdirectorios de plugins. No basta con renombrar una DLL incompatible. No reemplaces DLL Microsoft con bibliotecas Qt.
+3. Sustituye en `Bibliotecas/PySide6` las DLL Qt, `pyside6.abi3.dll`, bindings `.pyd` y plugins afectados; sustituye también `Bibliotecas/shiboken6` cuando corresponda. Conserva los subdirectorios de plugins. No basta con renombrar una DLL incompatible. No reemplaces DLL Microsoft con bibliotecas Qt.
 4. Ejecuta `FolioScan-3.2.exe --verify-libraries informe.json` desde una carpeta escribible. Este modo comprueba carga de bibliotecas y ciclo de eventos Qt, sin ejecutar operaciones con documentos. Verifica luego las funciones afectadas por tus modificaciones.
 5. Si cambia la ABI, utiliza el código de FolioScan y `desktop/Compilar-Windows.ps1` para volver a empaquetar con tu conjunto compatible. No se requiere la clave Android para Windows.
 
@@ -26,6 +26,6 @@ La prueba efectuada está en `legal/lgpl-replacement-verification.json`: una cop
 
 ## Estado
 
-La corrección de empaquetado y el acceso a fuentes Qt están preparados. El conjunto Windows **NO está autorizado por esta revisión para publicación** hasta cerrar la trazabilidad y los avisos del runtime nativo que detalla el informe final. Separar DLL o incluir LGPL no resuelve automáticamente las obligaciones de todos los componentes.
+La distribución onefile incorpora las dependencias. Antes de importar Qt, copia los reemplazos opcionales de Bibliotecas a la extracción temporal de esa ejecución, sin validar firmas ni impedir modificaciones compatibles. La prueba verifica el hash cargado. libffi y Microsoft tienen procedencia y avisos documentados en legal. No requiere un runtime externo.
 
 Referencias: https://www.qt.io/development/open-source-lgpl-obligations ; https://www.gnu.org/licenses/lgpl-3.0.html ; https://www.gnu.org/licenses/gpl-3.0.html .

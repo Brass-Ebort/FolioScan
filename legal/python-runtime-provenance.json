@@ -1,4 +1,5 @@
 {
   "url": "https://www.python.org/ftp/python/3.12.14/python-3.12.14-embed-amd64.zip",
-  "error": "HTTP Error 404: Not Found"
+  "error": "HTTP Error 404: Not Found",
+  "resolution": "Old runtime libffi provenance remains unasserted; the distributed DLL is replaced by the pinned official CPython build. See libffi-provenance.json."
 }

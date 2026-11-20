@@ -100,6 +100,9 @@ def run(report_path):
             }
     except Exception:
         result["error"] = traceback.format_exc()
+    import sys, hashlib
+    if getattr(sys, 'frozen', False):
+        result['exe_sha256'] = hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest()
     Path(report_path).write_text(
         json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8"
     )
