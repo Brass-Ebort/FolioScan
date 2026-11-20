@@ -906,14 +906,14 @@
     }
   },
   {
-    "file": "FolioScan-3.2.exe",
-    "sha256": "781fe129ed7af69f583aa3c1491e098940f1dcb5fc4f65e85604898b91033fd9",
+    "file": "FolioScan-0.4.0.exe",
+    "sha256": "4b352cd1d8f0e1bf3e94756987ac48c6a236859a332310ca5c036c6a61f8c19b",
     "component": "FolioScan / PyInstaller bootloader",
     "license_basis": "PolyForm Noncommercial / PyInstaller GPL with bootloader exception",
     "metadata": {
       "CompanyName": "Brass-Ebort",
-      "FileVersion": "3.2.0",
-      "ProductVersion": "3.2.0",
+      "FileVersion": "0.4.0",
+      "ProductVersion": "0.4.0",
       "LegalCopyright": "Copyright 2026 Brass-Ebort"
     }
   }

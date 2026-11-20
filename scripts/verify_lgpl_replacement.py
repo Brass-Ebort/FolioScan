@@ -6,16 +6,16 @@ the replacement mechanism, not arbitrary modified libraries or app features.
 from pathlib import Path
 import tempfile,shutil,subprocess,struct,hashlib,json
 root=Path(__file__).resolve().parents[1]
-source=root/'desktop/dist/FolioScan-3.2'
+source=root/'desktop/dist/FolioScan-0.4.0'
 scratch=root/'desktop/build'
 scratch.mkdir(exist_ok=True)
 folder=Path(tempfile.mkdtemp(prefix='lgpl-replacement-',dir=scratch)).resolve()
 assert scratch.resolve() in folder.parents
 try:
-    target=folder/'FolioScan-3.2';target.mkdir()
-    shutil.copy2(root/'desktop/dist/FolioScan-3.2-portable.exe',target/'FolioScan-3.2.exe')
+    target=folder/'FolioScan-0.4.0';target.mkdir()
+    shutil.copy2(root/'desktop/dist/FolioScan-0.4.0-portable.exe',target/'FolioScan-0.4.0.exe')
     report=folder/'baseline.json'
-    exe=target/'FolioScan-3.2.exe'
+    exe=target/'FolioScan-0.4.0.exe'
     subprocess.run([str(exe),'--verify-libraries',str(report)],check=True,timeout=60)
     baseline=json.loads(report.read_text('utf-8'));assert baseline['ok']
     library=target/'Bibliotecas/PySide6/Qt6Core.dll'

@@ -1,12 +1,12 @@
-# Building FolioScan V3.2
+# Building FolioScan 0.4.0
 
-Read the final publication report before distributing binaries. The current publication review has unresolved native-runtime provenance/redistribution questions; successful compilation alone is not release approval.
+Read the final publication report before distributing binaries. Runtime provenance and verification evidence are included under legal/.
 
 ## Android
 
 Use JDK 17, Android SDK platform 35 and Build Tools 35.0.0. Set JAVA_HOME and ANDROID_HOME, or supply a local.properties file containing sdk.dir. Gradle dependencies require network access on their first resolution. The wrapper pins Gradle 8.11.1.
 
-Run `./Compilar.ps1` in PowerShell. It builds release, runs the existing Android tests and lint, checks the signature and debug flag, then copies the APK into the source directory. To build without functional tests, run `./gradlew.bat :app:assembleRelease`; independently verify the APK before distributing it. During the publication review, functional tests were deliberately left to the owner.
+Run `./Compilar.ps1` in PowerShell. It builds release, runs the existing Android tests and lint, checks the signature and debug flag, then reports the verified APK path under app/build/outputs. To build without functional tests, run `./gradlew.bat :app:assembleRelease`; independently verify the APK before distributing it. Automated tests are included; physical camera and device testing remains separate.
 
 Release credentials are external to the repository: `~/.folioscan/signing/release.properties`, or the file selected by FOLIOSCAN_SIGNING_PROPERTIES. Required fields are storeFile, storePassword, keyAlias and keyPassword. The PKCS12 store path may be relative to the properties file. Never commit either file. Missing credentials stop release compilation; debug signing is not a fallback. Keep encrypted offline backups of both the store and credentials. Forks should use their own applicationId and signing key.
 
@@ -24,7 +24,7 @@ py -3.12 -m venv .venv
 ./Compilar-Windows.ps1
 ```
 
-`-SkipFunctionalTests` skips tests. Distribute `desktop/dist/FolioScan-3.2-portable.exe` as a single standalone EXE. The onedir output is for binary audits only. No Python or Visual C++ installation is needed by end users. Data stays in Datos beside the EXE. The EXE is not Authenticode-signed.
+`-SkipFunctionalTests` skips tests. Distribute `desktop/dist/FolioScan-0.4.0-portable.exe` as a single standalone EXE. The onedir output is for binary audits only. No Python or Visual C++ installation is needed by end users. Data stays in Datos beside the EXE. The EXE is not Authenticode-signed.
 
 The spec excludes unrelated system/ICU DLLs found on PATH. It also excludes the unused FFmpeg video backend (the camera explicitly uses DirectShow) and the Mesa software OpenGL fallback (the interface uses raster QWidget controls). These exclusions do not establish hardware compatibility; the owner performs camera and functional testing.
 

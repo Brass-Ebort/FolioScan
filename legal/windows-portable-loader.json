@@ -49,7 +49,7 @@
     }
   ],
   "scope": "DLL loading and Qt event loop only; no functional tests.",
-  "exe_sha256": "a987b1a2fc82ab4e39a5929843b4d142746873d83c6d7d98c818fc3d5cce568d",
+  "exe_sha256": "f8cb06146a6f787a964f6d905a765d46ec887db39fdf8208011d30e97bbd4e16",
   "only_exe_copied": true,
   "minimal_path": true
 }

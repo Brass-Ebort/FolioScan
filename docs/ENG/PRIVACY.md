@@ -6,7 +6,7 @@ Android uses Google ML Kit Document Scanner through Google Play Services. Compon
 
 Official information: https://developers.google.com/ml-kit/terms and https://developers.google.com/ml-kit/android-data-disclosure . The Google scanner handles camera access through Play Services; document-management permissions are separate.
 
-Searching shared storage on Android 11 or later requests all-files access. Android 8–10 use storage read/write permissions. Other applications' private data cannot be accessed; Android/data and Android/obb are skipped. Denying broad access does not prevent using the scanner and system file pickers. Google Play publication would require a separate review of its storage-access policies; these APKs are prepared for direct installation.
+Since 0.4.0, normal search uses only Documents/FolioScan and its subfolders via the Android folder picker. Grant access once to Documents (or directly FolioScan); the persisted grant is used only to search FolioScan. Normal mode does not need broad device access. Settings offers an optional whole-device mode after a warning: Android 11+ requests all-files access; Android 8–10 requests storage read/write access. Search is bounded and cancellable. Disabling the mode stops using broad access; revoke the OS permission separately in system settings if desired. Other applications' private data cannot be accessed; Android/data and Android/obb are skipped. Google Play publication requires a separate policy review; this distribution is for direct installation.
 
 Sharing grants read access to the application chosen by the user. Selecting a cloud provider as the export destination may upload the document by the user's choice; FolioScan does not control that provider.
 

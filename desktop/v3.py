@@ -634,7 +634,7 @@ class WindowV3(Window):
         layout = QVBoxLayout(dialog)
         layout.setContentsMargins(24, 24, 24, 24)
         layout.setSpacing(16)
-        layout.addWidget(QLabel("FolioScan · v3.2"))
+        layout.addWidget(QLabel("FolioScan · v0.4.0"))
         layout.addWidget(QLabel(i18n.tr("Gracias por descargar la aplicación.")))
         link = QLabel('<a href="https://github.com/Brass-Ebort">github.com/Brass-Ebort</a>')
         link.setOpenExternalLinks(True)

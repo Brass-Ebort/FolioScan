@@ -270,19 +270,19 @@
         "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff"
     },
     {
-        "id": "org.bouncycastle:bcpkix-jdk15to18:1.72",
-        "file": "bcpkix-jdk15to18-1.72.jar",
-        "sha256": "d9b97477b72499bcee02f5a906510810257ff36a94bf69fbca0b1e65e7ffdb6e"
+        "id": "org.bouncycastle:bcpkix-jdk15to18:1.87",
+        "file": "bcpkix-jdk15to18-1.87.jar",
+        "sha256": "c7dd4f507217399a0c7bb9737e4521077ce80a445f2752d83988ae08ece9a91d"
     },
     {
-        "id": "org.bouncycastle:bcprov-jdk15to18:1.72",
-        "file": "bcprov-jdk15to18-1.72.jar",
-        "sha256": "ea66ea8a450810b2193e8bf9a7ad3e46307c9896224c0f407d1b7d96ba1221cc"
+        "id": "org.bouncycastle:bcprov-jdk15to18:1.87",
+        "file": "bcprov-jdk15to18-1.87.jar",
+        "sha256": "0f1ae1e90adbdf1804f53c5bd3b5e43085ae367c0bd82f1035911a810d9e796d"
     },
     {
-        "id": "org.bouncycastle:bcutil-jdk15to18:1.72",
-        "file": "bcutil-jdk15to18-1.72.jar",
-        "sha256": "d92184bdeb3105a11ad9e36acbd66b5f8eed091b08b9c8f3e2549e42b7f131f1"
+        "id": "org.bouncycastle:bcutil-jdk15to18:1.87",
+        "file": "bcutil-jdk15to18-1.87.jar",
+        "sha256": "103a4bd0665d328ead3e52488f52e21a3ab01f0c0937c3c4ffdf8eefb8c93df3"
     },
     {
         "id": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24",

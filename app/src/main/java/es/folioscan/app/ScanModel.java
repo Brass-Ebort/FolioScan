@@ -18,25 +18,128 @@ public class ScanModel extends AndroidViewModel {
   final ExecutorService worker = Executors.newSingleThreadExecutor();
   volatile boolean busy;
   final MutableLiveData<File> savedScan = new MutableLiveData<>();
-  final MutableLiveData<java.util.List<File>> deviceFiles =
+  final MutableLiveData<java.util.List<DeviceDocument>> deviceFiles =
       new MutableLiveData<>(new ArrayList<>());
 
-  // Busca PDF accesibles; la interfaz obtiene los permisos antes de llamar a esta operación.
+  // Isolate search from PDF/export work; a stalled filesystem cannot occupy that worker.
+  private final ThreadPoolExecutor searchWorker = new ThreadPoolExecutor(
+      1, 1, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(1));
+  private final android.os.Handler searchHandler = new android.os.Handler(android.os.Looper.getMainLooper());
+  private Future<?> searchTask;
+  private Runnable searchTimeout;
+  private int searchGeneration;
+  volatile boolean searching;
+  private android.os.CancellationSignal searchSignal;
+  private File lastSearchRoot;
+  private Uri lastSearchFolder;
+  interface Search { DocumentStore.Discovery run(android.os.CancellationSignal signal) throws Exception; }
+
+
   void discover(File root) {
+    if(busy) return;
+    lastSearchRoot=root;lastSearchFolder=null;
+    startSearch(signal -> {
+      DocumentOps.Discovery found=DocumentOps.discover(root,200,20000,10000);
+      DocumentStore.Discovery result=new DocumentStore.Discovery();result.partial=found.partial;
+      for(File file:found.files) result.files.add(new DeviceDocument(file));
+      return result;
+    });
+  }
+  void discoverFolder(Uri folder) {
+    if(busy) return;
+    lastSearchFolder=folder;lastSearchRoot=null;
+    startSearch(signal -> DocumentStore.discover(getApplication().getContentResolver(),folder,signal));
+  }
+  void rediscover() {
+    if(lastSearchFolder!=null) discoverFolder(lastSearchFolder);
+    else if(lastSearchRoot!=null) discover(lastSearchRoot);
+  }
+  private void startSearch(Search search) {
     if (busy) return;
+    searchSignal=new android.os.CancellationSignal();
+    final android.os.CancellationSignal signal=searchSignal;
     busy = true;
-    status.setValue("Procesando…");
-    worker.execute(
-        () -> {
-          try {
-            deviceFiles.postValue(DocumentOps.discover(root));
-            busy = false;
-            status.postValue("Listo");
-          } catch (Exception e) {
-            busy = false;
-            status.postValue("Error");
-          }
+    searching = true;
+    final int generation = ++searchGeneration;
+    deviceFiles.setValue(new ArrayList<>());
+    status.setValue("Buscando PDF…");
+    searchTimeout = () -> {
+      if (generation != searchGeneration || !searching) return;
+      cancelSearch();
+      status.setValue("La búsqueda ha agotado el tiempo. Vuelve a intentarlo.");
+    };
+    searchHandler.postDelayed(searchTimeout, 15000);
+    searchWorker.purge();
+    try {
+      searchTask = searchWorker.submit(() -> {
+        List<DeviceDocument> files = new ArrayList<>();
+        String message;
+        try {
+          DocumentStore.Discovery result = search.run(signal);
+          files = result.files;
+          message = result.partial ? "Búsqueda parcial: se ha alcanzado un límite o hay carpetas inaccesibles." : "Listo";
+        } catch (Exception | OutOfMemoryError error) {
+          message = "No se pudo completar la búsqueda. Comprueba el permiso de almacenamiento.";
+        }
+        final List<DeviceDocument> completed = files;
+        final String outcome = message;
+        searchHandler.post(() -> {
+          // Cancelled/timed-out work must not overwrite a newer operation's state.
+          if (generation != searchGeneration || !searching) return;
+          searchHandler.removeCallbacks(searchTimeout);
+          searching = false;
+          busy = false;
+          deviceFiles.setValue(completed);
+          status.setValue(outcome);
         });
+      });
+    } catch (RejectedExecutionException error) {
+      cancelSearch();
+      status.setValue("La búsqueda ha agotado el tiempo. Vuelve a intentarlo.");
+    }
+  }
+
+  void cancelSearch() {
+    if (!searching) return;
+    ++searchGeneration;
+    if (searchTask != null) searchTask.cancel(true);
+    if (searchSignal != null) searchSignal.cancel();
+    if (searchTimeout != null) searchHandler.removeCallbacks(searchTimeout);
+    searching = false;
+    busy = false;
+    status.setValue("Búsqueda cancelada");
+  }
+
+  void configureFolder(Uri tree) {
+    if(busy) return;
+    busy=true;status.setValue("Procesando…");
+    worker.execute(() -> {
+      try {
+        Uri folder=DocumentStore.ensureFolder(getApplication().getContentResolver(),tree);
+        searchHandler.post(() -> {
+          getApplication().getSharedPreferences("MainActivity",0).edit().putString("documentFolder",folder.toString()).apply();
+          busy=false;discoverFolder(folder);
+        });
+      } catch(Exception error) {
+        searchHandler.post(() -> {busy=false;status.setValue("No se pudo abrir la carpeta. Autorízala de nuevo.");});
+      }
+    });
+  }
+  interface FileOperation { void run() throws Exception; }
+  void mutateDevice(FileOperation operation) {
+    if(busy) return;
+    busy=true;status.setValue("Procesando…");
+    worker.execute(() -> {
+      try {
+        operation.run();
+        searchHandler.post(() -> {busy=false;status.setValue("Guardado");rediscover();});
+      } catch(Exception error) {
+        searchHandler.post(() -> {busy=false;status.setValue("Error: "+error.getMessage());});
+      }
+    });
+  }
+  void append(Uri target,Uri parent,File addition) {
+    mutateDevice(() -> DocumentStore.append(getApplication(),target,parent,addition));
   }
 
   // Genera PDF e imágenes con la misma geometría empleada por la previsualización.
@@ -257,6 +360,10 @@ public class ScanModel extends AndroidViewModel {
 
   @Override
   protected void onCleared() {
+    ++searchGeneration;
+    searchHandler.removeCallbacksAndMessages(null);
+    if(searchSignal!=null) searchSignal.cancel();
+    searchWorker.shutdownNow();
     worker.shutdown();
   }
 }

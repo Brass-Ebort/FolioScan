@@ -21,11 +21,11 @@ runtime = json.loads(Path('../legal/microsoft-runtime-provenance.json').read_tex
 for item in runtime['files']:
     a.binaries.append((item['destination'], str(Path('build/verified-runtime/microsoft') / item['source_name']), 'BINARY'))
 pyz=PYZ(a.pure)
-exe=EXE(pyz,a.scripts,[],exclude_binaries=True,name='FolioScan-3.2',
+exe=EXE(pyz,a.scripts,[],exclude_binaries=True,name='FolioScan-0.4.0',
         debug=False,bootloader_ignore_signals=False,strip=False,upx=False,
         console=False,disable_windowed_traceback=False,icon='scanner.png',version='version_info.txt')
-collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='FolioScan-3.2')
+collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='FolioScan-0.4.0')
 # Single movable executable. The onedir build above is retained only for audits.
-portable=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='FolioScan-3.2-portable',
+portable=EXE(pyz,a.scripts,a.binaries,a.datas,[],name='FolioScan-0.4.0-portable',
         debug=False,bootloader_ignore_signals=False,strip=False,upx=False,
         console=False,disable_windowed_traceback=False,icon='scanner.png',version='version_info.txt')

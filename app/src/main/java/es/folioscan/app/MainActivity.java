@@ -24,7 +24,8 @@ public class MainActivity extends ComponentActivity {
   private int INK, ACCENT, PAPER, CARD, MUTED, SOFT;
   private boolean dark;
   private int libraryTab;
-  private String appendTarget;
+  private String appendTarget, appendParent;
+  private ActivityResultLauncher<Uri> documentFolderPicker;
   private ActivityResultLauncher<String[]> appendPicker;
   private ActivityResultLauncher<String[]> storagePermissions;
   private int tab = 0;
@@ -44,13 +45,17 @@ public class MainActivity extends ComponentActivity {
   @Override
   // Restaura preferencias, registra resultados del sistema y construye la interfaz.
   public void onCreate(Bundle saved) {
-    dark = getPreferences(0).getBoolean("dark", false);
+    boolean systemDark = (getResources().getConfiguration().uiMode
+        & android.content.res.Configuration.UI_MODE_NIGHT_MASK)
+        == android.content.res.Configuration.UI_MODE_NIGHT_YES;
+    dark = getPreferences(0).getBoolean("dark", systemDark);
     setTheme(dark ? R.style.DarkTheme : R.style.AppTheme);
     super.onCreate(saved);
     I18n.load(this);
     model = new ViewModelProvider(this).get(ScanModel.class);
     if (saved != null) {
       appendTarget = saved.getString("appendTarget");
+      appendParent = saved.getString("appendParent");
       libraryTab = saved.getInt("libraryTab");
     }
     if (saved != null) {
@@ -125,11 +130,23 @@ public class MainActivity extends ComponentActivity {
               if (!uris.isEmpty() && appendTarget != null) prepareAppend(new ArrayList<>(uris));
               else appendTarget = null;
             });
+    documentFolderPicker = registerForActivityResult(
+        new ActivityResultContracts.OpenDocumentTree(), uri -> {
+          if (uri == null) return;
+          if (!DocumentStore.allowedSelection(uri)) { message("Elige Documentos del teléfono."); return; }
+          try {
+            getContentResolver().takePersistableUriPermission(uri,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            model.configureFolder(uri);
+          } catch (SecurityException error) { message("Permiso denegado"); }
+        });
     storagePermissions =
         registerForActivityResult(
             new ActivityResultContracts.RequestMultiplePermissions(),
             result -> {
-              if (result.containsValue(true)) searchDevice();
+              if (Boolean.TRUE.equals(result.get(android.Manifest.permission.READ_EXTERNAL_STORAGE)))
+                searchDevice();
+              else model.status.setValue("Permiso denegado");
             });
     buildUi();
     model.status.observe(
@@ -156,6 +173,7 @@ public class MainActivity extends ComponentActivity {
   // Conserva selecciones y operaciones pendientes durante una recreación de Android.
   protected void onSaveInstanceState(Bundle out) {
     out.putString("appendTarget", appendTarget);
+    out.putString("appendParent", appendParent);
     out.putInt("libraryTab", libraryTab);
     out.putString("export", pendingExport);
     out.putString("format", scanFormat);
@@ -656,12 +674,24 @@ public class MainActivity extends ComponentActivity {
               chooseLanguage();
             }));
     panel.addView(button("Licencias y avisos", false, this::showLicenses));
+    panel.addView(button(getPreferences(0).getBoolean("fullDevice", false)
+        ? "Usar solo Documentos/FolioScan" : "Analizar todo el dispositivo", false, () -> {
+      drawer.dismiss();
+      if (getPreferences(0).getBoolean("fullDevice", false)) setSearchScope(false);
+      else new I18n.Builder(this).setTitle("Analizar todo el dispositivo")
+          .setMessage("Esta opción busca PDF fuera de Documentos/FolioScan y requiere acceso amplio al almacenamiento. Solo se analizan archivos accesibles; Android protege algunas carpetas. Los archivos se procesan en el teléfono. Puedes volver al modo de carpeta desde Configuración. ¿Activar?")
+          .setNegativeButton("Cancelar", null)
+          .setPositiveButton("Activar", (d,w) -> setSearchScope(true)).show();
+    }));
+    panel.addView(button("Autorizar Documentos/FolioScan", false, () -> {
+      drawer.dismiss(); setSearchScope(false); authorizeFolder();
+    }));
     // El contenido puede desplazarse en pantallas pequeñas sin ocultar el pie.
     View spacer = new View(this);
     panel.addView(spacer, new LinearLayout.LayoutParams(1, 0, 1));
     String version;
     try { version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName; }
-    catch (android.content.pm.PackageManager.NameNotFoundException e) { version = "3.2"; }
+    catch (android.content.pm.PackageManager.NameNotFoundException e) { version = "0.4.0"; }
     panel.addView(text("FolioScan · v" + version, 12, MUTED, false));
     addFooter(panel);
     ScrollView settingsScroll = new ScrollView(this);
@@ -838,8 +868,29 @@ public class MainActivity extends ComponentActivity {
     body.addView(tabs);
   }
 
+  private void setSearchScope(boolean wholeDevice) {
+    model.cancelSearch();
+    getPreferences(0).edit().putBoolean("fullDevice", wholeDevice).apply();
+    model.deviceFiles.setValue(new ArrayList<>());
+    model.status.setValue(wholeDevice ? "Analizar todo el dispositivo" : "Documentos/FolioScan");
+  }
+
+  private void authorizeFolder() {
+    new I18n.Builder(this).setTitle("Documentos/FolioScan")
+        .setMessage("Selecciona Documentos del teléfono y permite el acceso. FolioScan creará su carpeta y buscará PDF solo dentro de ella. También puedes seleccionar directamente Documentos/FolioScan si ya existe.")
+        .setNegativeButton("Cancelar", null)
+        .setPositiveButton("Continuar", (d,w) -> documentFolderPicker.launch(DocumentStore.initialFolder())).show();
+  }
+
   // Solicita permisos si faltan y busca en el almacenamiento compartido accesible.
   private void searchDevice() {
+    if (model.busy) return;
+    if (!getPreferences(0).getBoolean("fullDevice", false)) {
+      String folder = getPreferences(0).getString("documentFolder", null);
+      if (folder == null) authorizeFolder();
+      else model.discoverFolder(Uri.parse(folder));
+      return;
+    }
     if (android.os.Build.VERSION.SDK_INT >= 30
         && !android.os.Environment.isExternalStorageManager()) {
       new I18n.Builder(this)
@@ -877,24 +928,28 @@ public class MainActivity extends ComponentActivity {
 
   // Muestra los PDF encontrados con su carpeta para distinguir nombres repetidos.
   private void refreshDevice() {
-    list.addView(button("Buscar PDF", false, this::searchDevice));
-    List<File> files = model.deviceFiles.getValue();
+    Button searchButton = button(model.searching ? "Cancelar" : "Buscar PDF", false,
+        () -> { if (model.searching) model.cancelSearch(); else searchDevice(); });
+    searchButton.setEnabled(model.searching || !model.busy);
+    list.addView(searchButton);
+    list.addView(text(getPreferences(0).getBoolean("fullDevice", false) ? "Analizar todo el dispositivo" : "Documentos/FolioScan", 12, MUTED, false));
+    List<DeviceDocument> files = model.deviceFiles.getValue();
     if (files == null || files.isEmpty()) {
       list.addView(text("No hay documentos.", 14, MUTED, false));
       return;
     }
-    for (File file : files) {
-      if (!file.isFile()) continue;
-      Button b = button(file.getName(), false, () -> deviceMenu(file));
+    for (DeviceDocument file : files) {
+      Button b = button(file.name, false, () -> deviceMenu(file));
       list.addView(b);
-      list.addView(text(file.getParent(), 11, MUTED, false));
+      list.addView(text(file.location, 11, MUTED, false));
     }
   }
 
   // Gestiona un PDF del almacenamiento compartido sin importarlo a la biblioteca.
-  private void deviceMenu(File file) {
+  private void deviceMenu(DeviceDocument file) {
+    if (model.busy) return;
     new I18n.Builder(this)
-        .setTitle(file.getName())
+        .setTitle(file.name)
         .setItems(
             new String[] {"Ver PDF", "Añadir hojas", "Compartir PDF", "Cambiar nombre", "Eliminar"},
             (d, which) -> {
@@ -902,25 +957,25 @@ public class MainActivity extends ComponentActivity {
                 try {
                   startActivity(
                       new Intent(Intent.ACTION_VIEW)
-                          .setDataAndType(uri(file), "application/pdf")
+                          .setDataAndType(file.uri(this), "application/pdf")
                           .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
                 } catch (ActivityNotFoundException e) {
                   message("No hay un visor PDF instalado.");
                 }
               }
-              if (which == 1) addPages(file);
+              if (which == 1) addPages(file.file != null ? file.file.getPath() : file.document.toString(), file.parent == null ? null : file.parent.toString());
               if (which == 2)
                 startActivity(
                     Intent.createChooser(
                         new Intent(Intent.ACTION_SEND)
                             .setType("application/pdf")
-                            .putExtra(Intent.EXTRA_STREAM, uri(file))
+                            .putExtra(Intent.EXTRA_STREAM, file.uri(this))
                             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION),
                         I18n.t("Compartir PDF")));
               if (which == 3) {
                 EditText name = new EditText(this);
                 name.setSingleLine(true);
-                name.setText(file.getName());
+                name.setText(file.name);
                 new I18n.Builder(this)
                     .setTitle("Cambiar nombre")
                     .setView(name)
@@ -937,22 +992,20 @@ public class MainActivity extends ComponentActivity {
                             return;
                           }
                           if (!value.toLowerCase(Locale.ROOT).endsWith(".pdf")) value += ".pdf";
-                          File target = new File(file.getParentFile(), value);
-                          if (target.exists() || !file.renameTo(target)) message("Error");
-                          else searchDevice();
+                          final String newName = value;
+                          model.mutateDevice(() -> DocumentStore.rename(getContentResolver(), file, newName));
                         })
                     .show();
               }
               if (which == 4)
                 new I18n.Builder(this)
                     .setTitle("Eliminar")
-                    .setMessage(file.getName())
+                    .setMessage(file.name)
                     .setNegativeButton("Cancelar", null)
                     .setPositiveButton(
                         "Eliminar",
                         (dialog, w) -> {
-                          if (!file.delete()) message("Error");
-                          searchDevice();
+                          model.mutateDevice(() -> DocumentStore.delete(getContentResolver(), file));
                         })
                     .show();
             })
@@ -960,9 +1013,12 @@ public class MainActivity extends ComponentActivity {
   }
 
   // Recuerda el PDF de destino y permite añadir un nuevo escaneo o archivos PDF.
-  private void addPages(File target) {
+  private void addPages(File target) { addPages(target.getPath(), null); }
+
+  private void addPages(String target, String parent) {
     if (model.busy) return;
-    appendTarget = target.getPath();
+    appendTarget = target;
+    appendParent = parent;
     new I18n.Builder(this)
         .setTitle("Añadir hojas")
         .setItems(
@@ -1002,15 +1058,19 @@ public class MainActivity extends ComponentActivity {
   // Requiere confirmación explícita antes de sustituir el PDF seleccionado.
   private void confirmAppend(File addition) {
     if (appendTarget == null) return;
-    File target = new File(appendTarget);
+    String target = appendTarget, parent = appendParent;
     appendTarget = null;
+    appendParent = null;
     new I18n.Builder(this)
         .setTitle("Añadir hojas")
         .setMessage(
             "Se añadirán las páginas y se sobrescribirá el PDF original. Se conservará una copia de"
                 + " recuperación. ¿Continuar?")
         .setNegativeButton("Cancelar", null)
-        .setPositiveButton("Reemplazar", (d, w) -> model.append(target, addition))
+        .setPositiveButton("Reemplazar", (d, w) -> {
+          if (target.startsWith("content:")) model.append(Uri.parse(target), Uri.parse(parent), addition);
+          else model.append(new File(target), addition);
+        })
         .show();
   }
 

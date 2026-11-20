@@ -3,7 +3,7 @@ from pathlib import Path
 import html,json,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[1]
 inventory=json.loads((root/'legal/android-license-inventory.json').read_text('utf-8'))
-parts=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FolioScan — Licenses / Licencias</title><style>body{font:16px sans-serif;padding:16px;line-height:1.5}pre{white-space:pre-wrap;overflow-wrap:anywhere}h2{margin-top:2em}</style><h1>FolioScan V3.2 — Licenses / Licencias</h1>']
+parts=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FolioScan — Licenses / Licencias</title><style>body{font:16px sans-serif;padding:16px;line-height:1.5}pre{white-space:pre-wrap;overflow-wrap:anywhere}h2{margin-top:2em}</style><h1>FolioScan 0.4.0 — Licenses / Licencias</h1>']
 parts+=['<p>Document processing happens on-device. Google ML Kit may download components and send technical usage/performance metrics to Google; document inputs and outputs are not sent to Google for processing. / Los documentos se procesan en el dispositivo. Google ML Kit puede descargar componentes y comunicar métricas técnicas de uso y rendimiento; no envía las entradas y resultados a Google para procesarlos.</p>',
         '<p><a href="https://developers.google.com/ml-kit/terms">ML Kit terms and privacy</a> · <a href="https://developer.android.com/studio/terms">Google SDK terms</a> · <a href="https://developers.google.com/terms">Google API terms</a></p>']
 def section(title,text):

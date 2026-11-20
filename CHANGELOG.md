@@ -1,3 +1,7 @@
+# 0.4.0 — 2026-11-20
+
+Android y Windows usan la misma numeración. Android: Documentos/FolioScan por defecto mediante SAF, modo de dispositivo completo opcional con aviso, búsqueda cancelable y acotada, tema inicial del sistema y Bouncy Castle 1.87. versionCode 8, misma firma de publicación. Windows conserva funciones y empaquetado autónomo, con metadatos 0.4.0. Fuentes, pruebas e informes actualizados.
+
 # CorrecciÃ³n Android V3.2 â€” orientaciÃ³n de hoja
 
 AÃ±ade Girar hoja 90Â° en Preparar salida. Conserva los ajustes por pÃ¡gina y cambia tambiÃ©n las dimensiones de salida JPG/PNG. versionCode 7; Windows sin cambios.

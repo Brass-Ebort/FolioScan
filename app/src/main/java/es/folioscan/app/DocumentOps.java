@@ -7,6 +7,7 @@ import com.tom_roush.pdfbox.pdmodel.graphics.image.JPEGFactory;
 import com.tom_roush.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import java.io.*;
 import java.nio.file.*;
+import java.nio.file.Path;
 import java.util.*;
 
 /** Transactional operations: fully build and validate before touching the original. */
@@ -137,31 +138,59 @@ public final class DocumentOps {
     return ScanModel.images(directory);
   }
 
-  // Busca PDF accesibles; la interfaz obtiene los permisos antes de llamar a esta operación.
-  public static List<File> discover(File root) {
+  /** Bounded results keep both traversal and the Android view hierarchy manageable. */
+  public static final class Discovery {
+    public final List<File> files;
+    public final boolean partial;
+    Discovery(List<File> files, boolean partial) { this.files = files; this.partial = partial; }
+  }
+
+  public static List<File> discover(File root) throws IOException {
+    return discover(root, 200, 20000, 10000).files;
+  }
+
+  // Never follow links, allocate an entire directory listing, or scan without a budget.
+  static Discovery discover(File root, int maxResults, int maxEntries, long timeoutMs)
+      throws IOException {
+    if (!root.isDirectory() || !root.canRead()) throw new IOException("Unreadable folder");
+    if (maxResults < 1 || maxEntries < 1 || timeoutMs < 1)
+      throw new IllegalArgumentException("Invalid search budget");
     List<File> found = new ArrayList<>();
-    ArrayDeque<File> queue = new ArrayDeque<>();
-    Set<String> seen = new HashSet<>();
-    queue.add(root);
+    ArrayDeque<Path> queue = new ArrayDeque<>();
+    queue.add(root.toPath());
+    long start = System.nanoTime();
+    int visited = 0;
+    boolean partial = false;
+    search:
     while (!queue.isEmpty()) {
-      File dir = queue.removeFirst();
-      try {
-        if (!seen.add(dir.getCanonicalPath())) continue;
-      } catch (IOException e) {
-        continue;
-      }
-      File[] children = dir.listFiles();
-      if (children == null) continue;
-      for (File file : children) {
-        if (file.isDirectory()
-            && !file.getName().startsWith(".")
-            && !file.getPath().contains("/Android/data")
-            && !file.getPath().contains("/Android/obb")) queue.add(file);
-        else if (file.isFile() && file.getName().toLowerCase(Locale.ROOT).endsWith(".pdf"))
-          found.add(file);
+      if (Thread.currentThread().isInterrupted()) throw new InterruptedIOException("Cancelled");
+      if ((System.nanoTime() - start) / 1000000L >= timeoutMs) { partial = true; break; }
+      Path dir = queue.removeFirst();
+      try (DirectoryStream<Path> children = Files.newDirectoryStream(dir)) {
+        for (Path child : children) {
+          if (Thread.currentThread().isInterrupted()) throw new InterruptedIOException("Cancelled");
+          if (++visited > maxEntries || (System.nanoTime()-start)/1000000L >= timeoutMs) {
+            partial = true; break search;
+          }
+          String name = child.getFileName().toString();
+          if (Files.isDirectory(child, LinkOption.NOFOLLOW_LINKS)) {
+            if (!name.startsWith(".") && !(dir.getFileName() != null
+                && dir.getFileName().toString().equals("Android")
+                && (name.equals("data") || name.equals("obb")))) queue.add(child);
+          } else if (name.toLowerCase(Locale.ROOT).endsWith(".pdf")
+              && Files.isRegularFile(child, LinkOption.NOFOLLOW_LINKS)) {
+            found.add(child.toFile());
+            if (found.size() >= maxResults) { partial = true; break search; }
+          }
+        }
+      } catch (InterruptedIOException error) {
+        throw error;
+      } catch (IOException | SecurityException | DirectoryIteratorException error) {
+        if (dir.equals(root.toPath())) throw new IOException("Unreadable folder", error);
+        partial = true;
       }
     }
     found.sort(Comparator.comparing(File::getName, String.CASE_INSENSITIVE_ORDER));
-    return found;
+    return new Discovery(found, partial);
   }
 }

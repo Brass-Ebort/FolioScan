@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,importlib.metadata as metadata,pefile
 root=Path(__file__).resolve().parents[1]
-package=root/'desktop/dist/FolioScan-3.2'
+package=root/'desktop/dist/FolioScan-0.4.0'
 records=[]
 for p in sorted(package.rglob('*')):
     if not p.is_file() or p.suffix.lower() not in ['.dll','.pyd','.exe']:continue

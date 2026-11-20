@@ -13,6 +13,6 @@ if (!$SkipFunctionalTests) {
 if ($LASTEXITCODE -ne 0) { throw 'Ha fallado el empaquetado.' }
 if (!$SkipFunctionalTests) {
     $report = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../legal/windows-functional-check.json'))
-    $check = Start-Process -FilePath (Join-Path $PSScriptRoot 'dist/FolioScan-3.2-portable.exe') -ArgumentList @('--self-test', ('"' + $report + '"')) -WindowStyle Hidden -Wait -PassThru
+    $check = Start-Process -FilePath (Join-Path $PSScriptRoot 'dist/FolioScan-0.4.0-portable.exe') -ArgumentList @('--self-test', ('"' + $report + '"')) -WindowStyle Hidden -Wait -PassThru
     if ($check.ExitCode -ne 0) { throw 'Ha fallado la autoprueba del ejecutable.' }
 }

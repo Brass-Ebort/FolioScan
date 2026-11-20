@@ -6,7 +6,7 @@ script=root/'scripts/document_source.py'
 source=script.read_text('utf-8')
 start=source.index('for path in files:');end=source.index('def explain(line):',start)
 source=source[:start]+source[end:]
-source=source.replace('Código comentado V3','Código comentado V3.2').replace('Código V3:','Código V3.2:')
+source=source.replace('Código comentado V3','Código comentado 0.4.0').replace('Código V3:','Código 0.4.0:')
 exec(compile(source,str(script),'exec'),{'__file__':str(script),'__name__':'__main__'})
 es=(root/'docs/ESP/CODIGO_COMENTADO.html').read_text('utf-8')
 translations={
@@ -26,7 +26,7 @@ translations={
  'Calcula o conserva el valor indicado; el nombre de la izquierda identifica su destino.':'Computes or stores a value in the named destination.',
  'Declara o invoca la operación indicada; sus argumentos aparecen entre paréntesis.':'Declares or calls an operation with its arguments.',
  'Continúa la declaración o expresión del bloque que la contiene.':'Continues the enclosing declaration or expression.'}
-en=es.replace('lang="es"','lang="en"').replace('Código comentado V3.2','Annotated source V3.2').replace('Código V3.2: guía línea por línea','V3.2 source: line-by-line reading guide')
+en=es.replace('lang="es"','lang="en"').replace('Código comentado 0.4.0','Annotated source 0.4.0').replace('Código 0.4.0: guía línea por línea','0.4.0 source: line-by-line reading guide')
 en=re.sub(r'<p>.*?</p>','<p>English syntax notes accompany the original source, whose maintenance comments remain unchanged. These notes are reading aids; algorithm-specific comments take precedence.</p>',en,count=1,flags=re.S)
 en=re.sub(r'</pre></td><td>(.*?)</td>',lambda m:'</pre></td><td>'+translations.get(m[1],m[1])+'</td>',en)
 (root/'docs/ENG/CODE_GUIDE.html').write_text(en,'utf-8')

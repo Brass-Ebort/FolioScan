@@ -42,7 +42,7 @@ class V3Test(unittest.TestCase):
                         widget.accept()
             QTimer.singleShot(50, inspect_dialog)
             window.additional_info()
-            self.assertIn("FolioScan · v3.2", captured)
+            self.assertIn("FolioScan · v0.4.0", captured)
             window.settings.setValue("language", "es")
             window.close()
             with patch("v3.QLocale.system", return_value=QLocale("fr_FR")):

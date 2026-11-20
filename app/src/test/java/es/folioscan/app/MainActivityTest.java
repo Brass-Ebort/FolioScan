@@ -12,6 +12,42 @@ import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk=28)
 public class MainActivityTest {
+    @Test public void broadSearchRequiresConfirmationAndCanBeDisabled() {
+        RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().clear().putString("language","es").commit();
+        try(ActivityController<MainActivity> controller=Robolectric.buildActivity(MainActivity.class).setup()) {
+            MainActivity activity=controller.get();
+            assertFalse(activity.getPreferences(0).getBoolean("fullDevice",false));
+            find(activity.getWindow().getDecorView(),"⚙").performClick();
+            android.app.Dialog drawer=org.robolectric.shadows.ShadowDialog.getLatestDialog();
+            find(drawer.getWindow().getDecorView(),"Analizar todo el dispositivo").performClick();
+            android.app.AlertDialog warning=org.robolectric.shadows.ShadowAlertDialog.getLatestAlertDialog();
+            assertFalse(activity.getPreferences(0).getBoolean("fullDevice",false));
+            warning.getButton(android.content.DialogInterface.BUTTON_NEGATIVE).performClick();
+            Shadows.shadowOf(android.os.Looper.getMainLooper()).idle();
+            assertFalse(activity.getPreferences(0).getBoolean("fullDevice",false));
+            find(activity.getWindow().getDecorView(),"⚙").performClick();
+            drawer=org.robolectric.shadows.ShadowDialog.getLatestDialog();
+            find(drawer.getWindow().getDecorView(),"Analizar todo el dispositivo").performClick();
+            warning=org.robolectric.shadows.ShadowAlertDialog.getLatestAlertDialog();
+            warning.getButton(android.content.DialogInterface.BUTTON_POSITIVE).performClick();
+            Shadows.shadowOf(android.os.Looper.getMainLooper()).idle();
+            assertTrue(activity.getPreferences(0).getBoolean("fullDevice",false));
+            controller.recreate();activity=controller.get();
+            assertTrue(activity.getPreferences(0).getBoolean("fullDevice",false));
+            find(activity.getWindow().getDecorView(),"⚙").performClick();
+            drawer=org.robolectric.shadows.ShadowDialog.getLatestDialog();
+            find(drawer.getWindow().getDecorView(),"Usar solo Documentos/FolioScan").performClick();
+            assertFalse(activity.getPreferences(0).getBoolean("fullDevice",false));
+        }
+    }
+    @Test @Config(qualifiers="night") public void systemNightModeUsedWithoutManualOverride() {
+        RuntimeEnvironment.getApplication().getSharedPreferences("MainActivity",0).edit().remove("dark").commit();
+        try(ActivityController<MainActivity> controller=Robolectric.buildActivity(MainActivity.class).setup()) {
+            TypedValue color=new TypedValue();controller.get().getTheme().resolveAttribute(android.R.attr.windowLightStatusBar,color,true);
+            assertEquals(0,color.data);
+            assertFalse(controller.get().getPreferences(0).contains("dark"));
+        }
+    }
     @Test @Config(qualifiers="fr-rFR") public void systemLanguageAndManualOverride() {
         android.content.Context context = RuntimeEnvironment.getApplication();
         android.content.SharedPreferences prefs = context.getSharedPreferences("MainActivity",0);

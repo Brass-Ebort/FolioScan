@@ -22,6 +22,8 @@ loader=json.loads((root/'legal/windows-portable-loader.json').read_text('utf-8')
 assert loader['ok'] and loader['exe_sha256']==functional['exe_sha256']
 ffi=json.loads((root/'legal/libffi-provenance.json').read_text('utf-8'))
 assert hashlib.sha256((windows/'_internal/libffi-8.dll').read_bytes()).hexdigest()==ffi['sha256']
+android_security=json.loads((root/'legal/android-security-check.json').read_text('utf-8'))
+assert all(not package['advisories'] for package in android_security['packages'])
 security=json.loads((root/'legal/dependency-security-check.json').read_text('utf-8'))
 assert all(not package['advisories'] for package in security['packages'])
 # Audit the actual embedded payload, not only the parallel onedir build.
@@ -77,14 +79,16 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
 
 # Exact replacement list for GitHub; compare without altering the archived version.
 baseline=project/f'Versiones/V{version}/Codigo/FolioScan-V{version}-codigo.zip'
+if not baseline.exists():
+    baseline=project/'PUBLICAR_FOLIOSCAN_V3.2/FolioScan-V3.2-codigo.zip'
 changes=[]
 if baseline.exists():
     with zipfile.ZipFile(baseline) as old:
         old_names=set(old.namelist())
         for name,p in sorted(entries.items()):
-            if name not in old_names:changes.append('AÃƒÆ’Ã¢â‚¬ËœADIR '+name)
+            if name not in old_names:changes.append('ADD '+name)
             elif hashlib.sha256(old.read(name)).digest()!=hashlib.sha256(p.read_bytes()).digest():changes.append('ACTUALIZAR '+name)
-        changes+=['RETIRAR DEL REPOSITORIO (no del archivo histÃƒÆ’Ã‚Â³rico) '+name for name in sorted(old_names-set(entries))]
+        changes+=['REMOVE FROM REPOSITORY '+name for name in sorted(old_names-set(entries))]
 (output/'CAMBIOS_REPOSITORIO.txt').write_text('\n'.join(changes)+'\n','utf-8')
 for name in ['README.md','LICENSE','NOTICE','THIRD_PARTY.md','AVISO_QT_LGPL.md',
              'INFORME_FINAL_PUBLICACION.md','INSTRUCCIONES_GITHUB.md']:

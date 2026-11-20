@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib, json, os, shutil, subprocess, tempfile
 
 root = Path(__file__).resolve().parents[1]
-source = root/'desktop/dist/FolioScan-3.2-portable.exe'
+source = root/'desktop/dist/FolioScan-0.4.0-portable.exe'
 scratch = root/'desktop/build'
 folder = Path(tempfile.mkdtemp(prefix='single-exe-check-',dir=scratch)).resolve()
 assert scratch.resolve() in folder.parents
